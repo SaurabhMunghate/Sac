@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<title>Shatam Address Parser</title>
+<meta name="google-site-verification" content="">
+
+
+<script
+	src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+	
+</script>
+<script>
+	$(document).ready(function() {
+
+		//$('#stage').css("visibility", "hidden");
+		$('.bulk_output').css("visibility", "hidden");
+		$('.output_Text').css("visibility", "hidden");
+		$("button").click(function() {
+
+			Addresses1 = $("#txtArea").val();
+			numberOfOutput=$("#max_result").val();
+			numberofJobs=$("#no_jobs").val();
+			//var length = numberOfOutput.length;
+			try {
+		        JSON.parse(Addresses1);
+		    } catch (e) {
+		    	alert("Check JSON Format!");
+		        return 
+		    }
+		    $("#submit").html('Processing...');
+		   /*  if(length!=1){
+		    	alert("Invalid Number Of Outputs !");
+		    	return
+		    } */
+			//$('#stage').html("Loading....")
+			//alert(Addresses1);
+			$.ajax({
+				type : "POST",
+				url : "/postData/",
+				// The key needs to match your method's input parameter (case-sensitive).
+				//data : JSON.stringify(Addresses1),
+				data: JSON.stringify({ address: Addresses1, count: numberOfOutput,jobs: numberofJobs }),
+
+				error : function(xhr, status, error) {
+
+					alert(error);
+
+				},
+
+				success : function(data, textStatus, jqXHR) {
+				
+					if(data.indexOf("Check")==-1){
+					
+					$('.bulk_output').css("visibility", "true");
+					$('.output_Text').css("visibility", "true");
+					$('.bulk_output').html(data);
+					}
+					else{
+						$('.bulk_output').css("visibility", "hidden");
+						$('.output_Text').css("visibility", "hidden");
+						alert(data);
+					}
+				
+					 $("#submit").html('Correct Addresses');
+					//alert(data);
+
+				},
+				failure : function(errMsg) {
+					 $("#submit").html('Correct Addresses');
+					alert("Error: " + errMsg);
+					
+				}
+			});
+
+		});
+	});
+</script>
+
+</head>
+<body>
+
+
+	<h1>SHATAM ADDRESS PARSER</h1>
+	<table class="myhomeform">
+		<tr>
+			<td class="addressinputText">INPUT JSON ADDRESSES</td>
+		</tr>
+		<tr>
+			<td><textarea name="textArea" id="txtArea" cols="110" rows="5"
+					class="bulk_TextArea">  </textarea></td>
+					
+					
+		</tr>
+		<tr>
+			<td class="addressinputText">MAXIMUM RESULTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUMBERS OF THREADS</td>
+			
+				
+		</tr>
+		<tr>
+			<td><input type="text" name="MAX_RESULTS" id="max_result" value="1" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="no_jobs" id="no_jobs" value="50" /></td>
+		  
+		</tr>
+		<tr>
+			<td>
+
+				<button id="submit">Correct Addresses</button>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="output_Text"><h3>SAC CORRECTED ADDRESS</h3></td>
+		</tr>
+		<tr>
+			<td><textarea name="textArea" id="txtOutput" cols="110" rows="20"
+					class="bulk_output">  </textarea></td>
+		</tr>
+
+
+	</table>
+
+</body>
+</html>

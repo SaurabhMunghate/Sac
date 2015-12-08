@@ -1,0 +1,1473 @@
+
+
+Total SAC time=31278
+
+
+Total SAC time=31038
+
+
+Total SAC time=30438
+
+
+Total SAC time=30497
+
+
+Total SAC time=30149
+
+
+Total SAC time=33359
+
+
+Total SAC time=34446
+
+
+Total SAC time=34018
+
+
+Total SAC time=34814
+
+
+Total SAC time=33132
+
+
+Total SAC time=33234
+
+
+Total SAC time=34330
+
+
+Total SAC time=33154
+
+
+Total SAC time=32759
+
+
+Total SAC time=34801
+
+
+Total SAC time=37502
+
+
+Total SAC time=34666
+
+
+Total SAC time=33788
+
+
+Total SAC time=33796
+
+
+Total SAC time=36337
+
+
+Total SAC time=33632
+
+
+Total SAC time=32741
+
+
+Total SAC time=33056
+
+
+Total SAC time=33536
+
+
+Total SAC time=34994
+
+
+Total SAC time=35028
+
+
+Total SAC time=33760
+
+
+Total SAC time=32996
+
+
+Total SAC time=33620
+
+
+Total SAC time=33965
+
+
+Total SAC time=34075
+
+
+Total SAC time=33390
+
+
+Total SAC time=32903
+
+
+Total SAC time=34258
+
+
+Total SAC time=35652
+
+
+Total SAC time=33659
+
+
+Total SAC time=33086
+
+
+Total SAC time=33286
+
+
+Total SAC time=33327
+
+
+Total SAC time=34350
+
+
+Total SAC time=34303
+
+
+Total SAC time=33467
+
+
+Total SAC time=31767
+
+
+Total SAC time=31738
+
+
+Total SAC time=31797
+
+
+Total SAC time=32464
+
+
+Total SAC time=32238
+
+
+Total SAC time=33191
+
+
+Total SAC time=33649
+
+
+Total SAC time=33945
+
+
+Total SAC time=33364
+
+
+
+
+
+
+
+
+
+;;;;;
+
+Total SAC time=35531
+
+
+Total SAC time=35479
+
+
+Total SAC time=33133
+
+
+Total SAC time=33620
+
+
+Total SAC time=33757
+
+
+Total SAC time=32729
+
+
+Total SAC time=32457
+
+
+Total SAC time=33026
+
+
+Total SAC time=33509
+
+
+Total SAC time=33054
+
+
+Total SAC time=33022
+
+
+Total SAC time=33647
+
+
+Total SAC time=33711
+
+
+Total SAC time=32518
+
+
+Total SAC time=32697
+
+
+Total SAC time=32831
+
+
+Total SAC time=31984
+
+
+Total SAC time=32017
+
+
+Total SAC time=32106
+
+
+Total SAC time=33166
+
+
+Total SAC time=32794
+
+
+Total SAC time=32315
+
+
+Total SAC time=31940
+
+
+Total SAC time=33389
+
+
+Total SAC time=32590
+
+
+Total SAC time=37428
+
+
+Total SAC time=33324
+
+
+Total SAC time=34520
+
+
+Total SAC time=33990
+
+
+Total SAC time=34156
+
+
+Total SAC time=33963
+
+
+Total SAC time=38565
+
+
+Total SAC time=33473
+
+
+Total SAC time=37051
+
+
+Total SAC time=35373
+
+
+Total SAC time=35416
+
+
+Total SAC time=38622
+
+
+Total SAC time=34755
+
+
+Total SAC time=52773
+
+
+Total SAC time=2387
+
+
+Total SAC time=208
+
+
+Total SAC time=77
+
+
+Total SAC time=164
+
+
+Total SAC time=215
+
+
+Total SAC time=119
+
+
+Total SAC time=231
+
+
+Total SAC time=67
+
+
+Total SAC time=115
+
+
+Total SAC time=63
+
+
+Total SAC time=243
+
+
+Total SAC time=9637
+
+
+Total SAC time=7214
+
+
+Total SAC time=35
+
+
+Total SAC time=1036
+
+
+Total SAC time=44
+
+
+Total SAC time=51
+
+
+Total SAC time=30
+
+
+Total SAC time=29
+
+
+Total SAC time=143
+
+
+Total SAC time=36
+
+
+Total SAC time=1706
+
+
+Total SAC time=98
+
+
+Total SAC time=890
+
+
+Total SAC time=2237
+
+
+Total SAC time=59
+
+
+Total SAC time=247
+
+
+Total SAC time=2835
+
+
+Total SAC time=2360
+
+
+Total SAC time=29
+
+
+Total SAC time=1331
+
+
+Total SAC time=4107
+
+
+Total SAC time=2202
+
+
+Total SAC time=32
+
+
+Total SAC time=36536
+
+
+Total SAC time=8
+
+
+Total SAC time=20
+
+
+Total SAC time=1959
+
+
+Total SAC time=226
+
+
+Total SAC time=106
+
+
+Total SAC time=79
+
+
+Total SAC time=34
+
+
+Total SAC time=531
+
+
+Total SAC time=56
+
+
+Total SAC time=62
+
+
+Total SAC time=566
+
+
+Total SAC time=565
+
+
+Total SAC time=594
+
+
+Total SAC time=534
+
+
+Total SAC time=550
+
+
+Total SAC time=48
+
+
+Total SAC time=523
+
+
+Total SAC time=61
+
+
+Total SAC time=58
+
+
+Total SAC time=41
+
+
+Total SAC time=33
+
+
+Total SAC time=639
+
+
+Total SAC time=48
+
+
+Total SAC time=238
+
+
+Total SAC time=47
+
+
+Total SAC time=28
+
+
+Total SAC time=98
+
+
+Total SAC time=62
+
+
+Total SAC time=50
+
+
+Total SAC time=33
+
+
+Total SAC time=31
+
+
+Total SAC time=29
+
+
+Total SAC time=214
+
+
+Total SAC time=28
+
+
+Total SAC time=1385
+
+
+Total SAC time=366
+
+
+Total SAC time=124
+
+
+Total SAC time=601
+
+
+Total SAC time=586
+
+
+Total SAC time=815
+
+
+Total SAC time=19826
+
+
+Total SAC time=8127
+
+
+Total SAC time=8659
+
+
+Total SAC time=8119
+
+
+Total SAC time=3685
+
+
+Total SAC time=3534
+
+
+Total SAC time=3819
+
+
+Total SAC time=589
+
+
+Total SAC time=574
+
+
+Total SAC time=563
+
+
+Total SAC time=55
+
+
+Total SAC time=47
+
+
+Total SAC time=25
+
+
+Total SAC time=72
+
+
+Total SAC time=497
+
+
+Total SAC time=1326
+
+
+Total SAC time=136
+
+
+Total SAC time=607
+
+
+Total SAC time=148
+
+
+Total SAC time=875
+
+
+Total SAC time=76
+
+
+Total SAC time=708
+
+
+Total SAC time=74
+
+
+Total SAC time=186
+
+
+Total SAC time=104
+
+
+Total SAC time=529
+
+
+Total SAC time=82
+
+
+Total SAC time=176
+
+
+Total SAC time=842
+
+
+Total SAC time=175
+
+
+Total SAC time=80
+
+
+Total SAC time=985
+
+
+Total SAC time=69
+
+
+Total SAC time=85844
+
+
+Total SAC time=10614
+
+
+Total SAC time=51
+
+
+Total SAC time=5221
+
+
+Total SAC time=6010
+
+
+Total SAC time=35
+
+
+Total SAC time=5314
+
+
+Total SAC time=32
+
+
+Total SAC time=49
+
+
+Total SAC time=27
+
+
+Total SAC time=882
+
+
+Total SAC time=578
+
+
+Total SAC time=860
+
+
+Total SAC time=709
+
+
+Total SAC time=633
+
+
+Total SAC time=675
+
+
+Total SAC time=252
+
+
+Total SAC time=187
+
+
+Total SAC time=543
+
+
+Total SAC time=343
+
+
+Total SAC time=607
+
+
+Total SAC time=619
+
+
+Total SAC time=896
+
+
+Total SAC time=589
+
+
+Total SAC time=664
+
+
+Total SAC time=118
+
+
+Total SAC time=102
+
+
+Total SAC time=641
+
+
+Total SAC time=79
+
+
+Total SAC time=179
+
+
+Total SAC time=109
+
+
+Total SAC time=60
+
+
+Total SAC time=71
+
+
+Total SAC time=662
+
+
+Total SAC time=170
+
+
+Total SAC time=811
+
+
+Total SAC time=521
+
+
+Total SAC time=626
+
+
+Total SAC time=986
+
+
+Total SAC time=404
+
+
+Total SAC time=1001
+
+
+Total SAC time=520
+
+
+Total SAC time=769
+
+
+Total SAC time=240
+
+
+Total SAC time=214
+
+
+Total SAC time=1534
+
+
+Total SAC time=429
+
+
+Total SAC time=416
+
+
+Total SAC time=1158
+
+
+Total SAC time=893
+
+
+Total SAC time=419
+
+
+Total SAC time=954
+
+
+Total SAC time=1038
+
+
+Total SAC time=912
+
+
+Total SAC time=394
+
+
+Total SAC time=905
+
+
+Total SAC time=404
+
+
+Total SAC time=2498
+
+
+Total SAC time=818
+
+
+Total SAC time=2364
+
+
+Total SAC time=505
+
+
+Total SAC time=4006
+
+
+Total SAC time=517
+
+
+Total SAC time=449
+
+
+Total SAC time=451
+
+
+Total SAC time=548
+
+
+Total SAC time=1484
+
+
+Total SAC time=158
+
+
+Total SAC time=1009
+
+
+Total SAC time=451
+
+
+Total SAC time=329
+
+
+Total SAC time=378
+
+
+Total SAC time=331
+
+
+Total SAC time=317
+
+
+Total SAC time=146487
+
+
+Total SAC time=41782
+
+
+Total SAC time=390
+
+
+Total SAC time=52
+
+
+Total SAC time=2366
+
+
+Total SAC time=328
+
+
+Total SAC time=222
+
+
+Total SAC time=357
+
+
+Total SAC time=4054
+
+
+Total SAC time=1943
+
+
+Total SAC time=244
+
+
+Total SAC time=134
+
+
+Total SAC time=294
+
+
+Total SAC time=934
+
+
+Total SAC time=2792
+
+
+Total SAC time=276
+
+
+Total SAC time=480
+
+
+Total SAC time=1753
+
+
+Total SAC time=144
+
+
+Total SAC time=858
+
+
+Total SAC time=252
+
+
+Total SAC time=78
+
+
+Total SAC time=1364
+
+
+Total SAC time=182
+
+
+Total SAC time=121
+
+
+Total SAC time=82
+
+
+Total SAC time=164
+
+
+Total SAC time=37
+
+
+Total SAC time=6221
+
+
+Total SAC time=836
+
+
+Total SAC time=945
+
+
+Total SAC time=820
+
+
+Total SAC time=956
+
+
+Total SAC time=2266
+
+
+Total SAC time=127
+
+
+Total SAC time=180
+
+
+Total SAC time=642
+
+
+Total SAC time=435
+
+
+Total SAC time=105
+
+
+Total SAC time=120
+
+
+Total SAC time=291
+
+
+Total SAC time=5246
+
+
+Total SAC time=4864
+
+
+Total SAC time=3798
+
+
+Total SAC time=73
+
+
+Total SAC time=47
+
+
+Total SAC time=2098
+
+
+Total SAC time=1482
+
+
+Total SAC time=1545
+
+
+Total SAC time=1347
+
+
+Total SAC time=399
+
+
+Total SAC time=1850
+
+
+Total SAC time=383
+
+
+Total SAC time=1291
+
+
+Total SAC time=1406
+
+
+Total SAC time=1322
+
+
+Total SAC time=4273
+
+
+Total SAC time=2184
+
+
+Total SAC time=71789
+
+
+Total SAC time=59658
+
+
+Total SAC time=79749
+
+
+Total SAC time=79589
+
+
+Total SAC time=57642
+
+
+Total SAC time=236
+
+
+Total SAC time=65822
+
+
+Total SAC time=17960
+
+
+Total SAC time=19094
+
+
+Total SAC time=382431
+
+
+Total SAC time=378492
+
+
+Total SAC time=52104
+
+
+Total SAC time=68
+
+
+Total SAC time=721
+
+
+Total SAC time=709
+
+
+Total SAC time=873
+
+
+Total SAC time=885
+
+
+Total SAC time=275
+
+
+Total SAC time=37826
+
+
+Total SAC time=40
+
+
+Total SAC time=35440
+
+
+Total SAC time=183
+
+
+Total SAC time=2107
+
+
+Total SAC time=272
+
+
+Total SAC time=607
+
+
+Total SAC time=78
+
+
+Total SAC time=73
+
+
+Total SAC time=55
+
+
+Total SAC time=473
+
+
+Total SAC time=505
+
+
+Total SAC time=93
+
+
+Total SAC time=247
+
+
+Total SAC time=49
+
+
+Total SAC time=46
+
+
+Total SAC time=55
+
+
+Total SAC time=37
+
+
+Total SAC time=117
+
+
+Total SAC time=201
+
+
+Total SAC time=225
+
+
+Total SAC time=66
+
+
+Total SAC time=455
+
+
+Total SAC time=629
+
+
+Total SAC time=77
+
+
+Total SAC time=158
+
+
+Total SAC time=151
+
+
+Total SAC time=149
+
+
+Total SAC time=366
+
+
+Total SAC time=18974
+
+
+Total SAC time=20278
+
+
+Total SAC time=19349
+
+
+Total SAC time=39888
+
+
+Total SAC time=82
+
+
+Total SAC time=670
+
+
+Total SAC time=46
+
+
+Total SAC time=252
+
+
+Total SAC time=679
+
+
+Total SAC time=50
+
+
+Total SAC time=88
+
+
+Total SAC time=603
+
+
+Total SAC time=844
+
+
+Total SAC time=589
+
+
+Total SAC time=343
+
+
+Total SAC time=71
+
+
+Total SAC time=40
+
+
+Total SAC time=41
+
+
+Total SAC time=1258
+
+
+Total SAC time=149796
+
+
+Total SAC time=117
+
+
+Total SAC time=70
+
+
+Total SAC time=467
+
+
+Total SAC time=573
+
+
+Total SAC time=102
+
+
+Total SAC time=416
+
+
+Total SAC time=61876
+
+
+Total SAC time=22
+
+
+Total SAC time=175
+
+
+Total SAC time=517
+
+
+Total SAC time=365
+
+
+Total SAC time=559
+
+
+Total SAC time=2009
+
+
+Total SAC time=1655
+
+
+Total SAC time=313
+
+
+Total SAC time=337
+
+
+Total SAC time=226
+
+
+Total SAC time=31
+
+
+Total SAC time=120
+
+
+Total SAC time=123
+
+
+Total SAC time=570
+
+
+Total SAC time=469
+
+
+Total SAC time=472
+
+
+Total SAC time=436
+
+
+Total SAC time=501
+
+
+Total SAC time=1798
+
+
+Total SAC time=694
+
+
+Total SAC time=757
+
+
+Total SAC time=3429
+
+
+Total SAC time=2284
+
+
+Total SAC time=1247
+
+
+Total SAC time=191325
+
+
+Total SAC time=413
+
+
+Total SAC time=322
+
+
+Total SAC time=568
+
+
+Total SAC time=126
+
+
+Total SAC time=111
+
+
+Total SAC time=5377
+
+
+Total SAC time=19595
+
+
+Total SAC time=20733
+
+
+Total SAC time=372
+
+
+Total SAC time=329
+
+
+Total SAC time=1232
+
+
+Total SAC time=687
+
+
+Total SAC time=801
+
+
+Total SAC time=656
+
+
+Total SAC time=220048
+
+
+Total SAC time=1648
+
+
+Total SAC time=128
+
+
+Total SAC time=130252
+
+
+Total SAC time=45630
+
+
+Total SAC time=25817
+
+
+Total SAC time=25913
+
+
+Total SAC time=266
+
+
+Total SAC time=29
+
+
+Total SAC time=31
+
+
+Total SAC time=63
+
+
+Total SAC time=344
+
+
+Total SAC time=233
+
+
+Total SAC time=7697
+
+
+Total SAC time=21376
+
+
+Total SAC time=8006
+
+
+Total SAC time=663
+
+
+Total SAC time=7788
+
+
+Total SAC time=19324
+
+
+Total SAC time=6209
+
+
+Total SAC time=7618
+
+
+Total SAC time=5202
+
+
+Total SAC time=75927
+
+
+Total SAC time=8005
+
+
+Total SAC time=7103
+
+
+Total SAC time=6865
+
+
+Total SAC time=41
+
+
+Total SAC time=21
+
+
+Total SAC time=279
+
+
+Total SAC time=27
+
+
+Total SAC time=213
+
+
+Total SAC time=321
+
+
+Total SAC time=104
+
+
+Total SAC time=277
+
+
+Total SAC time=254
+
+
+Total SAC time=262
+
+
+Total SAC time=235
+
+
+Total SAC time=264
+
+
+Total SAC time=7506
+
+
+Total SAC time=29220
+
+
+Total SAC time=6659
+
+
+Total SAC time=6476
+
+
+Total SAC time=6918
+
+
+Total SAC time=6765
+
+
+Total SAC time=250
