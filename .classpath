@@ -26,7 +26,14 @@
 	<classpathentry kind="lib" path="C:/JAR_SAC/sac_jar/opencsv-2.3.jar"/>
 	<classpathentry kind="lib" path="C:/JAR_SAC/sac_jar/SuperCSV-1.52.jar"/>
 	<classpathentry kind="lib" path="C:/JAR_SAC/jar_corlib_project/simmetrics_jar_v1_6_2_d07_02_07.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/CoreLib"/>
 	<classpathentry kind="lib" path="Libs/json-20080701.jar"/>
+	<classpathentry kind="lib" path="Libs/commons-collections.jar"/>
+	<classpathentry kind="lib" path="Libs/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="Libs/commons-lang.jar"/>
+	<classpathentry kind="lib" path="Libs/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="Libs/jetty-all-7.0.2.v20100331.jar"/>
+	<classpathentry kind="lib" path="Libs/Logger.jar"/>
+	<classpathentry kind="lib" path="Libs/servlet-api-2.3.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CoreLib"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

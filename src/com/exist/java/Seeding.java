@@ -31,7 +31,7 @@ public class Seeding {
 				.sortInputAddress(textEntered);
 
 		ThreadedSAC threadedSAC = new ThreadedSAC();
-
+         U.log("seed");
 		threadedSAC.processByParts(addresses, "", "1", "10","USPS and TIGER",false);
 	}
 

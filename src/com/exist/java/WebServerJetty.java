@@ -37,7 +37,8 @@ public class WebServerJetty {
 		if(args.length>0)
 		Paths.READ_DATA=args[0];		
 		else{
-			Paths.READ_DATA=Paths.DATA_ROOT;
+			//Paths.READ_DATA=Paths.DATA_ROOT;
+			Paths.READ_DATA="E:\\SacData\\Data";
 		}
 		StringBuilder out = new StringBuilder();
 	try{	
@@ -91,7 +92,7 @@ System.out.println("OUTPUT=" + out.toString());
 		SelectChannelConnector connector = new SelectChannelConnector();
 
 		connector.setPort(3309);
-		/* connector.setConfidentialPort(49700); */
+		// connector.setConfidentialPort(3309); 
 		server.addConnector(connector);
 		ContextHandler contextState = new ContextHandler("/getData");
 		StateHandler2 handler = new StateHandler2();
@@ -104,7 +105,10 @@ System.out.println("OUTPUT=" + out.toString());
 		// resource_handler.setWelcomeFiles(new String[] {
 		// "WebContent/Index.html" });
 		// building cache for data
+		
+		
 		GenerateCache.doCache();
+		
 		Seeding.seed();
 		resource_handler.setResourceBase(".");
 		WebAppContext webapp = new WebAppContext();
@@ -116,9 +120,11 @@ System.out.println("OUTPUT=" + out.toString());
 				webapp });
 		server.setHandler(contexts);
 		String home = System.getProperty("user:dir", ".");
-
-		server.start();
+		U.log("SAC v 1.3 Running");
+        server.start();
 		server.join();
+		
+		
 	}
 	else
 	{

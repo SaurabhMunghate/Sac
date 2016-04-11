@@ -1,12 +1,6 @@
 package co.shatam.test;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import org.json.JSONArray;
 
@@ -36,6 +30,14 @@ public class Test {
         System.out.println(output+"jjjj");
 
 	}*/
+		
+		//Soundex sound = new Soundex();
+		//Metaphone phone = new Metaphone();
+		
+	    //U.log(sound.encode("rakesh"));
+	    //U.log(phone.encode("rakesh"));
+		
+		
 		org.json.JSONArray outputObj = new JSONArray();
 		outputObj.put(data);
 		U.log(outputObj.toString());

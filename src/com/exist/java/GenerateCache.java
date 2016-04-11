@@ -77,7 +77,7 @@ public static HashMap<String,String> getfips() throws Exception{
 		FIPS=getfips();
 		//U.log(FIPS.size());
 		Iterator iterator = U.STATE_MAP.keySet().iterator();
-
+     
 		while (iterator.hasNext()) {
 			String state = (String) iterator.next();
 		//	 String state="CA";

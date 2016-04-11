@@ -32,6 +32,7 @@ import org.json.JSONObject;
 
 import com.data.main.Logger;
 
+import com.shatam.data.PostSACJarInfoToServer;
 import com.shatam.io.ShatamIndexReader;
 
 import com.shatam.model.AddColumns;
@@ -215,6 +216,10 @@ public static String disable_enable="enable";
 			org.json.JSONArray arr =null;
 			try{
 			 arr = new org.json.JSONArray(inputData);
+			 
+			 //Posting Address Count info to server.
+			 PostSACJarInfoToServer postinfo = new PostSACJarInfoToServer(arr.length());
+			 postinfo.post();
 			}
 			catch(Exception e){
 				U.log(":::"+inputData);

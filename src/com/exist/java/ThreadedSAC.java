@@ -44,6 +44,7 @@ import com.shatam.shatamindex.search.Query;
 import com.shatam.shatamindex.util.fst.Util;
 import com.shatam.util.AbbrReplacement;
 import com.shatam.util.DistanceMatchForResult;
+import com.shatam.util.GoogleCachingTest;
 import com.shatam.util.OutputStatusCode;
 import com.shatam.util.ShatamIndexQueryCreator;
 import com.shatam.util.ShatamIndexQueryStruct;
@@ -74,9 +75,9 @@ static int avg=0;
 		// final JSONArray outputArr = new JSONArray();
 		org.json.JSONArray outputArr = new JSONArray();
 		// array = arr;
-		int start = 0;
+		//int start = 0;
 		// U.log("JSON LEnght ::" + arr.size());
-		int end = arr.size();// / 5;
+		//int end = arr.size();// / 5;
 		// U.log("JSON LEnght ::" + end);
 		MultiMap multiMap = null;
 		try {
@@ -109,6 +110,7 @@ static int avg=0;
 		 * finalresult.keySet(); long st = System.currentTimeMillis();
 		 * U.log("Set Size: " + keys.size());
 		 */
+		long sortSt = System.currentTimeMillis();
 		Set<String> keys1 = finalresult.keySet();
 
 		Set<String> keys = new HashSet<>();
@@ -117,7 +119,7 @@ static int avg=0;
 
 		if (keys1.size() != keys2.size()) {
 
-			long st = System.currentTimeMillis();
+			//long st = System.currentTimeMillis();
 			// U.log("Semioutput multimap Size: " + keys1.size());
 
 			MultiMap semimultiMap = new MultiValueMap();
@@ -151,6 +153,7 @@ static int avg=0;
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 			keys1 = finalresult.keySet();
 
 			keys.addAll(keys1);
@@ -184,9 +187,15 @@ static int avg=0;
 				}
 				// list=null;
 				// 0 - Contains Address Struct and 1 Contains key.
+				
 				addStruct = (ArrayList<AddressStruct>) list.get(0);
+				//U.log("Threaded SAC " + );
 				String addkey = (String) list.get(1);
 				List inputList = (List) list.get(2);
+				
+				//U.log("Threaded Sac:  "+ inputList.get(4));
+				//U.log("Threaded Sac:  "+ inputList);
+				
 				Boolean statePresent = true;
 				if (inputList != null && inputList.size() != 0) {
 
@@ -198,7 +207,7 @@ static int avg=0;
 
 				// U.log("list size===" + inputList.size());
 
-				long sortSt = System.currentTimeMillis();
+				//long sortSt = System.currentTimeMillis();
 
 				if (addStruct == null) {
 
@@ -237,6 +246,39 @@ static int avg=0;
 								.size(); returnOutputSize++) {
 							AddressStruct current = addStruct
 									.get(returnOutputSize);
+							
+							//U.log("Threaded Sac Input: " + current.inputAddress);
+							
+							if(current.inputAddress.equals("No Match Found")){
+								
+								
+								JsonSchema schemaobj = new JsonSchema();
+								schemaobj.key = addkey;
+								schemaobj.address = "No Match Found";
+								schemaobj.house_number = "";
+								schemaobj.prefix_direction = "";
+								schemaobj.prefix_qualifier = "";
+								schemaobj.prefix_type = "";
+								schemaobj.street_name = "";
+								schemaobj.suffix_type = "";
+								schemaobj.suffix_direction = "";
+								schemaobj.city = "";
+								schemaobj.state = "";
+								schemaobj.zip = "";
+								schemaobj.fipsCode = "";
+
+								if (statePresent == false)
+									schemaobj.errorCode = "14,18";
+								else {
+									schemaobj.errorCode = "14";
+								}
+								schemaobj.score = 0;
+								schemaobj.datasource = "";
+								schemaobj.message ="";
+								listOutput.add(schemaobj);
+								continue;
+							}
+							
 							float jaroPer =calculateScoring(hitscore, current)*100;
 							
 							//U.log("HITSCORE==="+current.hitScore);
@@ -331,12 +373,12 @@ static int avg=0;
 
 							schemaobj.score = 100 * (current.hitScore / avg);
 							
-					//		U.log(current.hitScore +"*********"+schemaobj.score);
+						//U.log(current.hitScore +"*********"+schemaobj.score);
 
 							if (schemaobj.score < 80 && current.hitScore > 2) {
 								float p = calculateMatchingRate(inputList,
 										current);
-								// U.log(p);
+								 //U.log("Threaddd: " + p);
 								if (p != 0) {
 									// U.log("set score");
 									schemaobj.score = p;
@@ -370,7 +412,13 @@ static int avg=0;
 
 						}
 					} else {
-
+						
+                       // U.log("Threaded SAC: adressstruu: " +addStruct);
+                       // U.log("Threaded SAC:  " +GoogleCachingTest.k1_reference);
+                        AddressStruct struct = new AddressStruct("");
+                        struct.inputAddress = "No Match Found";
+                        GoogleCachingTest.put(GoogleCachingTest.k1_reference, struct);
+                        
 						JsonSchema schemaobj = new JsonSchema();
 						schemaobj.key = addkey;
 						schemaobj.address = "No Match Found";
@@ -410,7 +458,7 @@ static int avg=0;
 				}
 
 				// long end = System.currentTimeMillis();
-				// //U.log("addjson time:-==" + (end - sortSt));
+			    //U.log("addjson time:-==" + (end - sortSt));
 				// U.log("::::::******" + jsonColl.toString());
 				outputArr.put(jsonColl);
 				//
@@ -424,7 +472,7 @@ static int avg=0;
 		//
 		// }
 
-		long en = System.currentTimeMillis();
+		//long en = System.currentTimeMillis();
 		// //U.log("create json ::" + (en - st));
 		// U.log("Number of input addresses=="+end);
 		// U.log("output size==="+outputArr.length());
@@ -451,7 +499,9 @@ static int avg=0;
 	public static float calculateScoring(String score ,AddressStruct addstruct) throws Exception{
 		float per=0;
 		int persentage;
-		String foundaddress=DistanceMatchForResult.getCompleteStreet(addstruct).toLowerCase();
+		
+		String  foundaddress=DistanceMatchForResult.getCompleteStreet(addstruct).toLowerCase().replace(addstruct.unitNumber, "");
+		//String foundaddress=DistanceMatchForResult.getCompleteStreet(addstruct).toLowerCase();
 		String inputAddress=addstruct.inputAddress.replace(addstruct.getHouseNumber(), "");
 		//U.log(":::::::::::"+inputAddress);
 		if(com.shatam.util.Util.match(inputAddress.toLowerCase(), "(zeroeth|first|second|third|fourth|fifth|sixth|seventh|eighth|nineth)")!=null&&com.shatam.util.Util.match(inputAddress.toLowerCase(), "\\d(th|st|nd|rd)")!=null)
@@ -760,8 +810,7 @@ static int avg=0;
 		String state = (String) list.get(6);
 		String city = shatamIndexQueryStruct.getCity();
 		String zip = shatamIndexQueryStruct.getZip();
-
-		String foundStreet;
+        String foundStreet;
 		String foundCity;
 		String foundZip;
 

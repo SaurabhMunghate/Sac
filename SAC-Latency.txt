@@ -37417,3 +37417,5412 @@ Total one state SAC time=184
 
 
 Total one state SAC time=21
+
+
+Total one state SAC time=106
+
+
+Total one state SAC time=17303
+
+
+Total one state SAC time=17993
+
+
+Total one state SAC time=15952
+
+
+Total one state SAC time=11048
+
+
+Total one state SAC time=11222
+
+
+Total one state SAC time=16737
+
+
+Total one state SAC time=16043
+
+
+Total one state SAC time=14305
+
+
+Total one state SAC time=22722
+
+
+Total one state SAC time=13914
+
+
+Total one state SAC time=23032
+
+
+Total one state SAC time=13936
+
+
+Total one state SAC time=13745
+
+
+Total one state SAC time=23548
+
+
+Total one state SAC time=790544
+
+
+Total one state SAC time=34463
+
+
+Total one state SAC time=18286
+
+
+Total one state SAC time=16500
+
+
+Total one state SAC time=16384
+
+
+Total one state SAC time=25890
+
+
+Total one state SAC time=22797
+
+
+Total one state SAC time=17305
+
+
+Total one state SAC time=14813
+
+
+Total one state SAC time=15569
+
+
+Total one state SAC time=22903
+
+
+Total one state SAC time=22388
+
+
+Total one state SAC time=473669
+
+
+Total one state SAC time=419433
+
+
+Total one state SAC time=421475
+
+
+Total one state SAC time=430842
+
+
+Total one state SAC time=89651
+
+
+Total one state SAC time=436198
+
+
+Total one state SAC time=71680
+
+
+Total one state SAC time=61388
+
+
+Total one state SAC time=83485
+
+
+Total one state SAC time=440757
+
+
+Total one state SAC time=75163
+
+
+Total one state SAC time=60029
+
+
+Total one state SAC time=52554
+
+
+Total one state SAC time=35741
+
+
+Total one state SAC time=39224
+
+
+Total one state SAC time=73649
+
+
+Total one state SAC time=60232
+
+
+Total one state SAC time=52927
+
+
+Total one state SAC time=34550
+
+
+Total one state SAC time=34999
+
+
+Total one state SAC time=67191
+
+
+Total one state SAC time=60353
+
+
+Total one state SAC time=52661
+
+
+Total one state SAC time=34836
+
+
+Total one state SAC time=34906
+
+
+Total one state SAC time=84490
+
+
+Total one state SAC time=74507
+
+
+Total one state SAC time=77017
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=1073
+
+
+Total one state SAC time=70350
+
+
+Total one state SAC time=119115
+
+
+Total one state SAC time=111561
+
+
+Total one state SAC time=151536
+
+
+Total one state SAC time=1240289
+
+
+Total one state SAC time=384921
+
+
+Total one state SAC time=398722
+
+
+Total one state SAC time=370770
+
+
+Total one state SAC time=342406
+
+
+Total one state SAC time=168590
+
+
+Total one state SAC time=113726
+
+
+Total one state SAC time=551251
+
+
+Total one state SAC time=266608
+
+
+Total one state SAC time=157768
+
+
+Total one state SAC time=77611
+
+
+Total one state SAC time=138180
+
+
+Total one state SAC time=98984
+
+
+Total one state SAC time=258969
+
+
+Total one state SAC time=177954
+
+
+Total one state SAC time=79511
+
+
+Total one state SAC time=138111
+
+
+Total one state SAC time=108229
+
+
+Total one state SAC time=256261
+
+
+Total one state SAC time=163336
+
+
+Total one state SAC time=86080
+
+
+Total one state SAC time=129470
+
+
+Total one state SAC time=106362
+
+
+Total one state SAC time=33601
+
+
+Total one state SAC time=34332
+
+
+Total one state SAC time=32343
+
+
+Total one state SAC time=1474545
+
+
+Total one state SAC time=241022
+
+
+Total one state SAC time=1512
+
+
+Total one state SAC time=60
+
+
+Total one state SAC time=62
+
+
+Total one state SAC time=160
+
+
+Total one state SAC time=151
+
+
+Total one state SAC time=32448
+
+
+Total one state SAC time=31135
+
+
+Total one state SAC time=31233
+
+
+Total one state SAC time=31657
+
+
+Total one state SAC time=1907
+
+
+Total one state SAC time=49
+
+
+Total one state SAC time=49
+
+
+Total one state SAC time=39
+
+
+Total one state SAC time=87
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=741
+
+
+Total one state SAC time=88
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=8
+
+
+Total one state SAC time=8
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=131
+
+
+Total one state SAC time=48
+
+
+Total one state SAC time=172
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=45
+
+
+Total one state SAC time=144
+
+
+Total one state SAC time=58
+
+
+Total one state SAC time=62
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=32
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=48
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=634
+
+
+Total one state SAC time=62
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=74
+
+
+Total one state SAC time=59
+
+
+Total one state SAC time=52
+
+
+Total one state SAC time=55
+
+
+Total one state SAC time=49
+
+
+Total one state SAC time=39
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=41
+
+
+Total one state SAC time=48
+
+
+Total one state SAC time=56
+
+
+Total one state SAC time=80
+
+
+Total one state SAC time=45
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=98
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=53
+
+
+Total one state SAC time=45
+
+
+Total one state SAC time=72
+
+
+Total one state SAC time=52
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=49
+
+
+Total one state SAC time=67
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=12
+
+
+Total one state SAC time=99
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=97
+
+
+Total one state SAC time=89
+
+
+Total one state SAC time=19
+
+
+Total one state SAC time=18308
+
+
+Total one state SAC time=40279
+
+
+Total one state SAC time=46635
+
+
+Total one state SAC time=35260
+
+
+Total one state SAC time=43881
+
+
+Total one state SAC time=3499
+
+
+Total one state SAC time=3908
+
+
+Total one state SAC time=15937
+
+
+Total one state SAC time=15702
+
+
+Total one state SAC time=18369
+
+
+Total one state SAC time=16669
+
+
+Total one state SAC time=16842
+
+
+Total one state SAC time=16341
+
+
+Total one state SAC time=16897
+
+
+Total one state SAC time=147460
+
+
+Total one state SAC time=66274
+
+
+Total one state SAC time=7195
+
+
+Total one state SAC time=177447
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=33
+
+
+Total one state SAC time=65
+
+
+Total one state SAC time=984
+
+
+Total one state SAC time=301
+
+
+Total one state SAC time=87
+
+
+Total one state SAC time=34
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=63
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=12
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=64
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=54
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=730
+
+
+Total one state SAC time=181
+
+
+Total one state SAC time=162
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=69
+
+
+Total one state SAC time=19
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=68
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=19
+
+
+Total one state SAC time=35
+
+
+Total one state SAC time=79
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=72
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=74
+
+
+Total one state SAC time=78
+
+
+Total one state SAC time=34
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=8
+
+
+Total one state SAC time=77441
+
+
+Total one state SAC time=1321733
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=517899
+
+
+Total one state SAC time=41
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=33
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=32
+
+
+Total one state SAC time=32
+
+
+Total one state SAC time=36
+
+
+Total one state SAC time=34
+
+
+Total one state SAC time=32
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=36
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=35
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=31
+
+
+Total one state SAC time=33
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=48246
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=54
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=46
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=36
+
+
+Total one state SAC time=36
+
+
+Total one state SAC time=39
+
+
+Total one state SAC time=61
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=63
+
+
+Total one state SAC time=127
+
+
+Total one state SAC time=220
+
+
+Total one state SAC time=213
+
+
+Total one state SAC time=62
+
+
+Total one state SAC time=74
+
+
+Total one state SAC time=31
+
+
+Total one state SAC time=62
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=390208
+
+
+Total one state SAC time=262935
+
+
+Total one state SAC time=403267
+
+
+Total one state SAC time=445937
+
+
+Total one state SAC time=329338
+
+
+Total one state SAC time=60321
+
+
+Total one state SAC time=58234
+
+
+Total one state SAC time=112
+
+
+Total one state SAC time=173
+
+
+Total one state SAC time=350
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=41
+
+
+Total one state SAC time=60
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=32
+
+
+Total one state SAC time=33
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=32481
+
+
+Total one state SAC time=40152
+
+
+Total one state SAC time=32193
+
+
+Total one state SAC time=214538
+
+
+Total one state SAC time=200207
+
+
+Total one state SAC time=214800
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=226
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=31
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=46
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=120
+
+
+Total one state SAC time=119
+
+
+Total one state SAC time=75
+
+
+Total one state SAC time=104
+
+
+Total one state SAC time=259
+
+
+Total one state SAC time=122
+
+
+Total one state SAC time=130
+
+
+Total one state SAC time=207
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=69
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=120
+
+
+Total one state SAC time=165
+
+
+Total one state SAC time=392
+
+
+Total one state SAC time=92
+
+
+Total one state SAC time=74
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=170
+
+
+Total one state SAC time=138
+
+
+Total one state SAC time=110
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=313
+
+
+Total one state SAC time=8
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=98
+
+
+Total one state SAC time=400
+
+
+Total one state SAC time=296
+
+
+Total one state SAC time=86
+
+
+Total one state SAC time=92788
+
+
+Total one state SAC time=105219
+
+
+Total one state SAC time=92389
+
+
+Total one state SAC time=63037
+
+
+Total one state SAC time=113887
+
+
+Total one state SAC time=99026
+
+
+Total one state SAC time=89728
+
+
+Total one state SAC time=58978
+
+
+Total one state SAC time=111697
+
+
+Total one state SAC time=53603
+
+
+Total one state SAC time=56296
+
+
+Total one state SAC time=40829
+
+
+Total one state SAC time=44573
+
+
+Total one state SAC time=39661
+
+
+Total one state SAC time=33796
+
+
+Total one state SAC time=65171
+
+
+Total one state SAC time=37220
+
+
+Total one state SAC time=36505
+
+
+Total one state SAC time=47559
+
+
+Total one state SAC time=39799
+
+
+Total one state SAC time=65663
+
+
+Total one state SAC time=50136
+
+
+Total one state SAC time=68299
+
+
+Total one state SAC time=63303
+
+
+Total one state SAC time=33780
+
+
+Total one state SAC time=40418
+
+
+Total one state SAC time=49251
+
+
+Total one state SAC time=45694
+
+
+Total one state SAC time=49648
+
+
+Total one state SAC time=54224
+
+
+Total one state SAC time=117
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=145
+
+
+Total one state SAC time=71
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=135
+
+
+Total one state SAC time=139
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=275
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=57
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=153
+
+
+Total one state SAC time=60
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=60
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=57
+
+
+Total one state SAC time=52
+
+
+Total one state SAC time=61
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=60
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=19
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=63
+
+
+Total one state SAC time=58
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=47
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=92
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=36
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=186989
+
+
+Total one state SAC time=182620
+
+
+Total one state SAC time=146712
+
+
+Total one state SAC time=145965
+
+
+Total one state SAC time=131
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=118946
+
+
+Total one state SAC time=143
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=60
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=153082
+
+
+Total one state SAC time=270
+
+
+Total one state SAC time=109135
+
+
+Total one state SAC time=68846
+
+
+Total one state SAC time=273
+
+
+Total one state SAC time=78422
+
+
+Total one state SAC time=60
+
+
+Total one state SAC time=116327
+
+
+Total one state SAC time=103535
+
+
+Total one state SAC time=64899
+
+
+Total one state SAC time=73223
+
+
+Total one state SAC time=75928
+
+
+Total one state SAC time=88120
+
+
+Total one state SAC time=144048
+
+
+Total one state SAC time=122119
+
+
+Total one state SAC time=127631
+
+
+Total one state SAC time=126929
+
+
+Total one state SAC time=65011
+
+
+Total one state SAC time=176440
+
+
+Total one state SAC time=191254
+
+
+Total one state SAC time=215895
+
+
+Total one state SAC time=109
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=121899
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=57661
+
+
+Total one state SAC time=75904
+
+
+Total one state SAC time=93491
+
+
+Total one state SAC time=95336
+
+
+Total one state SAC time=102259
+
+
+Total one state SAC time=296100
+
+
+Total one state SAC time=215400
+
+
+Total one state SAC time=98336
+
+
+Total one state SAC time=201289
+
+
+Total one state SAC time=176164
+
+
+Total one state SAC time=118199
+
+
+Total one state SAC time=138196
+
+
+Total one state SAC time=125723
+
+
+Total one state SAC time=115444
+
+
+Total one state SAC time=103426
+
+
+Total one state SAC time=64940
+
+
+Total one state SAC time=74110
+
+
+Total one state SAC time=56230
+
+
+Total one state SAC time=38395808
+
+
+Total one state SAC time=46566
+
+
+Total one state SAC time=49261
+
+
+Total one state SAC time=61731
+
+
+Total one state SAC time=61308
+
+
+Total one state SAC time=40884
+
+
+Total one state SAC time=41871
+
+
+Total one state SAC time=71363
+
+
+Total one state SAC time=86965
+
+
+Total one state SAC time=151599
+
+
+Total one state SAC time=121526
+
+
+Total one state SAC time=126214
+
+
+Total one state SAC time=106915
+
+
+Total one state SAC time=55309
+
+
+Total one state SAC time=171480
+
+
+Total one state SAC time=179869
+
+
+Total one state SAC time=200200
+
+
+Total one state SAC time=116564
+
+
+Total one state SAC time=70040
+
+
+Total one state SAC time=74043
+
+
+Total one state SAC time=92912
+
+
+Total one state SAC time=95232
+
+
+Total one state SAC time=101764
+
+
+Total one state SAC time=299591
+
+
+Total one state SAC time=212376
+
+
+Total one state SAC time=97220
+
+
+Total one state SAC time=180236
+
+
+Total one state SAC time=175401
+
+
+Total one state SAC time=130881
+
+
+Total one state SAC time=146246
+
+
+Total one state SAC time=126500
+
+
+Total one state SAC time=123384
+
+
+Total one state SAC time=105519
+
+
+Total one state SAC time=65981
+
+
+Total one state SAC time=73629
+
+
+Total one state SAC time=55322
+
+
+Total one state SAC time=60385
+
+
+Total one state SAC time=37625
+
+
+Total one state SAC time=42004
+
+
+Total one state SAC time=73
+
+
+Total one state SAC time=204
+
+
+Total one state SAC time=44
+
+
+Total one state SAC time=2049
+
+
+Total one state SAC time=1416
+
+
+Total one state SAC time=1412
+
+
+Total one state SAC time=1435
+
+
+Total one state SAC time=1371
+
+
+Total one state SAC time=1351
+
+
+Total one state SAC time=83
+
+
+Total one state SAC time=11075
+
+
+Total one state SAC time=420
+
+
+Total one state SAC time=139
+
+
+Total one state SAC time=86
+
+
+Total one state SAC time=147747
+
+
+Total one state SAC time=166338
+
+
+Total one state SAC time=113632
+
+
+Total one state SAC time=68774
+
+
+Total one state SAC time=85149
+
+
+Total one state SAC time=94540
+
+
+Total one state SAC time=76256
+
+
+Total one state SAC time=1179
+
+
+Total one state SAC time=198
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=148
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=46
+
+
+Total one state SAC time=53
+
+
+Total one state SAC time=41
+
+
+Total one state SAC time=101
+
+
+Total one state SAC time=109
+
+
+Total one state SAC time=109
+
+
+Total one state SAC time=33
+
+
+Total one state SAC time=116
+
+
+Total one state SAC time=107
+
+
+Total one state SAC time=271
+
+
+Total one state SAC time=121
+
+
+Total one state SAC time=44
+
+
+Total one state SAC time=141
+
+
+Total one state SAC time=101
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=111
+
+
+Total one state SAC time=104
+
+
+Total one state SAC time=47
+
+
+Total one state SAC time=111
+
+
+Total one state SAC time=116
+
+
+Total one state SAC time=48
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=61
+
+
+Total one state SAC time=241
+
+
+Total one state SAC time=38
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=111
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=59
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=180
+
+
+Total one state SAC time=38
+
+
+Total one state SAC time=63
+
+
+Total one state SAC time=101
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=81
+
+
+Total one state SAC time=117
+
+
+Total one state SAC time=49
+
+
+Total one state SAC time=31
+
+
+Total one state SAC time=76
+
+
+Total one state SAC time=31
+
+
+Total one state SAC time=81
+
+
+Total one state SAC time=91
+
+
+Total one state SAC time=83
+
+
+Total one state SAC time=45
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=57
+
+
+Total one state SAC time=55
+
+
+Total one state SAC time=46
+
+
+Total one state SAC time=48
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=93
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=120
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=71
+
+
+Total one state SAC time=72
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=137
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=32236
+
+
+Total one state SAC time=27634
+
+
+Total one state SAC time=5354
+
+
+Total one state SAC time=24450
+
+
+Total one state SAC time=38537
+
+
+Total one state SAC time=2428
+
+
+Total one state SAC time=2533
+
+
+Total one state SAC time=571
+
+
+Total one state SAC time=99
+
+
+Total one state SAC time=113
+
+
+Total one state SAC time=100
+
+
+Total one state SAC time=375
+
+
+Total one state SAC time=554
+
+
+Total one state SAC time=545
+
+
+Total one state SAC time=551
+
+
+Total one state SAC time=1727
+
+
+Total one state SAC time=2592
+
+
+Total one state SAC time=2720
+
+
+Total one state SAC time=2551
+
+
+Total one state SAC time=2426
+
+
+Total one state SAC time=2320
+
+
+Total one state SAC time=1384951
+
+
+Total one state SAC time=863343
+
+
+Total one state SAC time=61
+
+
+Total one state SAC time=61
+
+
+Total one state SAC time=78
+
+
+Total one state SAC time=56
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=19
+
+
+Total one state SAC time=61
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=480
+
+
+Total one state SAC time=194
+
+
+Total one state SAC time=417
+
+
+Total one state SAC time=119
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=110
+
+
+Total one state SAC time=54
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=19
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=64
+
+
+Total one state SAC time=32
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=58
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=75
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=86
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=61
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=71
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=71
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=373810
+
+
+Total one state SAC time=338841
+
+
+Total one state SAC time=40994
+
+
+Total one state SAC time=50237
+
+
+Total one state SAC time=321
+
+
+Total one state SAC time=1551
+
+
+Total one state SAC time=1512
+
+
+Total one state SAC time=1731
+
+
+Total one state SAC time=301
+
+
+Total one state SAC time=331
+
+
+Total one state SAC time=13306
+
+
+Total one state SAC time=221
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=34
+
+
+Total one state SAC time=36
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=549
+
+
+Total one state SAC time=44
+
+
+Total one state SAC time=53
+
+
+Total one state SAC time=49
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=170
+
+
+Total one state SAC time=52
+
+
+Total one state SAC time=46
+
+
+Total one state SAC time=39
+
+
+Total one state SAC time=190
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=247
+
+
+Total one state SAC time=187
+
+
+Total one state SAC time=100
+
+
+Total one state SAC time=97
+
+
+Total one state SAC time=170
+
+
+Total one state SAC time=45
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=200
+
+
+Total one state SAC time=47
+
+
+Total one state SAC time=42
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=44212
+
+
+Total one state SAC time=34477
+
+
+Total one state SAC time=31915
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=12
+
+
+Total one state SAC time=7
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=142
+
+
+Total one state SAC time=204
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=151
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=31
+
+
+Total one state SAC time=144
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=35
+
+
+Total one state SAC time=144
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=111
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=111
+
+
+Total one state SAC time=117
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=34
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=129
+
+
+Total one state SAC time=114
+
+
+Total one state SAC time=110
+
+
+Total one state SAC time=110
+
+
+Total one state SAC time=132
+
+
+Total one state SAC time=110
+
+
+Total one state SAC time=140
+
+
+Total one state SAC time=112
+
+
+Total one state SAC time=110
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=35
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=108
+
+
+Total one state SAC time=64
+
+
+Total one state SAC time=113
+
+
+Total one state SAC time=33
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=38
+
+
+Total one state SAC time=135
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=350
+
+
+Total one state SAC time=202
+
+
+Total one state SAC time=100
+
+
+Total one state SAC time=104
+
+
+Total one state SAC time=89
+
+
+Total one state SAC time=141
+
+
+Total one state SAC time=122
+
+
+Total one state SAC time=191
+
+
+Total one state SAC time=101
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=111
+
+
+Total one state SAC time=120
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=32363
+
+
+Total one state SAC time=32075
+
+
+Total one state SAC time=51643
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=47
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=60
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=12
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=73
+
+
+Total one state SAC time=79
+
+
+Total one state SAC time=9
+
+
+Total one state SAC time=44
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=62
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=38
+
+
+Total one state SAC time=148
+
+
+Total one state SAC time=8
+
+
+Total one state SAC time=48
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=262
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=34
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=48
+
+
+Total one state SAC time=35
+
+
+Total one state SAC time=87
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=2595
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=144
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=36128
+
+
+Total one state SAC time=50612
+
+
+Total one state SAC time=815
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=8
+
+
+Total one state SAC time=7
+
+
+Total one state SAC time=71
+
+
+Total one state SAC time=68
+
+
+Total one state SAC time=75
+
+
+Total one state SAC time=64
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=12
+
+
+Total one state SAC time=6
+
+
+Total one state SAC time=9
+
+
+Total one state SAC time=8
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=7
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=7
+
+
+Total one state SAC time=5
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=63
+
+
+Total one state SAC time=68
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=7
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=37215
+
+
+Total one state SAC time=52317
+
+
+Total one state SAC time=25047
+
+
+Total one state SAC time=23160
+
+
+Total one state SAC time=33045
+
+
+Total one state SAC time=48800
+
+
+Total one state SAC time=317
+
+
+Total one state SAC time=95
+
+
+Total one state SAC time=1530
+
+
+Total one state SAC time=1909
+
+
+Total one state SAC time=124
+
+
+Total one state SAC time=444
+
+
+Total one state SAC time=1060
+
+
+Total one state SAC time=1683
+
+
+Total one state SAC time=93
+
+
+Total one state SAC time=291
+
+
+Total one state SAC time=220
+
+
+Total one state SAC time=215
+
+
+Total one state SAC time=221
+
+
+Total one state SAC time=126
+
+
+Total one state SAC time=469
+
+
+Total one state SAC time=250
+
+
+Total one state SAC time=450
+
+
+Total one state SAC time=1236
+
+
+Total one state SAC time=224
+
+
+Total one state SAC time=164
+
+
+Total one state SAC time=128
+
+
+Total one state SAC time=416
+
+
+Total one state SAC time=125
+
+
+Total one state SAC time=34
+
+
+Total one state SAC time=4039
+
+
+Total one state SAC time=184
+
+
+Total one state SAC time=375
+
+
+Total one state SAC time=486
+
+
+Total one state SAC time=1463
+
+
+Total one state SAC time=102
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=6
+
+
+Total one state SAC time=9
+
+
+Total one state SAC time=6
+
+
+Total one state SAC time=6
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=56
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=9
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=180
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=173
+
+
+Total one state SAC time=2434
+
+
+Total one state SAC time=353
+
+
+Total one state SAC time=120
+
+
+Total one state SAC time=44
+
+
+Total one state SAC time=38
+
+
+Total one state SAC time=257
+
+
+Total one state SAC time=47
+
+
+Total one state SAC time=144
+
+
+Total one state SAC time=32
+
+
+Total one state SAC time=33
+
+
+Total one state SAC time=108
+
+
+Total one state SAC time=130
+
+
+Total one state SAC time=110
+
+
+Total one state SAC time=35622
+
+
+Total one state SAC time=51228
+
+
+Total one state SAC time=58243
+
+
+Total one state SAC time=79239
+
+
+Total one state SAC time=140617
+
+
+Total one state SAC time=46535
+
+
+Total one state SAC time=28431
+
+
+Total one state SAC time=44286
+
+
+Total one state SAC time=35114
+
+
+Total one state SAC time=34395
+
+
+Total one state SAC time=48455
+
+
+Total one state SAC time=53311
+
+
+Total one state SAC time=72308
+
+
+Total one state SAC time=130108
+
+
+Total one state SAC time=40707
+
+
+Total one state SAC time=25448
+
+
+Total one state SAC time=40538
+
+
+Total one state SAC time=119059
+
+
+Total one state SAC time=102157
+
+
+Total one state SAC time=84405
+
+
+Total one state SAC time=59489
+
+
+Total one state SAC time=52137
+
+
+Total one state SAC time=48710
+
+
+Total one state SAC time=31422
+
+
+Total one state SAC time=25236
+
+
+Total one state SAC time=17107
+
+
+Total one state SAC time=12089
+
+
+Total one state SAC time=15667
+
+
+Total one state SAC time=23239
+
+
+Total one state SAC time=27744
+
+
+Total one state SAC time=19477
+
+
+Total one state SAC time=15157
+
+
+Total one state SAC time=19474
+
+
+Total one state SAC time=24501
+
+
+Total one state SAC time=27478
+
+
+Total one state SAC time=55348
+
+
+Total one state SAC time=54750
+
+
+Total one state SAC time=25983
+
+
+Total one state SAC time=73872
+
+
+Total one state SAC time=76288
+
+
+Total one state SAC time=18207
+
+
+Total one state SAC time=46611
+
+
+Total one state SAC time=37394
+
+
+Total one state SAC time=55274
+
+
+Total one state SAC time=17078
+
+
+Total one state SAC time=22834
+
+
+Total one state SAC time=23705
+
+
+Total one state SAC time=30723
+
+
+Total one state SAC time=39435
+
+
+Total one state SAC time=17271
+
+
+Total one state SAC time=20773
+
+
+Total one state SAC time=58171
+
+
+Total one state SAC time=42870
+
+
+Total one state SAC time=72506
+
+
+Total one state SAC time=62060
+
+
+Total one state SAC time=89727
+
+
+Total one state SAC time=110874
+
+
+Total one state SAC time=77013
+
+
+Total one state SAC time=67087
+
+
+Total one state SAC time=162682
+
+
+Total one state SAC time=158696
+
+
+Total one state SAC time=77381
+
+
+Total one state SAC time=50230
+
+
+Total one state SAC time=59143
+
+
+Total one state SAC time=60515
+
+
+Total one state SAC time=38213
+
+
+Total one state SAC time=219
+
+
+Total one state SAC time=42
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=131
+
+
+Total one state SAC time=52
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=47
+
+
+Total one state SAC time=137
+
+
+Total one state SAC time=132
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=63
+
+
+Total one state SAC time=196
+
+
+Total one state SAC time=131
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=5
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=311
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=141
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=131
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=136
+
+
+Total one state SAC time=44
+
+
+Total one state SAC time=127
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=131
+
+
+Total one state SAC time=38
+
+
+Total one state SAC time=138
+
+
+Total one state SAC time=154
+
+
+Total one state SAC time=141
+
+
+Total one state SAC time=139
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=157
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=125
+
+
+Total one state SAC time=151
+
+
+Total one state SAC time=151
+
+
+Total one state SAC time=155
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=130
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=131
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=154
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=151
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=18
+
+
+Total one state SAC time=145
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=160
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=40822
+
+
+Total one state SAC time=53160
+
+
+Total one state SAC time=58807
+
+
+Total one state SAC time=32505
+
+
+Total one state SAC time=46919
+
+
+Total one state SAC time=81
+
+
+Total one state SAC time=19
+
+
+Total one state SAC time=32219
+
+
+Total one state SAC time=46555
+
+
+Total one state SAC time=52849
+
+
+Total one state SAC time=75589
+
+
+Total one state SAC time=135220
+
+
+Total one state SAC time=47169
+
+
+Total one state SAC time=31837
+
+
+Total one state SAC time=43659
+
+
+Total one state SAC time=125642
+
+
+Total one state SAC time=106888
+
+
+Total one state SAC time=87969
+
+
+Total one state SAC time=61266
+
+
+Total one state SAC time=52253
+
+
+Total one state SAC time=48986
+
+
+Total one state SAC time=32780
+
+
+Total one state SAC time=26385
+
+
+Total one state SAC time=16723
+
+
+Total one state SAC time=11700
+
+
+Total one state SAC time=15574
+
+
+Total one state SAC time=23732
+
+
+Total one state SAC time=28133
+
+
+Total one state SAC time=19416
+
+
+Total one state SAC time=14912
+
+
+Total one state SAC time=19462
+
+
+Total one state SAC time=24681
+
+
+Total one state SAC time=25352
+
+
+Total one state SAC time=57018
+
+
+Total one state SAC time=56783
+
+
+Total one state SAC time=25863
+
+
+Total one state SAC time=74343
+
+
+Total one state SAC time=74027
+
+
+Total one state SAC time=18184
+
+
+Total one state SAC time=45537
+
+
+Total one state SAC time=36161
+
+
+Total one state SAC time=55612
+
+
+Total one state SAC time=16941
+
+
+Total one state SAC time=23377
+
+
+Total one state SAC time=24437
+
+
+Total one state SAC time=31360
+
+
+Total one state SAC time=40076
+
+
+Total one state SAC time=18721
+
+
+Total one state SAC time=22070
+
+
+Total one state SAC time=60098
+
+
+Total one state SAC time=43582
+
+
+Total one state SAC time=74043
+
+
+Total one state SAC time=63707
+
+
+Total one state SAC time=99771
+
+
+Total one state SAC time=118451
+
+
+Total one state SAC time=80569
+
+
+Total one state SAC time=69016
+
+
+Total one state SAC time=167868
+
+
+Total one state SAC time=159056
+
+
+Total one state SAC time=78908
+
+
+Total one state SAC time=50388
+
+
+Total one state SAC time=68718
+
+
+Total one state SAC time=61925
+
+
+Total one state SAC time=38901
+
+
+Total one state SAC time=135109
+
+
+Total one state SAC time=70594
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=332504
+
+
+Total one state SAC time=367896
+
+
+Total one state SAC time=350265
+
+
+Total one state SAC time=20830
+
+
+Total one state SAC time=21223
+
+
+Total one state SAC time=19267
+
+
+Total one state SAC time=45724
+
+
+Total one state SAC time=63639
+
+
+Total one state SAC time=43368
+
+
+Total one state SAC time=65589
+
+
+Total one state SAC time=62249
+
+
+Total one state SAC time=43418
+
+
+Total one state SAC time=36081
+
+
+Total one state SAC time=30703
+
+
+Total one state SAC time=21949
+
+
+Total one state SAC time=150
+
+
+Total one state SAC time=73
+
+
+Total one state SAC time=102
+
+
+Total one state SAC time=300
+
+
+Total one state SAC time=77
+
+
+Total one state SAC time=112
+
+
+Total one state SAC time=68
+
+
+Total one state SAC time=83
+
+
+Total one state SAC time=77
+
+
+Total one state SAC time=76
+
+
+Total one state SAC time=96
+
+
+Total one state SAC time=330
+
+
+Total one state SAC time=67
+
+
+Total one state SAC time=109
+
+
+Total one state SAC time=19
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=82
+
+
+Total one state SAC time=334
+
+
+Total one state SAC time=325
+
+
+Total one state SAC time=73
+
+
+Total one state SAC time=358
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=86
+
+
+Total one state SAC time=97
+
+
+Total one state SAC time=73
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=69
+
+
+Total one state SAC time=84
+
+
+Total one state SAC time=60
+
+
+Total one state SAC time=93
+
+
+Total one state SAC time=107
+
+
+Total one state SAC time=306
+
+
+Total one state SAC time=93
+
+
+Total one state SAC time=77
+
+
+Total one state SAC time=77
+
+
+Total one state SAC time=80
+
+
+Total one state SAC time=66
+
+
+Total one state SAC time=21582
+
+
+Total one state SAC time=8745
+
+
+Total one state SAC time=7485
+
+
+Total one state SAC time=11011
+
+
+Total one state SAC time=7703
+
+
+Total one state SAC time=14788
+
+
+Total one state SAC time=21390
+
+
+Total one state SAC time=26190
+
+
+Total one state SAC time=16606
+
+
+Total one state SAC time=5896
+
+
+Total one state SAC time=5381
+
+
+Total one state SAC time=8271
+
+
+Total one state SAC time=5874
+
+
+Total one state SAC time=11193
+
+
+Total one state SAC time=17176
+
+
+Total one state SAC time=23127
+
+
+Total one state SAC time=18549
+
+
+Total one state SAC time=377589
+
+
+Total one state SAC time=358578
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=84
+
+
+Total one state SAC time=77
+
+
+Total one state SAC time=52
+
+
+Total one state SAC time=71
+
+
+Total one state SAC time=46
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=160
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=39
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=14
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=84
+
+
+Total one state SAC time=54
+
+
+Total one state SAC time=73699
+
+
+Total one state SAC time=331274
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=103
+
+
+Total one state SAC time=84
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=33
+
+
+Total one state SAC time=19
+
+
+Total one state SAC time=79
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=200899
+
+
+Total one state SAC time=198959
+
+
+Total one state SAC time=39407
+
+
+Total one state SAC time=28879
+
+
+Total one state SAC time=16631
+
+
+Total one state SAC time=9195
+
+
+Total one state SAC time=8090
+
+
+Total one state SAC time=10742
+
+
+Total one state SAC time=8442
+
+
+Total one state SAC time=14046
+
+
+Total one state SAC time=20161
+
+
+Total one state SAC time=24517
+
+
+Total one state SAC time=32386
+
+
+Total one state SAC time=26649
+
+
+Total one state SAC time=88
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=104
+
+
+Total one state SAC time=42
+
+
+Total one state SAC time=32
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=28
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=25
+
+
+Total one state SAC time=29
+
+
+Total one state SAC time=57
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=40
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=64
+
+
+Total one state SAC time=37
+
+
+Total one state SAC time=31
+
+
+Total one state SAC time=389589
+
+
+Total one state SAC time=410262
+
+
+Total one state SAC time=425596
+
+
+Total one state SAC time=406590
+
+
+Total one state SAC time=330
+
+
+Total one state SAC time=26
+
+
+Total one state SAC time=17
+
+
+Total one state SAC time=117
+
+
+Total one state SAC time=120
+
+
+Total one state SAC time=1000
+
+
+Total one state SAC time=920
+
+
+Total one state SAC time=170
+
+
+Total one state SAC time=160
+
+
+Total one state SAC time=150
+
+
+Total one state SAC time=150
+
+
+Total one state SAC time=1220
+
+
+Total one state SAC time=1622
+
+
+Total one state SAC time=400
+
+
+Total one state SAC time=51
+
+
+Total one state SAC time=138
+
+
+Total one state SAC time=168
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=50
+
+
+Total one state SAC time=1000
+
+
+Total one state SAC time=143
+
+
+Total one state SAC time=127
+
+
+Total one state SAC time=297
+
+
+Total one state SAC time=310
+
+
+Total one state SAC time=4999
+
+
+Total one state SAC time=4748
+
+
+Total one state SAC time=4107
+
+
+Total one state SAC time=5785
+
+
+Total one state SAC time=760
+
+
+Total one state SAC time=2146
+
+
+Total one state SAC time=5127
+
+
+Total one state SAC time=3381
+
+
+Total one state SAC time=32
+
+
+Total one state SAC time=700
+
+
+Total one state SAC time=83
+
+
+Total one state SAC time=107
+
+
+Total one state SAC time=87
+
+
+Total one state SAC time=80
+
+
+Total one state SAC time=100
+
+
+Total one state SAC time=1670
+
+
+Total one state SAC time=275
+
+
+Total one state SAC time=355
+
+
+Total one state SAC time=349
+
+
+Total one state SAC time=264
+
+
+Total one state SAC time=1584
+
+
+Total one state SAC time=83
+
+
+Total one state SAC time=43
+
+
+Total one state SAC time=67
+
+
+Total one state SAC time=138
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=2403
+
+
+Total one state SAC time=7867
+
+
+Total one state SAC time=9609
+
+
+Total one state SAC time=15147
+
+
+Total one state SAC time=137
+
+
+Total one state SAC time=5615
+
+
+Total one state SAC time=2029
+
+
+Total one state SAC time=1370
+
+
+Total one state SAC time=991
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=763
+
+
+Total one state SAC time=364
+
+
+Total one state SAC time=177
+
+
+Total one state SAC time=206
+
+
+Total one state SAC time=4790
+
+
+Total one state SAC time=1379
+
+
+Total one state SAC time=3200
+
+
+Total one state SAC time=7163
+
+
+Total one state SAC time=1840
+
+
+Total one state SAC time=272
+
+
+Total one state SAC time=21265
+
+
+Total one state SAC time=122
+
+
+Total one state SAC time=1929
+
+
+Total one state SAC time=460
+
+
+Total one state SAC time=470
+
+
+Total one state SAC time=2874
+
+
+Total one state SAC time=16165
+
+
+Total one state SAC time=9399
+
+
+Total one state SAC time=10719
+
+
+Total one state SAC time=280
+
+
+Total one state SAC time=4256
+
+
+Total one state SAC time=1011
+
+
+Total one state SAC time=8560
+
+
+Total one state SAC time=490
+
+
+Total one state SAC time=4740
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=7345
+
+
+Total one state SAC time=4424
+
+
+Total one state SAC time=5509
+
+
+Total one state SAC time=8490
+
+
+Total one state SAC time=480
+
+
+Total one state SAC time=1530
+
+
+Total one state SAC time=710
+
+
+Total one state SAC time=1560
+
+
+Total one state SAC time=2160
+
+
+Total one state SAC time=1520
+
+
+Total one state SAC time=1330
+
+
+Total one state SAC time=1460
+
+
+Total one state SAC time=930
+
+
+Total one state SAC time=1440
+
+
+Total one state SAC time=782
+
+
+Total one state SAC time=1410
+
+
+Total one state SAC time=1100
+
+
+Total one state SAC time=1544
+
+
+Total one state SAC time=6362
+
+
+Total one state SAC time=2960
+
+
+Total one state SAC time=1490
+
+
+Total one state SAC time=100
+
+
+Total one state SAC time=4670
+
+
+Total one state SAC time=15590
+
+
+Total one state SAC time=3762
+
+
+Total one state SAC time=3430
+
+
+Total one state SAC time=400
+
+
+Total one state SAC time=240
+
+
+Total one state SAC time=1930
+
+
+Total one state SAC time=8524
+
+
+Total one state SAC time=80
+
+
+Total one state SAC time=3670
+
+
+Total one state SAC time=7045
+
+
+Total one state SAC time=39115
+
+
+Total one state SAC time=3760
+
+
+Total one state SAC time=3448
+
+
+Total one state SAC time=271
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=4316
+
+
+Total one state SAC time=16310
+
+
+Total one state SAC time=610
+
+
+Total one state SAC time=1030
+
+
+Total one state SAC time=6205
+
+
+Total one state SAC time=80
+
+
+Total one state SAC time=3760
+
+
+Total one state SAC time=2723
+
+
+Total one state SAC time=19195
+
+
+Total one state SAC time=4001
+
+
+Total one state SAC time=3404
+
+
+Total one state SAC time=270
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=4390
+
+
+Total one state SAC time=16476
+
+
+Total one state SAC time=933
+
+
+Total one state SAC time=230
+
+
+Total one state SAC time=810
+
+
+Total one state SAC time=5542
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=3610
+
+
+Total one state SAC time=2630
+
+
+Total one state SAC time=19089
+
+
+Total one state SAC time=3577
+
+
+Total one state SAC time=3279
+
+
+Total one state SAC time=345
+
+
+Total one state SAC time=106
+
+
+Total one state SAC time=4256
+
+
+Total one state SAC time=16314
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=22
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=76
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=11
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=2321
+
+
+Total one state SAC time=4851
+
+
+Total one state SAC time=26635
+
+
+Total one state SAC time=20
+
+
+Total one state SAC time=32490
+
+
+Total one state SAC time=14874
+
+
+Total one state SAC time=60858
+
+
+Total one state SAC time=18809
+
+
+Total one state SAC time=11713
+
+
+Total one state SAC time=1600
+
+
+Total one state SAC time=1201
+
+
+Total one state SAC time=19794
+
+
+Total one state SAC time=58585
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=391
+
+
+Total one state SAC time=941
+
+
+Total one state SAC time=6041
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=3651
+
+
+Total one state SAC time=2793
+
+
+Total one state SAC time=18460
+
+
+Total one state SAC time=3753
+
+
+Total one state SAC time=2935
+
+
+Total one state SAC time=290
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=36656
+
+
+Total one state SAC time=20844
+
+
+Total one state SAC time=48923
+
+
+Total one state SAC time=20568
+
+
+Total one state SAC time=35942
+
+
+Total one state SAC time=19694
+
+
+Total one state SAC time=16306
+
+
+Total one state SAC time=24474
+
+
+Total one state SAC time=16224
+
+
+Total one state SAC time=17601
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=13
+
+
+Total one state SAC time=90
+
+
+Total one state SAC time=2840
+
+
+Total one state SAC time=458
+
+
+Total one state SAC time=137
+
+
+Total one state SAC time=133
+
+
+Total one state SAC time=127
+
+
+Total one state SAC time=27
+
+
+Total one state SAC time=23
+
+
+Total one state SAC time=18064
+
+
+Total one state SAC time=7903
+
+
+Total one state SAC time=6375
+
+
+Total one state SAC time=9708
+
+
+Total one state SAC time=14126
+
+
+Total one state SAC time=13084
+
+
+Total one state SAC time=13276
+
+
+Total one state SAC time=5891
+
+
+Total one state SAC time=5188
+
+
+Total one state SAC time=1453
+
+
+Total one state SAC time=2781
+
+
+Total one state SAC time=1688
+
+
+Total one state SAC time=3016
+
+
+Total one state SAC time=1688
+
+
+Total one state SAC time=3938
+
+
+Total one state SAC time=2344
+
+
+Total one state SAC time=2500
+
+
+Total one state SAC time=3125
+
+
+Total one state SAC time=2110
+
+
+Total one state SAC time=2501
+
+
+Total one state SAC time=5313
+
+
+Total one state SAC time=5424
+
+
+Total one state SAC time=6374
+
+
+Total one state SAC time=3078
+
+
+Total one state SAC time=2235
+
+
+Total one state SAC time=6532
+
+
+Total one state SAC time=5469
+
+
+Total one state SAC time=4625
+
+
+Total one state SAC time=14094
+
+
+Total one state SAC time=12547
+
+
+Total one state SAC time=14626
+
+
+Total one state SAC time=15110
+
+
+Total one state SAC time=1187
+
+
+Total one state SAC time=390
+
+
+Total one state SAC time=360
+
+
+Total one state SAC time=625
+
+
+Total one state SAC time=312
+
+
+Total one state SAC time=906
+
+
+Total one state SAC time=359
+
+
+Total one state SAC time=406
+
+
+Total one state SAC time=422
+
+
+Total one state SAC time=406
+
+
+Total one state SAC time=422
+
+
+Total one state SAC time=360
+
+
+Total one state SAC time=328
+
+
+Total one state SAC time=297
+
+
+Total one state SAC time=312
+
+
+Total one state SAC time=454
+
+
+Total one state SAC time=735
+
+
+Total one state SAC time=390
+
+
+Total one state SAC time=454
+
+
+Total one state SAC time=266
+
+
+Total one state SAC time=235
+
+
+Total one state SAC time=515
+
+
+Total one state SAC time=422
+
+
+Total one state SAC time=41596
+
+
+Total one state SAC time=51049
+
+
+Total one state SAC time=54441
+
+
+Total one state SAC time=667
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=5
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=100
+
+
+Total one state SAC time=79
+
+
+Total one state SAC time=77
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=75
+
+
+Total one state SAC time=78
+
+
+Total one state SAC time=91
+
+
+Total one state SAC time=80
+
+
+Total one state SAC time=97
+
+
+Total one state SAC time=47
+
+
+Total one state SAC time=223
+
+
+Total one state SAC time=15
+
+
+Total one state SAC time=30
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=1
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=511
+
+
+Total one state SAC time=5
+
+
+Total one state SAC time=549
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=7
+
+
+Total one state SAC time=6
+
+
+Total one state SAC time=6
+
+
+Total one state SAC time=24
+
+
+Total one state SAC time=2160
+
+
+Total one state SAC time=70
+
+
+Total one state SAC time=67
+
+
+Total one state SAC time=6
+
+
+Total one state SAC time=6
+
+
+Total one state SAC time=155
