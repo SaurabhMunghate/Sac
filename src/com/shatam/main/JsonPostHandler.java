@@ -1,3 +1,10 @@
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
 package com.shatam.main;
 
 import java.io.BufferedReader;
@@ -11,43 +18,30 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.rmi.CORBA.Util;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.data.main.Logger;
-
-import com.shatam.dataPost.PostSACJarInfoToServer;
-import com.shatam.io.ShatamIndexReader;
-
 import com.shatam.model.AddColumns;
 import com.shatam.model.AddressStruct;
-import com.shatam.util.Paths;
 import com.shatam.util.U;
 
 public class JsonPostHandler extends AbstractHandler {
 	public String state;
 	public String errMsg = null;
-
 	public String hitscore1 = null;
 	public String maxResults1 = null;
 	public String noOfJobs1 = null;
-public static String disable_enable="enable";
+	public static String disable_enable = "enable";
 	public ThreadedSAC threadedSAC = new ThreadedSAC();
 
 	@Override
@@ -55,39 +49,21 @@ public static String disable_enable="enable";
 			HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
 
-		
-		 /* Queue queue = QueueFactory.getDefaultQueue();
-	        queue.add(TaskOptions.Builder.withUrl("/postData"));*/
-		
-		
-		
 		response.setContentType("text/html;charset=utf-8");
-
 		response.setStatus(HttpServletResponse.SC_OK);
-
 		baseRequest.setHandled(true);
-
 		ServletInputStream input = request.getInputStream();
 		BufferedReader br = new BufferedReader(new InputStreamReader(input));
 		String strLine;
-
 		StringBuffer buf = new StringBuffer();
-
 		while ((strLine = br.readLine()) != null) {
-
 			buf.append(strLine);
-
 		}
-
 		String data1 = buf.toString();
 		input.close();
-
 		org.json.JSONArray outputObj = null;
-
 		try {
-			//U.log(Thread.currentThread().getName()+"=data1=="+data1);
 			org.json.JSONObject inputJSon = new JSONObject(data1);
-			
 			data1 = null;
 			if (!inputJSon.has("address"))
 				throw new Exception(
@@ -101,34 +77,26 @@ public static String disable_enable="enable";
 			String count = inputJSon.get("count").toString().trim();
 			String noOfJobs = inputJSon.get("jobs").toString().trim();
 			String dataSource = inputJSon.get("data").toString().trim();
-			 disable_enable=inputJSon.get("log").toString().trim();
+			disable_enable = inputJSon.get("log").toString().trim();
 			String value = evaluateJson(inputData, count, noOfJobs);
 
 			if (value != null)
 				throw new Exception(value);
 
-			// write etxt in log file
 			Date date = new Date();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			String ROOT = System.getProperty("user.dir");
 			String PATH = new File(ROOT).getParent() + "/LOG/";
 			File file = new File(PATH + dateFormat.format(date) + ".txt");
-			//U.log("file log name==="+file.getPath());
 			BufferedWriter out = new BufferedWriter(new FileWriter(file, true));
 			InetAddress IP = InetAddress.getLocalHost();
-		//	Long writeStartTime=System.currentTimeMillis();
-			if(disable_enable.toLowerCase().contains("enable")){
-			out.write("\n\n************************Input Addresses********="
-					+ IP.getHostAddress()
-					+ "=***************************\n"
-					+ inputData
-					+ "\n************************Output Addresses***************************");
-			//U.log("FILE is writed");
+			if (disable_enable.toLowerCase().contains("enable")) {
+				out.write("\n\n************************Input Addresses********="
+						+ IP.getHostAddress()
+						+ "=***************************\n"
+						+ inputData
+						+ "\n************************Output Addresses***************************");
 			}
-		//	Long writeEndTime=System.currentTimeMillis();
-			
-			//U.log("Time==="+(writeEndTime-writeStartTime));
-			
 			JsonAddress md = new JsonAddress();
 			try {
 				outputObj = md.jsonAddress(inputData, "", count, noOfJobs,
@@ -138,55 +106,38 @@ public static String disable_enable="enable";
 				e.getMessage();
 				out.write("\n" + e.getMessage());
 			}
-//			writeStartTime=System.currentTimeMillis();
-			if(disable_enable.toLowerCase().contains("enable"))
-			{
-			out.write("\n" + outputObj.toString());
+			if (disable_enable.toLowerCase().contains("enable")) {
+				out.write("\n" + outputObj.toString());
 			}
-//			writeEndTime=System.currentTimeMillis();
-			
-//			U.log("Time2==="+(writeEndTime-writeStartTime));
 			out.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			if (e.getLocalizedMessage().contains(
 					"A JSONObject text must begin with"))
 				errMsg = "Check Json Format ,Could not find 'address' key or  'count' key In Input Json !";
-
 			try {
 				Logger.put(String.class.getName(), e.toString(), "IP Error");
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
 		}
-
-		// * String out= outputObj.toString(); out=out.replaceAll("\"", "\\\"");
-
 		if (errMsg != null) {
 			String err = errMsg;
 			errMsg = null;
 			response.getWriter().println(err);
 		}
-
-		
 		if (outputObj != null)
 			response.getWriter().println(outputObj);
-		
-		// System.out.println("Final OutPut:" + outputObj);
 
 	}
 
 	private String evaluateJson(String inputData, String count, String jobs)
 			throws Exception {
-		// TODO Auto-generated method stub
 		char ch = inputData.charAt(0);
 		if (ch != '[') {
 			inputData = inputData.substring(1, inputData.length() - 1);
 		}
-
 		try {
-
 			if (jobs.length() == 0)
 				throw new InvalidJsonException(
 						"Check Input Of Jobs Value!It should be greater than 0");
@@ -195,7 +146,6 @@ public static String disable_enable="enable";
 			if (jobs1 != null || jobs2 != null)
 				throw new InvalidJsonException(
 						"Check Input Of Jobs Value!It Should Be In Number Format. ");
-
 			if (count.length() > 1 || count.length() == 0)
 				throw new InvalidJsonException(
 						"Check Maximum Addresses Count value! It should be 1, 2, 3 ");
@@ -211,21 +161,13 @@ public static String disable_enable="enable";
 			if (val <= 0)
 				throw new InvalidJsonException(
 						"Check Maximum Addresses Count value! It should be 1, 2, 3 ");
-
-		//	U.log(inputData);
-			org.json.JSONArray arr =null;
-			try{
-			 arr = new org.json.JSONArray(inputData);
-			 
-			 //Posting Address Count info to server.
-			 //PostSACJarInfoToServer postinfo = new PostSACJarInfoToServer(arr.length());
-			// postinfo.post();
-			}
-			catch(Exception e){
-				U.log(":::"+inputData);
+			org.json.JSONArray arr = null;
+			try {
+				arr = new org.json.JSONArray(inputData);
+			} catch (Exception e) {
+				U.log(":::" + inputData);
 			}
 			org.json.JSONArray innerArr = arr.getJSONArray(0);
-
 		} catch (InvalidJsonException e) {
 			e.printStackTrace();
 			errMsg = e.getMessage();
@@ -243,7 +185,6 @@ public static String disable_enable="enable";
 		try {
 			inputData = inputData.replace("\\", "").trim();
 			org.json.JSONArray innerArr = new org.json.JSONArray(inputData);
-
 			if (innerArr.length() != 6) {
 				throw new InvalidJsonException(
 						"Invalid Json Array Exception In Address , JSON Array Length Should be 6.");
@@ -251,7 +192,6 @@ public static String disable_enable="enable";
 			String state = innerArr.getString(3).toUpperCase();
 			if (!U.STATE_MAP.containsKey(state.trim())) {
 				String state2 = USStates.abbr(state.trim());
-
 				if (state2 == null) {
 					throw new InvalidJsonException(
 							"Invalid State Abbreviation In Address ");
@@ -259,7 +199,6 @@ public static String disable_enable="enable";
 					state = state2;
 				}
 			}
-
 			String city = innerArr.getString(2);
 			String address1 = innerArr.getString(0);
 			address1 = address1.replaceAll("\\d+", "").trim();
@@ -267,9 +206,7 @@ public static String disable_enable="enable";
 				throw new InvalidJsonException(
 						"Invalid Address1 In Address , Either Address1 contains only digits or is blank in ");
 			}
-
 			String zip = innerArr.getString(4);
-
 			String city2 = match(city, "\\d+");
 			if (city2 != null) {
 				throw new InvalidJsonException("Invalid City Name In Address");
@@ -278,7 +215,6 @@ public static String disable_enable="enable";
 			if (city2 != null) {
 				throw new InvalidJsonException("Invalid City Name In Address");
 			}
-
 			String zip2 = match(zip, "[a-zA-Z]");
 			String zip3 = match(zip, "[$&+,:;=?@#|*%()^!.~-]");
 			if (zip2 != null || zip.trim().length() > 5 || zip3 != null)
@@ -300,12 +236,11 @@ public static String disable_enable="enable";
 		while (m.find()) {
 			String val = txt.substring(m.start(), m.end());
 			val = val.trim();
-
 			val = val.replaceAll("\\s+", " ").trim();
 			return val;
 		}
 		return null;
-	}// match
+	}
 
 	public org.json.JSONArray processJsonFileforSAC(
 			ArrayList<InputJsonSchema> addList, String hitscore,
@@ -313,74 +248,15 @@ public static String disable_enable="enable";
 			throws Exception {
 		hitscore1 = hitscore;
 		maxResults1 = maxResults;
-		// noOfJobs1=noOfJobs;
-		// U.log("Processing Started :::");
-
-		// U.log(hitscore);
-		// U.log(maxResults);
-		// U.log(noOfJobs);
-		// U.log(dataSource);
 		long sactime1 = System.currentTimeMillis();
-
-		// Added New
-		// org.json.JSONArray JSonAddressArray = new
-		// org.json.JSONArray(textEntered);
-
-		// /CustomAddressCorrector.NORMAL= CustomAddressCorrector.METAPHONE=
-		// CustomAddressCorrector.SOUNDEX=CustomAddressCorrector.DOUBLE_METAPHONE=
-		// CustomAddressCorrector.REFINED_SOUNDEX=0;
-
-		/*
-		 * ExecutorService executorService =
-		 * Executors.newFixedThreadPool(Integer.parseInt(noOfJobs));
-		 * 
-		 * executorService.execute(new Runnable() { public void run() {
-		 * 
-		 * //new ArrayList<InputJsonSchema>(addresses.subList(threadJobStart[i],
-		 * threadJobEnd[i])) // for(int i=0;i<threadJobStart.length;i++){
-		 * 
-		 * try {
-		 */
-		// SimpleThreadFactory simpleThreadFactory=new SimpleThreadFactory();
-		// ExecutorService executorService = Executors.newFixedThreadPool(50 );
-
-
-		
-	
-
 		org.json.JSONArray outputArry = threadedSAC.processByParts(addList,
 				hitscore1, maxResults1, noOfJobs, dataSource, flag);
-
-		// outputArry.put(outputArry1);
-		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); }
-		 * 
-		 * // // } // // } });
-		 * 
-		 * executorService.shutdown(); while (!executorService.isTerminated()) {
-		 * 
-		 * }
-		 */
-		// change in logic
-		// outputArry=SimpleThreadPool.simpletrheadpoolCalling(addresses,
-		// hitscore,maxResults,noOfJobs);
-
 		long sactime2 = System.currentTimeMillis();
-		// U.log("Total SACccc time"+(sactime2-sactime1));
 		String text = "\nTotal one state SAC time=" + (sactime2 - sactime1);
 		U.writeFile(text);
-		// ShatamIndexReader.close();
-		//U.log("NORMAL="+CustomAddressCorrector.NORMAL+"::"+"METAPHONE="+CustomAddressCorrector.METAPHONE+"::"+"SOUNDEX="+CustomAddressCorrector.SOUNDEX+"::"+"DOUBLE_METAPHONE="+CustomAddressCorrector.DOUBLE_METAPHONE+"::"+"REFINED_SOUNDEX="+CustomAddressCorrector.REFINED_SOUNDEX);
-//U.log("KIRTI MISAL");
-		// //U.log(outputArry);
-
 		return outputArry;
-	
-}
-		// return null;
 
-	
+	}
 
 	private org.json.JSONArray addToJson(ArrayList<AddressStruct> addStruct,
 			String hitscore, String maxResults, String key)
@@ -402,10 +278,8 @@ public static String disable_enable="enable";
 				schemaobj.prefix_qualifier = current.get(AddColumns.PREQUALABR);
 				schemaobj.prefix_type = current.get(AddColumns.PRETYPABRV);
 				schemaobj.street_name = current.get(AddColumns.NAME);
-
 				schemaobj.suffix_type = current.get(AddColumns.SUFTYPABRV);
 				schemaobj.suffix_direction = current.get(AddColumns.SUFDIRABRV);
-
 				schemaobj.city = current.get(AddColumns.CITY);
 				if (current.getState() != null)
 					schemaobj.state = current.getState();
@@ -413,11 +287,9 @@ public static String disable_enable="enable";
 					schemaobj.state = "";
 
 				schemaobj.zip = current.get(AddColumns.ZIP);
-				
 				if (current.hitScore > 5)
 					current.hitScore = 5;
 				schemaobj.score = 100 * (current.hitScore / 5);
-
 				listOutput.add(schemaobj);
 
 			}
@@ -429,17 +301,12 @@ public static String disable_enable="enable";
 			schemaobj.prefix_qualifier = "";
 			schemaobj.prefix_type = "";
 			schemaobj.street_name = "";
-
 			schemaobj.suffix_type = "";
 			schemaobj.suffix_direction = "";
-
 			schemaobj.city = "";
-
 			schemaobj.state = "";
 			schemaobj.zip = "";
-
 			schemaobj.score = 0;
-
 			listOutput.add(schemaobj);
 		}
 
@@ -452,7 +319,6 @@ public static String disable_enable="enable";
 
 	private org.json.JSONArray generateJson(ArrayList<JsonSchema> listOutput)
 			throws JSONException {
-		// TODO Auto-generated method stub
 
 		org.json.JSONArray jsonColl = new org.json.JSONArray();
 		for (JsonSchema obj : listOutput) {

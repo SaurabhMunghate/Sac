@@ -1,4 +1,11 @@
-package com.shatam.test1;
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
+package com.shatam.testhttp;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,12 +27,7 @@ import org.json.JSONObject;
 
 import com.shatam.util.U;
 
-public class requestHttp {
-
-	/**
-	 * @param args
-	 * @throws IOException
-	 */
+public class RequestHttpTest {
 
 	public static void main(String[] args) throws IOException {
 
@@ -104,8 +106,7 @@ public class requestHttp {
 	public static void httprequestToSac(String addresses) {
 		String data = addresses;
 		HttpClient client = new DefaultHttpClient();
-		HttpConnectionParams.setConnectionTimeout(client.getParams(), 1000); // Timeout
-																				// Limit
+		HttpConnectionParams.setConnectionTimeout(client.getParams(), 1000);
 		HttpResponse response;
 		JSONObject json = new JSONObject();
 
@@ -123,10 +124,7 @@ public class requestHttp {
 			response = client.execute(post);
 
 			if (response != null) {
-				InputStream in = response.getEntity().getContent(); // Get the
-																	// data in
-																	// the
-																	// entity
+				InputStream in = response.getEntity().getContent();
 				BufferedReader reader = new BufferedReader(
 						new InputStreamReader(in));
 				StringBuilder out = new StringBuilder();
@@ -134,11 +132,7 @@ public class requestHttp {
 				while ((line = reader.readLine()) != null) {
 					out.append(line);
 				}
-				System.out.println("OUTPUT=" + out.toString()); // Prints the
-																// string
-																// content read
-																// from input
-																// stream
+				System.out.println("OUTPUT=" + out.toString());
 				reader.close();
 			}
 

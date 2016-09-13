@@ -1,3 +1,10 @@
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
 package com.shatam.memdb;
 
 import java.util.ArrayList;
@@ -5,87 +12,64 @@ import java.util.ArrayList;
 import com.shatam.util.StrUtil;
 import com.shatam.util.U;
 
-public class TableData
-{
-    private ArrayList<String[]> data = new ArrayList<String[]>();
+public class TableData {
+	private ArrayList<String[]> data = new ArrayList<String[]>();
 
-    // int indexBy = 0;
-    // private HashMap<String, Integer> indexSet = new HashMap<String,
-    // Integer>();
-    private IndexType           indexType;
+	private IndexType indexType;
 
-    public TableData(IndexType indexType)
-    {
-        this.indexType = indexType;
-    }
+	public TableData(IndexType indexType) {
+		this.indexType = indexType;
+	}
 
-    public void add(Object[] rowObjects, int maxColns)
-    {
+	public void add(Object[] rowObjects, int maxColns) {
 
-        String[] rowStrings = StrUtil.convertToStringArr(rowObjects, maxColns);
+		String[] rowStrings = StrUtil.convertToStringArr(rowObjects, maxColns);
 
-        if (this.indexType != null)
-        {
-            if (!indexType.shouldAddRow(rowStrings))
-            {
-                // U.log("Exists key:" + key);
-                return;
-            }
+		if (this.indexType != null) {
+			if (!indexType.shouldAddRow(rowStrings)) {
 
-            indexType.addToIndex(rowStrings, data.size());
+				return;
+			}
 
-        }
+			indexType.addToIndex(rowStrings, data.size());
 
-        data.add(rowStrings);
+		}
 
-    }// add()
+		data.add(rowStrings);
 
-    public ArrayList<String[]> searchAndFind(String val) throws Exception
-    {
-        ArrayList<String[]> retList = new ArrayList<String[]>();
-        if (val == null)
-            return retList;
+	}
 
-        if (this.indexType == null)
-            throw new Exception("Not indexed");
+	public ArrayList<String[]> searchAndFind(String val) throws Exception {
+		ArrayList<String[]> retList = new ArrayList<String[]>();
+		if (val == null)
+			return retList;
 
-        val = val.trim().toLowerCase();
+		if (this.indexType == null)
+			throw new Exception("Not indexed");
 
-        int[] foundAt = indexType.find(val);
-        for (int i : foundAt)
-        {
-            retList.add(data.get(i));
-        }
+		val = val.trim().toLowerCase();
 
-        return retList;
-    }
+		int[] foundAt = indexType.find(val);
+		for (int i : foundAt) {
+			retList.add(data.get(i));
+		}
 
-    public int size()
-    {
-        
-        return data.size();
-    }
+		return retList;
+	}
 
-    public String[] getRowAt(int rowNumber)
-    {
-        
-        return data.get(rowNumber);
-    }
+	public int size() {
 
-    public void close()
-    {
-        /*
-        while (data.size() > 0)
-        {
-            //U.log("clear data.size():" + data.size());
-            String[] arr = data.remove(0);
-            for (int j = 0; j < arr.length; j++)
-            {
-                arr[j] = null;
-            }
-            arr = null;
-        }*/
-        data.clear();
-        System.gc();
-    }
-}// class TableData
+		return data.size();
+	}
+
+	public String[] getRowAt(int rowNumber) {
+
+		return data.get(rowNumber);
+	}
+
+	public void close() {
+
+		data.clear();
+		System.gc();
+	}
+}

@@ -7,3 +7,57 @@ Total one state SAC time=3
 
 
 Total one state SAC time=5
+
+
+Total one state SAC time=72
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=395
+
+
+Total one state SAC time=9
+
+
+Total one state SAC time=10
+
+
+Total one state SAC time=5
+
+
+Total one state SAC time=65
+
+
+Total one state SAC time=5
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=84
+
+
+Total one state SAC time=2
+
+
+Total one state SAC time=3
+
+
+Total one state SAC time=21
+
+
+Total one state SAC time=16
+
+
+Total one state SAC time=6
+
+
+Total one state SAC time=4
+
+
+Total one state SAC time=0
+
+
+Total one state SAC time=6

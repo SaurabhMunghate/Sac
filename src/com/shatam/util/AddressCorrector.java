@@ -1,91 +1,56 @@
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
 package com.shatam.util;
 
 import java.util.ArrayList;
 
 import com.shatam.io.AbstractIndexType;
-import com.shatam.io.ShatamIndexUtil;
-import com.shatam.model.AddColumns;
 import com.shatam.model.AddressStruct;
 
-public class AddressCorrector
-{
+public class AddressCorrector {
 
+	public static AddressStruct corrUsingAppropriateIndex(String address1,
+			String address2, String city, String state, String zip)
+			throws Exception {
 
+		AddressStruct returnAddStruct = null;
 
-    public static AddressStruct corrUsingAppropriateIndex(String address1, String address2, String city, String state, String zip)
-            throws Exception
-    {
+		for (AbstractIndexType it : AbstractIndexType.TYPES) {
 
-        //ArrayList<AddressStruct> arr = new ArrayList<AddressStruct>();
-        AddressStruct returnAddStruct = null;
+			for (final String dataSource : new String[] { U.USPS }) {
 
-        for (AbstractIndexType it : AbstractIndexType.TYPES)
-        {
+				ArrayList<AddressStruct> resultAdds = new ArrayList<>();
+				if (resultAdds.size() == 0)
+					continue;
 
-            for (final String dataSource : new String[] { U.USPS})
-            {
-                //U.log("  *** " + it.getFieldName() + " / " + dataSource);
+				returnAddStruct = resultAdds.get(0);
+				String foundStreet = returnAddStruct.getFoundName();
 
-                ArrayList<AddressStruct> resultAdds =new ArrayList<>();//= ShatamIndexUtil.correctAddresses(address1, address2, city, zip, state, it, dataSource);
-                if (resultAdds.size() == 0)
-                    continue;
+				{
+					if (foundStreet.startsWith("RR")) {
+						returnAddStruct
+								.setHouseNumber(returnAddStruct.unitNumber);
+						returnAddStruct.unitNumber = "";
+						returnAddStruct.unitTypeFromInputAddress = "";
+					}
+				}
 
-                returnAddStruct = resultAdds.get(0);
+				DistanceMatchForResult matcher = new DistanceMatchForResult(
+						returnAddStruct, it);
+			}
 
-                //arr.add(t);
-                String foundStreet = returnAddStruct.getFoundName(); //.split(StrUtil.WORD_DELIMETER)[0];
+		}
 
-                //adjust for RR
-                {
-                    if (foundStreet.startsWith("RR"))
-                    {
-                        returnAddStruct.setHouseNumber(returnAddStruct.unitNumber);
-                        returnAddStruct.unitNumber = "";
-                        returnAddStruct.unitTypeFromInputAddress = "";
-                    }
-                }
+		{
+			returnAddStruct.setBlank();
+			return returnAddStruct;
+		}
 
-                ////U.log("A shatamIndexQueryString:" + returnAddStruct.getshatamIndexQueryString());
-                ////U.log("B foundStreet:" + foundStreet + "  score(t):" + score(returnAddStruct));
-                ////U.log("C Found :"+foundStreet + " , "+foundCity);
-                
-                DistanceMatchForResult matcher = new DistanceMatchForResult(returnAddStruct, it);
-             /*   if (matcher.isResultMatched()){
-                    return returnAddStruct;
-                }else{
-                    U.disp(returnAddStruct);
-                }*/
-                
-                /*
-                if (DistanceMatchForResult.isMatchGoodEnough(foundStreet, returnAddStruct, it, score))
-                {
-                    final String foundCity = returnAddStruct.get(AddColumns.CITY).toUpperCase();
-                    final String foundZip = returnAddStruct.get(AddColumns.ZIP).toUpperCase();
-
-                    //U.log("C Found :" + foundStreet + " , " + foundCity);
-                    if (DistanceMatchForResult.isMatchGoodEnough(foundCity, returnAddStruct, it, score) || DistanceMatchForResult.isMatchGoodEnough(foundZip, returnAddStruct, it, score))
-                    {
-                        //U.log("D Found :" + foundStreet + " , " + foundCity);
-                        return returnAddStruct;
-                    }
-
-                }
-                */
-
-            }//for (final String dataSource
-
-        }// for it
-
-        //create empty struct
-        {
-            returnAddStruct.setBlank();
-            //U.log("?????????? NOT FOUND ??????????/ returnAddStruct:" + returnAddStruct.toOnlyStreet());
-            return returnAddStruct;
-        }
-
-    }//corrUsingAppropriateIndex()
-
-
-
+	}
 
 }

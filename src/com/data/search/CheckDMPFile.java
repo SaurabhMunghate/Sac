@@ -1,3 +1,10 @@
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
 package com.data.search;
 
 import java.io.BufferedReader;
@@ -42,22 +49,9 @@ public class CheckDMPFile {
 	public int allCount = 0;
 	public int approxMatched = 0;
 
-	/*public CheckDMPFile(String state) {
-		TEST_ONLY_FOR_STATE = state;
-	}*/
-
-	/**
-	 * @param args
-	 * @throws Exception
-	 */
-	public int[] main(/* String[] args */) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public int[] main() throws Exception {
 
 		String addPath = "D://DMPSampleAddresses_10K.csv";
-
-		// int[] noMatchCount = new int[16];
-		// int[] iAmBetterCount = new int[16];
 
 		_CountStatusStruct[] matchCount = new _CountStatusStruct[18];
 		for (int i = 0; i < matchCount.length; i++) {
@@ -73,55 +67,30 @@ public class CheckDMPFile {
 		int i2 = 0;
 		int i3 = 0;
 		while ((caRow = csvReader.read()) != null) {
-			// U.log("i1: "+i1++);
 
 			String ipState = caRow.get(3).trim();
-			// if (ipState.contains("C"))U.log("ipState:"+ipState +
-			// "   TEST_ONLY_FOR_STATE:"+TEST_ONLY_FOR_STATE);
 
-			/*if (TEST_ONLY_FOR_STATE != null
-					&& !TEST_ONLY_FOR_STATE.contains(ipState))
-				continue;*/
 			processState.totalProcessed++;
-			// if(processState.totalProcessed<1600 &&
-			// processState.totalProcessed>1199){
 
-			// 1600 && processState.totalProcessed>1199
 			String ipId = caRow.get(0).trim();
 			U.log("--------------------------" + processState.totalProcessed);
-			// Test
+
 			if (ONLY_TEST_ID != null && !ipId.equals(ONLY_TEST_ID))
 				continue;
-
-			// U.log("--- ID : " + ipId + " --- ipState:" + ipState);
 
 			String ipAddress = getCsvVal(caRow, 1).replaceAll("\\s+|/", " ")
 					.toUpperCase();
 			String ipCity = getCsvVal(caRow, 2).toUpperCase();
 			String ipZip = getCsvVal(caRow, 4).toUpperCase();
-			if(ipAddress.contains("625 ORE STREET"))
+			if (ipAddress.contains("625 ORE STREET"))
 				continue;
 
-			// Street Number Pre-Directional Street Name Street Suffix
-			// Post-Directional Secondary Designation Secondary Number *City
-			// *State ZipAddon *Zip Addon
-
-			/*
-			 * String caStreetNumber = getCsvVal(caRow, 10); String
-			 * caPreDirectional = getCsvVal(caRow, 11); String caStreetName =
-			 * getCsvVal(caRow, 12); String caStreetSuffix = getCsvVal(caRow,
-			 * 13); String caPostDirectional = getCsvVal(caRow, 14); String
-			 * caSecondaryDesignation = getCsvVal(caRow, 15); String
-			 * caSecondaryNumber = getCsvVal(caRow, 16); String caCity =
-			 * getCsvVal(caRow, 17);
-			 */
 			String caState = getCsvVal(caRow, 18);
 			String caStreet = getCsvVal(caRow, 12);
 			String caStreetPre = getCsvVal(caRow, 11);
 			String caStreetPost = getCsvVal(caRow, 13);
 			String caCity = getCsvVal(caRow, 17);
 
-			// String caZipAddon = getCsvVal(caRow, 19);
 			String caZip = getCsvVal(caRow, 20);
 			String caAddon = getCsvVal(caRow, 21);
 
@@ -129,15 +98,13 @@ public class CheckDMPFile {
 					|| ipState.toUpperCase().equals("TA")) {
 				continue;
 			}
-			// U.log("i2: "+i2++);
+
 			ipAddress = ipAddress.replace("/", "");
 			ipAddress = ipAddress.replace("342D", "342");
 			U.log(ipAddress + "," + ipCity);
 			AddressStruct addStruct = AddressCorrector
 					.corrUsingAppropriateIndex(ipAddress, "", ipCity, ipState,
 							ipZip);
-			// final UnitTypeAndZipPlus4 unitTypeAndZip =
-			// addStruct.getUnitTypeAndZipPlus4();
 
 			String fullCAOutput = appendString(caRow, 10, 18);
 			fullCAOutput = getFullFormAddress(fullCAOutput);
@@ -145,9 +112,6 @@ public class CheckDMPFile {
 			fullSHOutput = getFullFormAddress(fullSHOutput);
 			U.log("fullCAOutput:" + fullCAOutput + "---");
 			U.log("fullSHOutput:" + fullSHOutput + "---");
-			// U.log("addStruct.toFullAddressString3()"+addStruct.toFullAddressString3());
-
-			// for approx match
 
 			if (!fullCAOutput.equalsIgnoreCase(fullSHOutput)) {
 				U.log(" Input Address     \t:" + ipAddress + ", " + ipCity
@@ -191,15 +155,13 @@ public class CheckDMPFile {
 						count++;
 					if (caZip.equals(matchedAddress[5]))
 						count++;
-					// String arr[]=new
-					// String[]{pre,street,post,city,state,zip};
+
 					double percent = 100 * ((count + 0.0) / totalCount);
 					U.log("percent:::" + percent);
 					if (percent > 80)
 						BothCorrect++;
 					else {
-						// cantTell++;
-						// comparison And Get USUS Address
+
 						String address = CheckAddressWithUSPS
 								.main(new String[] {
 										getCsvVal(caRow, 1).toUpperCase(),
@@ -235,10 +197,8 @@ public class CheckDMPFile {
 			} else {
 				BothCorrect++;
 			}
-			// break;
 
-		}// for a
-			// }
+		}
 
 		csvReader.close();
 
@@ -246,19 +206,16 @@ public class CheckDMPFile {
 		return new int[] { BothCorrect, cantTell, CACorrect, shatamCorrect,
 				approxMatched };
 
-		// ----Create header -----
 	}
 
 	public static String getFullFormAddress(String add) throws Exception {
 
 		StringBuffer buf = new StringBuffer();
 		String[] arr = add.split("[^\\d\\w\\-/]");
-		// int partIndex = -1;
+
 		for (String part : arr) {
 			if (StrUtil.isEmpty(part))
 				continue;
-
-			// partIndex++;
 
 			String v = AbbrReplacement.getFullName(part, "AZ");
 			if (v.matches("[\\-_]")) {
@@ -277,7 +234,6 @@ public class CheckDMPFile {
 	}
 
 	private void WriteCountToFile() throws Exception {
-		// TODO Auto-generated method stub
 
 		File outputFile = new File("D://FilesD/18_Jan_Count_All.csv");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
@@ -322,7 +278,7 @@ public class CheckDMPFile {
 
 	private void WriteToCsvFile(ArrayList<String> allData2, String fileName)
 			throws Exception {
-		// TODO Auto-generated method stub
+
 		File outputFile = new File("D://FilesD//" + fileName);
 		BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
 		StringWriter sw = new StringWriter();
@@ -362,10 +318,10 @@ public class CheckDMPFile {
 
 		return caRow.get(i).trim().toUpperCase().replaceAll("\\s+", " ");
 
-	}// main
+	}
 
 	public String[] getGooAddress(String add) throws Exception {
-		// String addr = add[0] + "+" + add[1];
+
 		String addr = add;
 		String data = null;
 		String latLong = null;
@@ -373,8 +329,6 @@ public class CheckDMPFile {
 		addr = addr.replace("AVENIDA", "AVE");
 		String link = "http://maps-api-ssl.google.com/maps/api/geocode/xml?address="
 				+ URLEncoder.encode(addr, "UTF-8") + "&sensor=false";
-
-		// https://maps-api-ssl.google.com/maps/api/geocode/xml?address=Frankfurstein+ring+105a,M%C3%BCnchen,de,80000,&sensor=false&client=gme-kickzag&signature=RD8P7J07rJbfmClUeMEY4adIoTs=
 
 		U.log(link);
 
@@ -406,7 +360,7 @@ public class CheckDMPFile {
 
 		String values[] = getValues(input.toString(), "<short_name>",
 				"</short_name>");
-		// wr.write(input.toString());
+
 		String formattedAd = HttpURLConnectionExample.getSectionValue(input
 				+ "", "<formatted_address>", "</formatted_address>");
 		String ad = null;

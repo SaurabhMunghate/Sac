@@ -1,3 +1,10 @@
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
 package com.shatam.main;
 
 import java.io.BufferedReader;
@@ -23,20 +30,13 @@ public class JsonAddress {
 		String maxResults = "1";
 		BufferedReader br = null;
 		org.json.JSONArray outputObj = null;
-
 		String sCurrentLine;
 		br = new BufferedReader(new FileReader("E:\\AddressFile\\2.txt"));
 		while ((sCurrentLine = br.readLine()) != null) {
-			// System.out.println(sCurrentLine);
 			textEntered = sCurrentLine;
-			// textEntered
-			// ="[[\"205 207 MADISON AVENUE  ST. MARYS\",\" \",\"SAINT MARYS\",\"GA\",\"31558\",\"536\"]]";
 			JsonAddress md = new JsonAddress();
-
-			// GenerateCache.doCache();
 			outputObj = md.jsonAddress(textEntered, hitscore, maxResults,
 					noOfJobs, dataSource, false);
-
 		}
 		if (br != null)
 			br.close();
@@ -53,78 +53,63 @@ public class JsonAddress {
 		}
 		textEntered = textEntered.replace("\\", "").trim();
 		TestDemo td = new TestDemo();
-		
 		td.addArray();
-	//	textEntered=textEntered.replaceAll("CHECK|check", "check ");
 		HashMap<String, ArrayList<InputJsonSchema>> addressMap = td
 				.sortAddress(textEntered);
-		
 		ArrayList<InputJsonSchema> addList = null;
 		Set<String> addSet = addressMap.keySet();
-		int noOfOutput=0;
-		int inputAddressCount=0;
+		int noOfOutput = 0;
+		int inputAddressCount = 0;
 		long s = System.currentTimeMillis();
 		for (String m : addSet) {
-		//	U.log(m);
-			if(!m.contains("no state")&&!m.contains("missing")){
-			addList = addressMap.get(m);
-			inputAddressCount+=addList.size();
-			outputObj = jph.processJsonFileforSAC(addList, hitscore,
-					maxResults, noOfJobs, dataSource, flag);
-	//	 U.log(outputObj.toString());
-			objOutput.put(outputObj);
-noOfOutput+=outputObj.length();
-			}
-			else{
-				if(m.contains("missing")){
+			if (!m.contains("no state") && !m.contains("missing")) {
 				addList = addressMap.get(m);
-				//U.log("@@@@@@@@@@"+addList.size());
-				inputAddressCount+=addList.size();
-				for (int i = 0; i < addList.size(); i++) {
-					//U.log("found no state address");
-					InputJsonSchema innerArr = addList.get(i);
-					
-					String key = innerArr.key;
-					
-					String arr[]={key,"Some fields are missing","","","","","","","","","","","","",""};
-					outputObj=new JSONArray(Arrays.asList(arr));
-					outputObj=new JSONArray(Arrays.asList(outputObj));
-					outputObj=new JSONArray(Arrays.asList(outputObj));
-					//U.log("::::::::::::"+outputObj.length());
-					objOutput.put(outputObj);
-					noOfOutput+=outputObj.length();
-				}
-			}
-				if(m.contains("no state")){
+				inputAddressCount += addList.size();
+				outputObj = jph.processJsonFileforSAC(addList, hitscore,
+						maxResults, noOfJobs, dataSource, flag);
+				objOutput.put(outputObj);
+				noOfOutput += outputObj.length();
+			} else {
+				if (m.contains("missing")) {
 					addList = addressMap.get(m);
-					//U.log("@@@@@@@@@@>>>>>"+addList.size());
-					inputAddressCount+=addList.size();
+
+					inputAddressCount += addList.size();
 					for (int i = 0; i < addList.size(); i++) {
-						//U.log("found no state address:::");
-						
 						InputJsonSchema innerArr = addList.get(i);
 						String key = innerArr.key;
-						//if(outputObj.get(key)!=null)
-						{
-						String arr[]={key,"State is invalid","","","","","","","","","","","","",""};
-						outputObj=new JSONArray(Arrays.asList(arr));
-						outputObj=new JSONArray(Arrays.asList(outputObj));
-						outputObj=new JSONArray(Arrays.asList(outputObj));
-					//	U.log("::::::::::::"+outputObj.length());
+						String arr[] = { key, "Some fields are missing", "",
+								"", "", "", "", "", "", "", "", "", "", "", "" };
+						outputObj = new JSONArray(Arrays.asList(arr));
+						outputObj = new JSONArray(Arrays.asList(outputObj));
+						outputObj = new JSONArray(Arrays.asList(outputObj));
 						objOutput.put(outputObj);
-						noOfOutput+=outputObj.length();
+						noOfOutput += outputObj.length();
+					}
+				}
+				if (m.contains("no state")) {
+					addList = addressMap.get(m);
+					inputAddressCount += addList.size();
+					for (int i = 0; i < addList.size(); i++) {
+						InputJsonSchema innerArr = addList.get(i);
+						String key = innerArr.key;
+						{
+							String arr[] = { key, "State is invalid", "", "",
+									"", "", "", "", "", "", "", "", "", "", "" };
+							outputObj = new JSONArray(Arrays.asList(arr));
+							outputObj = new JSONArray(Arrays.asList(outputObj));
+							outputObj = new JSONArray(Arrays.asList(outputObj));
+							objOutput.put(outputObj);
+							noOfOutput += outputObj.length();
 						}
+					}
 				}
 			}
-		}
 		}
 		long e = System.currentTimeMillis();
 		flag = true;
-		
-	//	U.log(objOutput);
 		U.log("Total SAC TIME::" + (e - s));
-		U.log("Number of INPUT addresses=="+inputAddressCount);
-		U.log("Number of OUTPUT addresses==="+noOfOutput);  
+		U.log("Number of INPUT addresses==" + inputAddressCount);
+		U.log("Number of OUTPUT addresses===" + noOfOutput);
 		return objOutput;
 
 	}

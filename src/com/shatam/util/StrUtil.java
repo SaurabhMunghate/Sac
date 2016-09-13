@@ -1,43 +1,46 @@
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
 package com.shatam.util;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.shatam.io.ShatamIndexWriter;
-
 public class StrUtil
 {
-    //TODO: Why do I have . here?
+    
     public static final String         WORD_DELIMETER      = "[\\s,\\.#)(]+";
     public static final String         WORD_DELIMETER_UNIT      = "[\\s,\\.#)(]*";
-    private static String              _UNIT_ETRACT_SUFFIX = "[\\s,\\.:#\\-]+(.*)" + WORD_DELIMETER;//"[\\s,\\.:#\\-]*(.*)" + WORD_DELIMETER;
+    private static String              _UNIT_ETRACT_SUFFIX = "[\\s,\\.:#\\-]+(.*)" + WORD_DELIMETER;
     private static String              _UNIT_ETRACT_SUFFIX_UNIT = "[\\s,\\.:#\\-]*(.*)" + WORD_DELIMETER;
     private static ArrayList<String[]> unitRegexMap        = new ArrayList<String[]>();
 
     static
     {
-        // unit extraction map 
+        
         unitRegexMap
                 .add(new String[] {
             "po box",
             "(post office box|po draw|p\\.o\\. boxx| po boxx|p o boxx|po box|po bxo|po bx|p\\. *o\\. *b\\.|pob |p\\.o\\.bo|p\\.o\\.|p o box|post box|p o bx|firm caller|caller|drawer |lock *box|pobx|po boc|bx | bin )"
                     + _UNIT_ETRACT_SUFFIX_UNIT });
 
-        // Double unit numbers
+        
         unitRegexMap.add(new String[] { "apt", "(#) (.* pmb .*)" });
         unitRegexMap.add(new String[] { "apt", "(#) (.* # .*)" });
         unitRegexMap.add(new String[] { "", "((#\\s*\\d+[a-z]*\\-*\\d*))" });
-        //unitRegexMap.add(new String[] { "", "((#\\s*\\d+[a-z]*))" });
+        
         
         unitRegexMap.add(new String[] { "lot", "(lot)" + "[\\s#\\-]*(\\d+) *$" });
 
-        unitRegexMap.add(new String[] { "box", WORD_DELIMETER + "(box|hbox)" + "[\\s,\\.:#\\-]*([a-z0-9]+)[\\s,\\.#)(]+"});//+ _UNIT_ETRACT_SUFFIX_UNIT });
+        unitRegexMap.add(new String[] { "box", WORD_DELIMETER + "(box|hbox)" + "[\\s,\\.:#\\-]*([a-z0-9]+)[\\s,\\.#)(]+"});
 
-        //probably for the common #
+        
         unitRegexMap.add(new String[] { "#", "( # )" + _UNIT_ETRACT_SUFFIX_UNIT });
 
         unitRegexMap.add(new String[] { "apt", "(apt |apartment|aptmt|aptmnt|bld )" + _UNIT_ETRACT_SUFFIX_UNIT });
@@ -45,8 +48,8 @@ public class StrUtil
         unitRegexMap.add(new String[] { "floor", "(floor|flr|fl )" + _UNIT_ETRACT_SUFFIX_UNIT });
         unitRegexMap.add(new String[] { "pmb", "(pmb )" + _UNIT_ETRACT_SUFFIX_UNIT });
         unitRegexMap.add(new String[] { "frnt", "(frnt)" + _UNIT_ETRACT_SUFFIX_UNIT });
-        unitRegexMap.add(new String[] { "flat", "(flt )" + _UNIT_ETRACT_SUFFIX_UNIT });//(flat|flt )
-        unitRegexMap.add(new String[] { "unit", WORD_DELIMETER + "(unit|unt )" + "[\\s,\\.:#\\-]*([a-z0-9]+)[\\s,\\.#)(]+"});//_UNIT_ETRACT_SUFFIX_UNIT });
+        unitRegexMap.add(new String[] { "flat", "(flt )" + _UNIT_ETRACT_SUFFIX_UNIT });
+        unitRegexMap.add(new String[] { "unit", WORD_DELIMETER + "(unit|unt )" + "[\\s,\\.:#\\-]*([a-z0-9]+)[\\s,\\.#)(]+"});
         unitRegexMap.add(new String[] { "unit", WORD_DELIMETER + "(unit|unt )" + "[\\s,\\.:#\\-]*([a-z0-9]+\\-[a-z0-9]*)"});
         unitRegexMap.add(new String[] { "box", "( box )" + _UNIT_ETRACT_SUFFIX_UNIT });
         unitRegexMap.add(new String[] { "ph", "( ph )" + _UNIT_ETRACT_SUFFIX_UNIT });
@@ -59,43 +62,35 @@ public class StrUtil
 
         unitRegexMap.add(new String[] { "trlr", "(trlr)" + _UNIT_ETRACT_SUFFIX_UNIT });
         
-        // unitRegexMap.add(new String[] { "vlg frnt", "(vlg frnt)" +
-        // _UNIT_ETRACT_SUFFIX });
+      
 
     }
 
     public static String fixNumericStreetSuffixes(String address)
     {
 
-        //Handle 9109 SW 27     8186 E 480 RD
+      
         {
-            //String endingWithStreetNum = extractPattern(address.trim().toLowerCase(), "\\d+ [a-z]+ (\\d+)$", 1);
+           
             String endingWithStreetNum = extractPattern(address.trim().toLowerCase(), "\\d+ (ne|nw|se|sw|e|w|n|s|northeast|northwest|southeast|southwest|east|west|north|south) (\\d+)$", 2);
-            //U.log("endingWithStreetNum:"+endingWithStreetNum);
+           
             if (!StrUtil.isEmpty(endingWithStreetNum))
                 address = address + "th";
-            /*else
-            {
-                String endingWithStreetNumRd = extractPattern(address.trim().toLowerCase(), "\\d+ [a-z]+ (\\d+) (rd|st|pl|dr)$", 1);
-                if (!StrUtil.isEmpty(endingWithStreetNumRd))
-                {
-                    address = address.replace(" " +endingWithStreetNumRd + " ", " " +endingWithStreetNumRd + "th ");
-                }
-            }*/
+           
         }
 
         address += " ";
 
         String reg = null;
         String mr = null;
-        // fix numeric street suffixes
+        
         if (!address.contains(" of the ")){
         for (int i = 19; i >= 0; i--)
         {
             String suf = U._getNumSuf(i);
 
-            //reg = i + " *(th|st|nd|rd) ";
-            reg = i + "( *th|st| *nd|rd) ";//( *th| *st| *nd|rd) 
+           
+            reg = i + "( *th|st| *nd|rd) "; 
             mr = ".*" + reg + ".*";
             if (address.matches(mr))
             {
@@ -103,26 +98,12 @@ public class StrUtil
                 break;
             }
 
-        }//for i
-        }// for if
-
-        /*
-        for (int i = 19; i >= 0; i--)
-        {
-            String suf = U._getNumSuf(i);
-
-            String reg = i + "\\s*(th|st|nd|rd)";
-
-            if (address.matches(".*" + reg + ".*"))
-            {
-                String ta = address.replaceFirst(reg, i + "" + suf);
-                address = ta;
-                break;
-            }
         }
-        */
+        }
+
+        
         return address.trim();
-    }//fixNumericStreetSuffixes
+    }
 
     public static String[] extractApartment(String add)
     {
@@ -132,11 +113,11 @@ public class StrUtil
    	 
         add = " " + add.toLowerCase() + " ";
 
-     // U.log("*************"+add);
+     
         for (String[] pair : unitRegexMap)
         {
             String v = StrUtil.extractPattern(add, pair[1], 2);
-           //U.log("extractApartment pair[1]:"+pair[1] + " v:"+v);
+           
 
             if (!StrUtil.isEmpty(v) && (StrUtil.containsNum(v) || v.length() == 1))
             {
@@ -145,7 +126,7 @@ public class StrUtil
                 {
                     v = arr[0];
                 }
-           //U.log("extractApartment pair[0]:"+pair[0] + " v:"+v);
+           
                 return new String[] { pair[0].trim(), v.trim() };
             }
         }
@@ -173,7 +154,7 @@ public class StrUtil
 
         return arr;
 
-    }// extractApartment()
+    }
 
     public static String removeUnitFromAddress(String add)
     {
@@ -183,9 +164,9 @@ public class StrUtil
         add = " " + add.toLowerCase() + " ";
         for (String[] pair : unitRegexMap)
         {
-        	//U.log(pair[1]);
+        
             add = add.replaceFirst(pair[1], "");
-          // U.log("**********"+add);
+        
         }
 
         return add.trim();
@@ -198,7 +179,7 @@ public class StrUtil
             Double.parseDouble(s);
         } catch (NumberFormatException nfe)
         {
-        	//U.log(nfe);
+        	
             return false;
         }
         return true;
@@ -224,11 +205,11 @@ public class StrUtil
 
     public static String removeNonNumber(String phone)
     {
-        // return phone;
+       
         String[] arr = phone.split("[^\\d]");
         return arr[arr.length - 1];
 
-        // return phone.replaceAll("[^\\d]", "");
+        
     }
 
     public static String[] convertToStringArr(Object[] rowObjects, int maxColns)
@@ -240,7 +221,7 @@ public class StrUtil
         }
         return rowStrings;
 
-    }// convertToStringArr()
+    }
 
     public static boolean containsString(String num)
     {
@@ -270,7 +251,7 @@ public class StrUtil
 
     public static ArrayList<String> getFipsForStateCode(String stateCode) throws IOException{
         ArrayList<String> list = new ArrayList<String>();
-        //String stateCode = U.getStateCode(state);
+        
         ArrayList<String> fipsArr = getFips();
         for (String fips : fipsArr)
         {
@@ -279,13 +260,13 @@ public class StrUtil
         }
 
         return list;
-    }//getFipsForState
+    }
     
 
     public static boolean containsOnlyAlphaAndSpaces(String address1)
     {
         String s = address1.toLowerCase().replaceAll("[a-z ]", "");
-        // U.log("containsOnlyAlphaAndSpaces:"+s);
+        
         return s.length() == 0;
     }
 

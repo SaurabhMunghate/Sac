@@ -1,3 +1,10 @@
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
 package com.shatam.geo;
 
 import java.io.File;
@@ -21,96 +28,86 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.index.ItemVisitor;
 import com.vividsolutions.jts.index.quadtree.Quadtree;
 
-public class ReadShapeFile
-{
-    private Quadtree           quad = new Quadtree();
-    private ShapefileDataStore sfds;
-    private String keepField; 
+public class ReadShapeFile {
+	private Quadtree quad = new Quadtree();
+	private ShapefileDataStore sfds;
+	private String keepField;
 
-    public ArrayList<String> query(final Object oGeo)
-    {
-        final Geometry geo = (Geometry)oGeo;
-        final ArrayList<String> arr = new ArrayList<String>();
-        quad.query(geo.getEnvelopeInternal(), new ItemVisitor() {
+	public ArrayList<String> query(final Object oGeo) {
+		final Geometry geo = (Geometry) oGeo;
+		final ArrayList<String> arr = new ArrayList<String>();
+		quad.query(geo.getEnvelopeInternal(), new ItemVisitor() {
 
-            @Override
-            public void visitItem(Object arrObj)
-            {
-                Geometry geo2 = (Geometry)((Object [])arrObj)[0];
-                
-                if (geo.intersects(geo2))
-                {
-                    String zip = (String)((Object [])arrObj)[1];
-                    int index = Integer.parseInt( ((Object [])arrObj)[1].toString());
-                    arr.add(zip);
-                }
-            }
-        });
+			@Override
+			public void visitItem(Object arrObj) {
+				Geometry geo2 = (Geometry) ((Object[]) arrObj)[0];
 
-        return arr;
+				if (geo.intersects(geo2)) {
+					String zip = (String) ((Object[]) arrObj)[1];
+					int index = Integer.parseInt(((Object[]) arrObj)[1]
+							.toString());
+					arr.add(zip);
+				}
+			}
+		});
 
-    }// query()
+		return arr;
 
-    
-    
-    public static void iterate(ArrayList<File> files, String [] getFields, Observer observer) throws Exception
-    {
-        File file =  null;
-        for (File f: files){
-            if (f.getName().endsWith("shp")){
-                file = f;
-                break;
-            }
-        }
+	}
 
-        
-        ShapefileDataStore sfds = new ShapefileDataStore(file.toURL());
-        SimpleFeatureIterator itr = sfds.getFeatureSource().getFeatures().features();
-        int i = 0;
-        HashMap<String, Object> map = new HashMap<String, Object>();
-        while (itr.hasNext())
-        {
-            SimpleFeature feature = itr.next();
-            Geometry geo = (Geometry) feature.getDefaultGeometry();
-            map.put("_GEOMETRY", geo);
-            map.put("_ROW", i);
-            i++;
-            
-            for (String field: getFields){
-                map.put(field, feature.getAttribute(field)); 
-            }//for 
-            
-            observer.update(null, map);
-        }//while
-    }
-    
-    public ReadShapeFile(File file, String keepField ) throws Exception
-    {
-        this.keepField = keepField;
+	public static void iterate(ArrayList<File> files, String[] getFields,
+			Observer observer) throws Exception {
+		File file = null;
+		for (File f : files) {
+			if (f.getName().endsWith("shp")) {
+				file = f;
+				break;
+			}
+		}
 
-        sfds = new ShapefileDataStore(file.toURL());
+		ShapefileDataStore sfds = new ShapefileDataStore(file.toURL());
+		SimpleFeatureIterator itr = sfds.getFeatureSource().getFeatures()
+				.features();
+		int i = 0;
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		while (itr.hasNext()) {
+			SimpleFeature feature = itr.next();
+			Geometry geo = (Geometry) feature.getDefaultGeometry();
+			map.put("_GEOMETRY", geo);
+			map.put("_ROW", i);
+			i++;
 
-        SimpleFeatureIterator itr = sfds.getFeatureSource().getFeatures().features();
+			for (String field : getFields) {
+				map.put(field, feature.getAttribute(field));
+			}
 
-        int i = 0;
-        while (itr.hasNext())
-        {
-            SimpleFeature feature = itr.next();
-            Geometry geo = (Geometry) feature.getDefaultGeometry();
-            Envelope env = geo.getEnvelopeInternal();
-            Geometry convexHullGeo = (new ConvexHull(geo)).getConvexHull();
-            quad.insert(env, new Object[]{convexHullGeo, feature.getAttribute(this.keepField), ""+i });
+			observer.update(null, map);
+		}
+	}
 
-            i++;
-            // for (String name: keepFields){
-            // feature.getAttribute(name);
-            // }
-        }
+	public ReadShapeFile(File file, String keepField) throws Exception {
+		this.keepField = keepField;
 
-        // f = new ShapefileReader(new ShpFiles(shp), true, true, new
-        // GeometryFactory());
+		sfds = new ShapefileDataStore(file.toURL());
 
-    }// ReadShapeFile
+		SimpleFeatureIterator itr = sfds.getFeatureSource().getFeatures()
+				.features();
 
+		int i = 0;
+		while (itr.hasNext()) {
+			SimpleFeature feature = itr.next();
+			Geometry geo = (Geometry) feature.getDefaultGeometry();
+			Envelope env = geo.getEnvelopeInternal();
+			Geometry convexHullGeo = (new ConvexHull(geo)).getConvexHull();
+			quad.insert(
+					env,
+					new Object[] { convexHullGeo,
+							feature.getAttribute(this.keepField), "" + i });
+
+			i++;
+
+		}
+
+	}
 
 }

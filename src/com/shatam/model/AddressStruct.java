@@ -1,8 +1,14 @@
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
 package com.shatam.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 
 import com.shatam.util.AbbrReplacement;
@@ -12,10 +18,8 @@ import com.shatam.util.U;
 
 public class AddressStruct implements Comparable<AddressStruct> {
 
-	// @XStreamOmitField
 	private HashMap<AddColumns, String> fields = new HashMap<AddColumns, String>();
 
-	// @XStreamOmitField
 	public float hitScore;
 
 	private String houseNumber = "99";
@@ -27,7 +31,7 @@ public class AddressStruct implements Comparable<AddressStruct> {
 	public int _hnDistance = Integer.MAX_VALUE;
 	public String unitTypeFromInputAddress;
 	private String DATASOURCE;
-	
+
 	private String unitType;
 	private String lowNoZipPlus4 = null;
 	private String highNoZipPlus4 = null;
@@ -47,30 +51,22 @@ public class AddressStruct implements Comparable<AddressStruct> {
 			this.calculateSecondaryElements();
 		return unitType;
 	}
+
 	public String getUnitTypeFromInput() {
 		if (!unitTypeAndZipCalculated)
 			this.unitTypeFromInput();
 		return unitType;
 	}
+
 	public String getZip4() {
 		if (!unitTypeAndZipCalculated)
 			this.calculateSecondaryElements();
 		return this.lowNoZipPlus4;
 	}
 
-	/*
-	 * public String getHighZip4() { if (!unitTypeAndZipCalculated)
-	 * this.calculateSecondaryElements(); return this.highNoZipPlus4; }
-	 */
+	public static String getshortForm(String s, String state, AddColumns col)
+			throws Exception {
 
-	/*
-	 * public String TLID; public int FROMHN; public int TOHN; public String
-	 * ZIP; public String PREDIRABRV; public String SUFDIRABRV; public String
-	 * SUFTYPABRV; public String PREQUALABR; public String NAME; public String
-	 * PRETYPABRV; public String CITY;
-	 */
-public static String getshortForm(String s,String state,AddColumns col) throws Exception{
-	
 		String v = U._toStr(s);
 
 		if (state != null) {
@@ -86,10 +82,9 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 			}
 		}
 		return v;
-	
-}
-	
-	
+
+	}
+
 	public void put(AddColumns col, Object vo) throws Exception {
 		String v = U._toStr(vo);
 
@@ -98,20 +93,15 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 			if (col.name().startsWith("PRE")) {
 				v = AbbrReplacement.getFullName(v, AbbrReplacement.PREFIX,
 						state);
-			
-
 			} else if (col.name().startsWith("SUF")) {
 				v = AbbrReplacement.getFullName(v, AbbrReplacement.SUFFIX,
 						state);
-
-
 			}
 		}
 		fields.put(col, v);
 	}
 
 	public String get(AddColumns col) {
-
 		String v = fields.get(col);
 		return U._toStr(v);
 	}
@@ -123,14 +113,10 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 	}
 
 	public void close() {
-
 		fields.clear();
-		// shatamIndexQueryString = null;
-
 	}
 
 	public String getState() {
-
 		return state;
 	}
 
@@ -158,12 +144,12 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 
 		buf.trimToSize();
 		return buf;
-	}// toStreetName()
+	}
 
 	public StringBuffer toOnlyStreet2() {
 		StringBuffer buf = new StringBuffer();
 		if (!StrUtil.isEmpty(this.inputAddress)) {
-			// buf.append(this.houseNumber);
+
 			_a(buf, AddColumns.PREDIRABRV);
 			_a(buf, AddColumns.PREQUALABR);
 			_a(buf, AddColumns.PRETYPABRV);
@@ -184,7 +170,7 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 
 		buf.trimToSize();
 		return buf;
-	}// toStreetName()
+	}
 
 	public String toFullAddressString2() {
 		StringBuffer buf = this.toOnlyStreet();
@@ -193,7 +179,7 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 		buf.append(" ").append(this.get(AddColumns.ZIP));
 
 		if (!StrUtil.isEmpty(this.getZip4())) {
-			// buf.append("-").append(this.getZip4());
+
 		}
 
 		return buf.toString().trim().toUpperCase();
@@ -206,7 +192,7 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 		buf.append(" ").append(this.get(AddColumns.ZIP));
 
 		if (!StrUtil.isEmpty(this.getZip4())) {
-			// buf.append("-").append(this.getZip4());
+
 		}
 
 		return buf.toString().trim().toUpperCase();
@@ -219,46 +205,28 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 		buf.append(" ").append(this.get(AddColumns.ZIP));
 
 		if (!StrUtil.isEmpty(this.getZip4())) {
-			// buf.append("-").append(this.getZip4());
+
 		}
 
 		return buf.toString().trim().toUpperCase();
 	}
-     private void unitTypeFromInput(){
-	if (StrUtil.isEmpty(unitType)
-			|| unitTypeFromInputAddress.trim().equalsIgnoreCase("PO BOX")) {
-		this.unitType = unitTypeFromInputAddress;
+
+	private void unitTypeFromInput() {
+		if (StrUtil.isEmpty(unitType)
+				|| unitTypeFromInputAddress.trim().equalsIgnoreCase("PO BOX")) {
+			this.unitType = unitTypeFromInputAddress;
+		}
 	}
-}
+
 	private void calculateSecondaryElements() {
 
-		 //U.log("unitTypeFromInputAddress:"+unitTypeFromInputAddress);
-
 		ArrayList<_USPSSecondaryStruct> allLines = getAllDataLines();
-		//U.log(allLines);
-		//U.log(allLines.size());
-//		for (int i = 0; i < allLines.size(); i++) {
-//			if (i > 10)
-//				break;
-//			// U.log("SORTED Line: " + allLines.get(i).toString());
-//		}
 
 		this.unitType = null;
 		this.lowNoZipPlus4 = null;
 		this.highNoZipPlus4 = null;
 
-		/*
-		 * if (StrUtil.isEmpty(unitNumber)) { for (_USPSSecondaryStruct
-		 * secStruct : allLines) { if
-		 * (StrUtil.isEmpty(secStruct.addrSecondaryAbbr)){ this.lowNoZipPlus4 =
-		 * secStruct.lowNoZipPlus4; this.highNoZipPlus4 =
-		 * secStruct.highNoZipPlus4; unitTypeAndZipCalculated = true; return; }
-		 * } }
-		 */
-
 		for (_USPSSecondaryStruct secStruct : allLines) {
-			// if (StrUtil.isEmpty(unitNumber) &&
-			// StrUtil.isEmpty(secStruct.addrSecondaryAbbr))
 
 			if (StrUtil.isEmpty(unitNumber)
 					|| secStruct.isUnitInRange(unitNumber)) {
@@ -271,7 +239,7 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 				break;
 			}
 
-		} // for line
+		}
 
 		if (StrUtil.isEmpty(unitType)) {
 			for (_USPSSecondaryStruct secStruct : allLines) {
@@ -286,7 +254,7 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 			this.unitType = unitTypeFromInputAddress;
 		}
 
-	}// calculateSecondaryElements()
+	}
 
 	private static final int _SEC_LINES_LEVELS = 4;
 
@@ -320,23 +288,8 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 					break;
 				}
 			}
-			/*
-			 * if (secStruct.isHouseNumInRange(houseNumber)) { int levelI = 0;
-			 * lists.get(levelI++).add(secStruct); if
-			 * (secStruct.isOnSameSideOfRoad(houseNumber)) {
-			 * lists.get(levelI++).add(secStruct);
-			 * //U.log("StrUtil.isEmpty("+unitNumber
-			 * +") && StrUtil.isEmpty("+secStruct.addrSecondaryAbbr+"):" +
-			 * (StrUtil.isEmpty(unitNumber) &&
-			 * StrUtil.isEmpty(secStruct.addrSecondaryAbbr))); if
-			 * (StrUtil.isEmpty(unitNumber) &&
-			 * StrUtil.isEmpty(secStruct.addrSecondaryAbbr)) {
-			 * lists.get(levelI++).add(secStruct); if
-			 * (secStruct.isSameHouseNumAsStartAndEnd(houseNumber)) {
-			 * lists.get(levelI++).add(secStruct); } } } }
-			 */
 
-		} // for line
+		}
 
 		ArrayList<_USPSSecondaryStruct> allLines = lists.get(0);
 		for (int i = lists.size() - 1; i >= 0; i--) {
@@ -346,47 +299,31 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 			}
 		}
 
-		// U.log("houseNumber:" + houseNumber + "  unitNumber:" + unitNumber);
-
 		Collections.sort(allLines, new SecondaryAddressComparator(houseNumber,
 				unitNumber));
 
 		return allLines;
 
-	}// getAllDataLines()
+	}
 
 	public String[] toSplitAddress() {
-		/*
-		 * StringBuffer buf = this.toOnlyStreet();
-		 * buf.append(" ").append(this.get(AddColumns.CITY));
-		 * buf.append(" ").append(U.STATE_NAME_MAP.get(this.getState()));
-		 * buf.append(" ").append(this.get(AddColumns.ZIP));
-		 * 
-		 * if (!StrUtil.isEmpty(this.getZip4())) {
-		 * //buf.append("-").append(this.getZip4()); }
-		 * 
-		 * return buf.toString().trim().toUpperCase();
-		 */
+
 		String pre = this.get(AddColumns.PREDIRABRV);
 		String post = this.get(AddColumns.SUFDIRABRV);
 		String street = this.get(AddColumns.NAME);
 		String city = this.get(AddColumns.CITY);
 		String zip = this.get(AddColumns.ZIP);
 		String state = this.state;
-
 		String arr[] = new String[] { pre, street, post, city, state, zip };
-
 		return arr;
 	}
 
 	private void _a(StringBuffer buf, AddColumns col) {
 		String v = this.get(col);
 		if (!StrUtil.isEmpty(v)) {
-			// U.log(col.name() + " = " + v);
-			// if (col.name().equalsIgnoreCase("PRETYPABRV") &&
-			// v.equalsIgnoreCase("HIGHWAY"))
+
 			if (col.name().equalsIgnoreCase("PRETYPABRV")) {
-				// keep it as is.
+
 			} else if (col.name().startsWith("PRE")) {
 				v = AbbrReplacement.getAbbr(v, AbbrReplacement.PREFIX, state);
 			} else if (col.name().startsWith("SUF")) {
@@ -399,18 +336,18 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 			if (buf.length() > 0)
 				buf.append(" ");
 			buf.append(v);
-		}// if
+		}
 
-	}// _a()
+	}
 
 	public void makeCopy(AddressStruct from) throws Exception {
 		for (AddColumns col : AddColumns.values()) {
 			put(col, from.get(col));
-		}// AddColumns col
+		}
 		this.latitude = from.latitude;
 		this.longitude = from.longitude;
 
-	}// makeCopy
+	}
 
 	public boolean isGoodLatLon() {
 		boolean badLoc = (latitude + "").equals("NaN")
@@ -437,12 +374,13 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 	public ShatamIndexQueryStruct getQueryStruct() {
 		return queryStruct;
 	}
-	public String getLuceneQueryString() {
+
+	public String getShatamQueryString() {
 		return queryStruct.getQuery().toUpperCase();
 	}
-	
+
 	public void setBlank() throws Exception {
-		// this.unitTypeFromInputAddress = "";
+
 		this.setHouseNumber("");
 		this.put(AddColumns.NAME, "");
 		this.put(AddColumns.FULLNAME, "");
@@ -453,7 +391,7 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 		this.put(AddColumns.SUFDIRABRV, "");
 		this.put(AddColumns.SUFQUALABR, "");
 		this.put(AddColumns.SUFTYPABRV, "");
-		// inputAddress = "";
+
 	}
 
 	public String getQueryCity() {
@@ -480,10 +418,9 @@ public static String getshortForm(String s,String state,AddColumns col) throws E
 		StringBuffer buf = this.toOnlyStreet();
 		buf.append(" ").append(this.get(AddColumns.CITY));
 		buf.append(" ").append(this.state);
-		// buf.append(" ").append(this.get(AddColumns.ZIP));
 
 		if (!StrUtil.isEmpty(this.getZip4())) {
-			// buf.append("-").append(this.getZip4());
+
 		}
 
 		return buf.toString().trim().toUpperCase();

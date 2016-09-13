@@ -1,3 +1,10 @@
+/* 
+ * Copyright (C) Shatam Technologies, Nagpur, India (shatam.com) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Shatam development team <info@shatam.com>, Aug 2016
+ * 
+ */
 package com.shatam.geo;
 
 import java.io.File;
@@ -8,31 +15,19 @@ import java.util.Observer;
 
 import org.geotools.data.shapefile.dbf.DbaseFileReader;
 
-import com.shatam.util.U;
+public class ReadDbfFile {
 
-public class ReadDbfFile
-{
+	public static void iterate(File file, Observer observer) throws Exception {
 
-    public static void iterate(File file, Observer observer) throws Exception
-    {
+		FileChannel in = new FileInputStream(file).getChannel();
+		DbaseFileReader r = new DbaseFileReader(in, false,
+				Charset.defaultCharset());
+		while (r.hasNext()) {
+			Object[] objRow = r.readEntry();
+			observer.update(null, objRow);
+		}
 
-        FileChannel in = new FileInputStream(file).getChannel();
-        DbaseFileReader r = new DbaseFileReader(in, false, Charset.defaultCharset());
-        // int fields = r.getHeader().getNumFields();
+		r.close();
 
-        while (r.hasNext())
-        {
-        	//try{
-            Object[] objRow = r.readEntry();
-            observer.update(null, objRow);
-//        	}
-//            catch(Exception e){
-//            	U.log("SIZE ERROR");
-//            }
-        }
-
-        r.close();
-
-
-    }
+	}
 }
