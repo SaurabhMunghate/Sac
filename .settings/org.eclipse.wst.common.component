@@ -2,7 +2,7 @@
     <wb-module deploy-name="Sac">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/shatamIndex"/>
         <property name="context-root" value="Sac"/>
         <property name="java-output-path" value="/Sac/build/classes"/>
     </wb-module>
