@@ -154,7 +154,7 @@ public class ThreadedSAC {
 					schemaobj.message = "";
 					listOutput.add(schemaobj);
 				} else {
-					if (addStruct.size() > 0) {
+					if (addStruct.size() > 0) {						
 						for (int returnOutputSize = 0; returnOutputSize < addStruct
 								.size(); returnOutputSize++) {
 							AddressStruct current = addStruct
@@ -228,16 +228,17 @@ public class ThreadedSAC {
 								schemaobj.state = current.getState();
 							else
 								schemaobj.state = "";
-							String hashcode = current.get(AddColumns.ZIP)
-									+ current.getState();
+							//String hashcode = current.get(AddColumns.ZIP)
+							//		+ current.getState();
 
 							if (current.getState() != null) {
-								String fipsCode = GenerateCache.FIPS
-										.get(hashcode.hashCode() + "");
-
-								if (fipsCode == null)
-									fipsCode = U.STATE_MAP.get(current
-											.getState());
+								//String fipsCode = GenerateCache.FIPS
+								//		.get(hashcode.hashCode() + "");
+								String fipsCode = U.getStateCode(current.getState()) + current.get(AddColumns.COUNTYNO);
+//								if (fipsCode == null)
+//									fipsCode = U.STATE_MAP.get(current
+//											.getState());
+								
 								if (fipsCode.length() == 3)
 									fipsCode = "0" + fipsCode;
 								schemaobj.fipsCode = fipsCode;

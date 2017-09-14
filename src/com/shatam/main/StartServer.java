@@ -25,6 +25,8 @@ public class StartServer {
 		if (args.length > 0)
 			Paths.READ_DATA = args[0];
 
+//		Paths.READ_DATA = "C:\\sac test\\DATA\\";
+//		U.log("Root Path ::"+System.getProperty("user.dir"));
 		Server server = new Server();
 		SelectChannelConnector connector = new SelectChannelConnector();
 		connector.setPort(3309);
@@ -48,7 +50,7 @@ public class StartServer {
 		contexts.setHandlers(new Handler[] { contextState, contextPostData,
 				webapp });
 		server.setHandler(contexts);
-		U.log("SAC v 1.11 Running");
+		U.log("SAC v 1.15 Running");
 		server.start();
 		server.join();
 

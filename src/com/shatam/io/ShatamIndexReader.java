@@ -72,7 +72,7 @@ public class ShatamIndexReader {
 			ShatamIndexQueryStruct shatamIndexQueryStruct,
 			String unitTypeFromInputAddress, String unitNumber, Query query,
 			String key, String indextype, String finalsource,
-			String dataSource, String k1dataSource)
+			String dataSource, String k1dataSource,int maxResult)
 
 	throws Exception {
 
@@ -92,14 +92,14 @@ public class ShatamIndexReader {
 
 		}
 		if (indextype == "k1") {
-			ShatamCachingSingle.k1_reference = query.toString();
+			ShatamCachingSingle.k1_reference = query.toString()+state;
 		}
-		if (ShatamIndexUtil.maxresult == 1) {
+		if (maxResult == 1) {
 			ShatamCachingSingle.newBuilder();
 			if (ShatamCachingSingle.size() > 0) {
 				AddressStruct newStruct = new AddressStruct(state);
 				AddressStruct oldStruct = ShatamCachingSingle.get(query
-						.toString());
+						.toString()+state);
 				if (oldStruct != null) {
 					if (oldStruct.inputAddress != null) {
 						if (oldStruct.inputAddress.equals("No Match Found")) {
@@ -132,13 +132,12 @@ public class ShatamIndexReader {
 			}
 		}
 
-		if (ShatamIndexUtil.maxresult > 1) {
+		if (maxResult > 1) {
 			ShatamCachingList.newBuilder();
 
 			List<AddressStruct> oldlist = ShatamCachingList.get(query
-					.toString());
-			if (oldlist != null) {
-
+					.toString()+state);
+			if (oldlist != null && oldlist.size() == maxResult) {		
 				ArrayList<AddressStruct> newList = new ArrayList<>();
 				for (AddressStruct old : oldlist) {
 
@@ -161,7 +160,7 @@ public class ShatamIndexReader {
 					} else {
 						newAddStruct.hitScore = old.hitScore;
 					}
-					newList.add(newAddStruct);
+					newList.add(newAddStruct);					
 				}
 
 				return newList;
@@ -211,10 +210,10 @@ public class ShatamIndexReader {
 					addStruct._hnDistance = 0;
 					DistanceMatchForResult matcher = new DistanceMatchForResult(
 							addStruct, indexType);
-					if (ShatamIndexUtil.maxresult == 1) {
+					if (maxResult == 1) {
 						{
 							if (matcher.isResultMatched(caseV, key)) {
-								ShatamCachingSingle.put(query.toString(),
+								ShatamCachingSingle.put(query.toString()+state,
 										addStruct);
 								addresses.add(addStruct);
 
@@ -234,18 +233,18 @@ public class ShatamIndexReader {
 					else {
 						if (indexType.getFieldName().contains("k1")
 								&& dataSource.contains(k1dataSource)) {
-							if (addressesk1.size() != ShatamIndexUtil.maxresult)
+							if (addressesk1.size() != maxResult)
 								addressesk1.add(addStruct);
-							if (addressesk1.size() == ShatamIndexUtil.maxresult)
+							if (addressesk1.size() == maxResult)
 								mapOfAddresses.put(key, addressesk1);
 						}
 
 						if (!indexType.getFieldName().contains("k1")
 								&& dataSource.contains(k1dataSource)
 								&& mapOfAddresses.get(key) == null) {
-							if (addressesk1.size() != ShatamIndexUtil.maxresult)
+							if (addressesk1.size() != maxResult)
 								addressesk1.add(addStruct);
-							if (addressesk1.size() == ShatamIndexUtil.maxresult)
+							if (addressesk1.size() == maxResult)
 								mapOfAddresses.put(key, addressesk1);
 						}
 
@@ -256,7 +255,7 @@ public class ShatamIndexReader {
 								if (i == MAX_HITS) {
 									addresses.add(firstApperanceaddresses
 											.get(0));
-									if (addresses.size() != ShatamIndexUtil.maxresult)
+									if (addresses.size() != maxResult)
 										addresses.add(firstApperanceaddresses
 												.get(1));
 								}
@@ -268,21 +267,22 @@ public class ShatamIndexReader {
 					}
 					exists.put(addStructKey, addStruct);
 				}
-				if (addresses.size() == ShatamIndexUtil.maxresult) {
+				if (addresses.size() == maxResult) {
 					break;
 				}
 			}
-			if (ShatamIndexUtil.maxresult > 1
-					&& addresses.size() == ShatamIndexUtil.maxresult) {
-				ShatamCachingList.put(query.toString(), addresses);
+			if (maxResult > 1
+					&& addresses.size() == maxResult) {
+				ShatamCachingList.put(query.toString()+state, addresses);
 			}
-			if (addresses.size() == ShatamIndexUtil.maxresult) {
+			if (addresses.size() == maxResult) {
 				break;
 			}
 		}
 		if (finalsource.contains(dataSource) && indextype.contains("k5")
-				&& addresses.size() == 0 && ShatamIndexUtil.maxresult > 1) {
+				&& addresses.size() == 0 && maxResult > 1) {
 			addresses = mapOfAddresses.get(key);
+			ShatamCachingList.put(query.toString()+state, addresses);
 		}
 
 		if (addresses == null) {

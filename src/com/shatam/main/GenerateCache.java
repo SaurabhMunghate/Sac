@@ -48,7 +48,7 @@ public class GenerateCache {
 
 	public static void doCache() throws Exception {
 
-		FIPS = getfips();
+		// FIPS = getfips();
 		Iterator iterator = U.STATE_MAP.keySet().iterator();
 		while (iterator.hasNext()) {
 			String state = (String) iterator.next();
@@ -61,7 +61,6 @@ public class GenerateCache {
 					ShatamIndexUtil.readerMap.put(readerKey, reader);
 				}
 			}
-
 		}
 
 	}

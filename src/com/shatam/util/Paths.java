@@ -19,7 +19,9 @@ public class Paths {
 	public static String LOG_PATH = null;
 	public static String READ_DATA = null;
 	static {
+//		U.log("Root Path ::"+System.getProperty("user.dir"));
 		DATA_ROOT = System.getProperty("user.dir");
+		
 		LOG_PATH = new File(DATA_ROOT).getParent();
 		LOG_PATH = combine(LOG_PATH, "LOG");
 		DATA_ROOT = new File(DATA_ROOT).getParent();
@@ -34,6 +36,7 @@ public class Paths {
 	}
 
 	public static String combine(String path1, String path2) {
+
 		File file1 = new File(path1);
 		File file2 = new File(file1, path2);
 		return file2.getPath();

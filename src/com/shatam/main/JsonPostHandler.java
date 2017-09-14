@@ -39,16 +39,15 @@ public class JsonPostHandler extends AbstractHandler {
 	public String state;
 	public String errMsg = null;
 	public String hitscore1 = null;
-	public String maxResults1 = null;
+	public String maxResults11 = null;
 	public String noOfJobs1 = null;
-	public static String disable_enable = "enable";
+	public String disable_enable = "enable";
 	public ThreadedSAC threadedSAC = new ThreadedSAC();
 
 	@Override
 	public void handle(String target, Request baseRequest,
 			HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
-
 		response.setContentType("text/html;charset=utf-8");
 		response.setStatus(HttpServletResponse.SC_OK);
 		baseRequest.setHandled(true);
@@ -85,8 +84,10 @@ public class JsonPostHandler extends AbstractHandler {
 
 			Date date = new Date();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
 			String ROOT = System.getProperty("user.dir");
 			String PATH = new File(ROOT).getParent() + "/LOG/";
+
 			File file = new File(PATH + dateFormat.format(date) + ".txt");
 			BufferedWriter out = new BufferedWriter(new FileWriter(file, true));
 			InetAddress IP = InetAddress.getLocalHost();
@@ -247,13 +248,13 @@ public class JsonPostHandler extends AbstractHandler {
 			String maxResults, String noOfJobs, String dataSource, boolean flag)
 			throws Exception {
 		hitscore1 = hitscore;
-		maxResults1 = maxResults;
-		long sactime1 = System.currentTimeMillis();
+		//maxResults1 = maxResults;
+		//long sactime1 = System.currentTimeMillis();
 		org.json.JSONArray outputArry = threadedSAC.processByParts(addList,
-				hitscore1, maxResults1, noOfJobs, dataSource, flag);
-		long sactime2 = System.currentTimeMillis();
-		String text = "\nTotal one state SAC time=" + (sactime2 - sactime1);
-		U.writeFile(text);
+				hitscore1, maxResults, noOfJobs, dataSource, flag);
+		//long sactime2 = System.currentTimeMillis();
+		//String text = "\nTotal one state SAC time=" + (sactime2 - sactime1);
+		//U.writeFile(text);
 		return outputArry;
 
 	}

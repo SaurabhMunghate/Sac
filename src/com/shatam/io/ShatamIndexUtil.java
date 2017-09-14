@@ -43,7 +43,7 @@ public class ShatamIndexUtil {
 	public static HashMap<String, ShatamIndexReader> readerMap = new HashMap<>();
 	public static HashMap<String, ShatamIndexWriter> writerMap;
 
-	public static int maxresult;
+	//public static int maxresult;
 
 	public ShatamIndexWriter getWriter(final String fips,
 			final String dataSource) throws Exception {
@@ -70,7 +70,7 @@ public class ShatamIndexUtil {
 	static long ss1, ee1;
 	static ArrayList<Long> queryTime = new ArrayList<Long>();
 	static ArrayList<Long> searcherTime = new ArrayList<Long>();
-
+    static Object lock = new Object();
 	public MultiMap correctAddresses(MultiMap multimap1,
 			final AbstractIndexType indexType1, final String dataSource1,
 			String maxresult, String hitscore, String noOfJobs,
@@ -140,7 +140,7 @@ public class ShatamIndexUtil {
 
 					final MultiMap multimap = multimap1;
 
-					ShatamIndexUtil.maxresult = Integer.parseInt(maxresult);
+					//ShatamIndexUtil.maxresult = Integer.parseInt(maxresult);
 					ArrayList<AddressStruct> resultAddsDisplay = new ArrayList<AddressStruct>();
 
 					ss = System.currentTimeMillis();
@@ -192,7 +192,7 @@ public class ShatamIndexUtil {
 						if (reader == null) {
 							U.log("OMG reader=null");
 						}
-						synchronized (output) {
+						synchronized (lock) {
 
 							try {
 
@@ -200,7 +200,7 @@ public class ShatamIndexUtil {
 										shatamIndexQueryStruct, unitType,
 										unitNumber, query, key,
 										indexType.getFieldName(), source,
-										dataSource, k1DataSource);
+										dataSource, k1DataSource,Integer.parseInt(maxresult));
 
 							} catch (Exception e1) {
 								U.log("exception in read addresses==" + e1);
@@ -217,7 +217,7 @@ public class ShatamIndexUtil {
 								output.put(key, (String) list.get(5));
 								output.put(key, list);
 							}
-							if (addresses.size() == ShatamIndexUtil.maxresult) {
+							if (addresses.size() == Integer.parseInt(maxresult)) {
 								output.put(key, addresses);
 								output.put(key, (String) list.get(5));
 								output.put(key, list);

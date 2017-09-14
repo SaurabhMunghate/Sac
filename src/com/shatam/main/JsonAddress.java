@@ -14,7 +14,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.http.HttpRequest;
 import org.json.JSONArray;
+
 
 import com.shatam.util.U;
 
@@ -35,8 +39,8 @@ public class JsonAddress {
 		while ((sCurrentLine = br.readLine()) != null) {
 			textEntered = sCurrentLine;
 			JsonAddress md = new JsonAddress();
-			outputObj = md.jsonAddress(textEntered, hitscore, maxResults,
-					noOfJobs, dataSource, false);
+			//outputObj = md.jsonAddress(textEntered, hitscore, maxResults,
+			//		noOfJobs, dataSource, false);
 		}
 		if (br != null)
 			br.close();
@@ -107,6 +111,7 @@ public class JsonAddress {
 		}
 		long e = System.currentTimeMillis();
 		flag = true;
+		//========= End =================
 		U.log("Total SAC TIME::" + (e - s));
 		U.log("Number of INPUT addresses==" + inputAddressCount);
 		U.log("Number of OUTPUT addresses===" + noOfOutput);

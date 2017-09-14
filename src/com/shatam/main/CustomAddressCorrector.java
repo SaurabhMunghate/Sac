@@ -19,11 +19,11 @@ public class CustomAddressCorrector {
 			String dataSource, boolean flag) throws Exception {
 		@SuppressWarnings("deprecation")
 		MultiMap returnoutput = new MultiHashMap();
-		long s = System.currentTimeMillis();
+		//long s = System.currentTimeMillis();
 		ShatamIndexUtil shatamIndexUtil = new ShatamIndexUtil();
 		returnoutput = shatamIndexUtil.correctAddresses(multimap, null, null,
 				maxresult, hitscore, noOfJobs, dataSource, flag);
-		long e = System.currentTimeMillis();
+		//long e = System.currentTimeMillis();
 		return returnoutput;
 
 	}
