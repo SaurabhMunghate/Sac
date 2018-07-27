@@ -30,6 +30,7 @@ import com.shatam.model.AddColumns;
 import com.shatam.model.AddressStruct;
 import com.shatam.shatamindex.search.Query;
 import com.shatam.util.AbbrReplacement;
+import com.shatam.util.BoostAddress;
 import com.shatam.util.DistanceMatchForResult;
 import com.shatam.util.ShatamCachingSingle;
 import com.shatam.util.OutputStatusCode;
@@ -43,7 +44,7 @@ public class ThreadedSAC {
 
 	public org.json.JSONArray processByParts(ArrayList<InputJsonSchema> arr,
 			final String hitscor, String maxResult, String noOfJobs,
-			String dataSource, boolean flag) throws Exception {
+			String dataSource, boolean flag, int distanceCriteria, BoostAddress boostAddress) throws Exception {
 
 		String hitscore = hitscor;
 		final String maxResults = maxResult;
@@ -61,7 +62,7 @@ public class ThreadedSAC {
 		MultiMap finalresult = null;
 		try {
 			finalresult = customAddressCorrector.corrUsingAppropriateIndex(
-					multiMap, maxResults, hitscor, noOfJobs, dataSource, flag);
+					multiMap, maxResults, hitscor, noOfJobs, dataSource, flag, distanceCriteria, boostAddress);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
@@ -97,7 +98,7 @@ public class ThreadedSAC {
 			try {
 				finalresult = customAddressCorrector.corrUsingAppropriateIndex(
 						semimultiMap, maxResults, hitscor, noOfJobs,
-						dataSource, flag);
+						dataSource, flag, distanceCriteria, boostAddress);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -152,9 +153,11 @@ public class ThreadedSAC {
 					schemaobj.score = 0;
 					schemaobj.datasource = "";
 					schemaobj.message = "";
+					schemaobj.secondary_designator = "";
+					schemaobj.secondary_number = "";
 					listOutput.add(schemaobj);
 				} else {
-					if (addStruct.size() > 0) {						
+					if (addStruct.size() > 0) {
 						for (int returnOutputSize = 0; returnOutputSize < addStruct
 								.size(); returnOutputSize++) {
 							AddressStruct current = addStruct
@@ -182,6 +185,8 @@ public class ThreadedSAC {
 								schemaobj.score = 0;
 								schemaobj.datasource = "";
 								schemaobj.message = "";
+								schemaobj.secondary_designator = "";
+								schemaobj.secondary_number = "";
 								listOutput.add(schemaobj);
 								continue;
 							}
@@ -204,6 +209,13 @@ public class ThreadedSAC {
 							JsonSchema schemaobj = new JsonSchema();
 							schemaobj.key = addkey;
 							schemaobj.address = getCompleteStreet(current);
+
+							if (!StrUtil.isEmpty(current.unitNumber)) {
+								schemaobj.secondary_designator = current
+										.getUnitType();
+								schemaobj.secondary_number = current.unitNumber;
+							}
+
 							schemaobj.house_number = current.getHouseNumber();
 							schemaobj.prefix_direction = standrdForm(
 									current.get(AddColumns.PREDIRABRV),
@@ -228,17 +240,19 @@ public class ThreadedSAC {
 								schemaobj.state = current.getState();
 							else
 								schemaobj.state = "";
-							//String hashcode = current.get(AddColumns.ZIP)
-							//		+ current.getState();
+							// String hashcode = current.get(AddColumns.ZIP)
+							// + current.getState();
 
 							if (current.getState() != null) {
-								//String fipsCode = GenerateCache.FIPS
-								//		.get(hashcode.hashCode() + "");
-								String fipsCode = U.getStateCode(current.getState()) + current.get(AddColumns.COUNTYNO);
-//								if (fipsCode == null)
-//									fipsCode = U.STATE_MAP.get(current
-//											.getState());
-								
+								// String fipsCode = GenerateCache.FIPS
+								// .get(hashcode.hashCode() + "");
+								String fipsCode = U.getStateCode(current
+										.getState())
+										+ current.get(AddColumns.COUNTYNO);
+								// if (fipsCode == null)
+								// fipsCode = U.STATE_MAP.get(current
+								// .getState());
+
 								if (fipsCode.length() == 3)
 									fipsCode = "0" + fipsCode;
 								schemaobj.fipsCode = fipsCode;
@@ -293,7 +307,7 @@ public class ThreadedSAC {
 										.replaceAll(" ", "");
 								String cityobserverCity = com.shatam.util.Util.cityObserver
 										.get(cityWithoutSpace.toUpperCase()
-												.trim());
+												.trim() + schemaobj.zip);
 
 								if (cityobserverCity != null) {
 									schemaobj.message = "City name standardized";
@@ -332,6 +346,8 @@ public class ThreadedSAC {
 						schemaobj.score = 0;
 						schemaobj.datasource = "";
 						schemaobj.message = "";
+						schemaobj.secondary_designator = "";
+						schemaobj.secondary_number = "";
 						listOutput.add(schemaobj);
 					}
 				}
@@ -686,6 +702,9 @@ public class ThreadedSAC {
 					arrr.add("FALSE");
 
 				arrr.add(obj.message);
+				arrr.add(obj.secondary_designator);
+				arrr.add(obj.secondary_number);
+				
 				jsonColl.put(arrr);
 			}
 		} else {
@@ -746,8 +765,7 @@ public class ThreadedSAC {
 					return (DistanceMatchForResult.jaroMatch(inputHashKey,
 							outputHashKeyAddress)) * 100;
 				}
-			}
-			else {
+			} else {
 
 			}
 		} catch (Exception e) {

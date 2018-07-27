@@ -34,8 +34,11 @@ public class U {
 
 	public static final boolean DO_GEOCODE = false;
 	public static final int MAX_SEARCH_RESULTS_ALLOWED = 3;
+
 	public static final String ZIP_ENHANCE = "^4";
+//	public static String ZIP_ENHANCE = "^4";
 	public static String CITY_ENHANCE = "^4";
+	
 	public static String STREET_ENHANCE = "^5";
 
 	public static final String USPS = "USPS";
@@ -43,6 +46,7 @@ public class U {
 	public static String ROOT = System.getProperty("user.dir");
 	public static String PATH = new File(ROOT).getParent() + "/LOG/";
 
+	
 	public static void disp(AddressStruct addStruct) throws Exception {
 
 	}

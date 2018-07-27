@@ -33,6 +33,7 @@ import org.json.JSONObject;
 import com.data.main.Logger;
 import com.shatam.model.AddColumns;
 import com.shatam.model.AddressStruct;
+import com.shatam.util.BoostAddress;
 import com.shatam.util.U;
 
 public class JsonPostHandler extends AbstractHandler {
@@ -43,7 +44,7 @@ public class JsonPostHandler extends AbstractHandler {
 	public String noOfJobs1 = null;
 	public String disable_enable = "enable";
 	public ThreadedSAC threadedSAC = new ThreadedSAC();
-
+//	public int distanceCriteria = 0;
 	@Override
 	public void handle(String target, Request baseRequest,
 			HttpServletRequest request, HttpServletResponse response)
@@ -77,6 +78,35 @@ public class JsonPostHandler extends AbstractHandler {
 			String noOfJobs = inputJSon.get("jobs").toString().trim();
 			String dataSource = inputJSon.get("data").toString().trim();
 			disable_enable = inputJSon.get("log").toString().trim();
+
+			/**
+			 * @author Sawan
+			 */
+			String distCriteria = "";
+//			try{
+//				distCriteria = inputJSon.get("distance_criteria").toString().trim();
+//			}catch(JSONException e){}
+			
+			String cityWeight = "";
+			try{
+				cityWeight = inputJSon.get("city_weight").toString().trim();
+			}catch(JSONException e){}
+			
+			String zipWeight = "";
+			try{
+				zipWeight = inputJSon.get("zip_weight").toString().trim();
+			}catch(JSONException e){}
+			
+			if(cityWeight.isEmpty() || cityWeight.length() == 0 || cityWeight == null)cityWeight = "4";
+			if(zipWeight.isEmpty() || zipWeight.length() == 0 || zipWeight == null)zipWeight = "4";
+			
+			if(distCriteria.trim().isEmpty() || distCriteria.trim().length()<=1 || distCriteria.trim().length()>3 || distCriteria == null)distCriteria="0";
+			
+			int distanceCriteria = Integer.parseInt(distCriteria);
+			int cityBoost = Integer.parseInt(cityWeight);
+			int zipBoost = Integer.parseInt(zipWeight);
+			/***/
+			
 			String value = evaluateJson(inputData, count, noOfJobs);
 
 			if (value != null)
@@ -101,7 +131,7 @@ public class JsonPostHandler extends AbstractHandler {
 			JsonAddress md = new JsonAddress();
 			try {
 				outputObj = md.jsonAddress(inputData, "", count, noOfJobs,
-						dataSource, false);
+						dataSource, false,distanceCriteria, cityBoost, zipBoost); //, distanceCriteria, 4, 3
 			} catch (Exception e) {
 				U.log("Output obj null'");
 				e.getMessage();
@@ -245,13 +275,13 @@ public class JsonPostHandler extends AbstractHandler {
 
 	public org.json.JSONArray processJsonFileforSAC(
 			ArrayList<InputJsonSchema> addList, String hitscore,
-			String maxResults, String noOfJobs, String dataSource, boolean flag)
+			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria, BoostAddress boostAddress)
 			throws Exception {
 		hitscore1 = hitscore;
 		//maxResults1 = maxResults;
 		//long sactime1 = System.currentTimeMillis();
 		org.json.JSONArray outputArry = threadedSAC.processByParts(addList,
-				hitscore1, maxResults, noOfJobs, dataSource, flag);
+				hitscore1, maxResults, noOfJobs, dataSource, flag, distanceCriteria, boostAddress);
 		//long sactime2 = System.currentTimeMillis();
 		//String text = "\nTotal one state SAC time=" + (sactime2 - sactime1);
 		//U.writeFile(text);

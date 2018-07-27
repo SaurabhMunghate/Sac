@@ -11,9 +11,13 @@ import java.io.File;
 
 public class Paths {
 
-	public static String DATA_ROOT = "C:\\SAC_Raw_Files\\";
+/*	public static String DATA_ROOT = "C:\\SAC_Raw_Files\\";
 	public static String SETTINGS_PATH = "C:\\SAC_Raw_Files\\settings\\";
-
+*/
+	
+	public static String DATA_ROOT = "/home/glady/";
+	public static String SETTINGS_PATH  = "/home/glady/Sac_Workspace/Data/settings/";
+	    
 	public static String SQLITE_ROOT = null;
 	public static String ZIP_SHAPE_PATH = null;
 	public static String LOG_PATH = null;

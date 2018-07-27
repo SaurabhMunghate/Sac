@@ -11,18 +11,19 @@ import org.apache.commons.collections.MultiHashMap;
 import org.apache.commons.collections.MultiMap;
 
 import com.shatam.io.ShatamIndexUtil;
+import com.shatam.util.BoostAddress;
 
 public class CustomAddressCorrector {
 
 	public MultiMap corrUsingAppropriateIndex(MultiMap multimap,
 			String maxresult, String hitscore, String noOfJobs,
-			String dataSource, boolean flag) throws Exception {
+			String dataSource, boolean flag, int distanceCriteria, BoostAddress boostAddress) throws Exception {
 		@SuppressWarnings("deprecation")
 		MultiMap returnoutput = new MultiHashMap();
 		//long s = System.currentTimeMillis();
 		ShatamIndexUtil shatamIndexUtil = new ShatamIndexUtil();
 		returnoutput = shatamIndexUtil.correctAddresses(multimap, null, null,
-				maxresult, hitscore, noOfJobs, dataSource, flag);
+				maxresult, hitscore, noOfJobs, dataSource, flag, distanceCriteria, boostAddress);
 		//long e = System.currentTimeMillis();
 		return returnoutput;
 

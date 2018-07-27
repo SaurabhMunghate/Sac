@@ -24,6 +24,7 @@ import com.shatam.shatamindex.search.ScoreDoc;
 import com.shatam.shatamindex.search.TopDocs;
 import com.shatam.shatamindex.store.FSDirectory;
 import com.shatam.shatamindex.util.Version;
+import com.shatam.util.BoostAddress;
 import com.shatam.util.DistanceMatchForResult;
 import com.shatam.util.ShatamCachingList;
 import com.shatam.util.ShatamCachingSingle;
@@ -72,7 +73,7 @@ public class ShatamIndexReader {
 			ShatamIndexQueryStruct shatamIndexQueryStruct,
 			String unitTypeFromInputAddress, String unitNumber, Query query,
 			String key, String indextype, String finalsource,
-			String dataSource, String k1dataSource,int maxResult)
+			String dataSource, String k1dataSource,int maxResult, int distanceCriteria, BoostAddress boostAddress)
 
 	throws Exception {
 
@@ -170,6 +171,7 @@ public class ShatamIndexReader {
 		if (indextype != "k1")
 			MAX_HITS = 3;
 
+		
 		TopDocs results = searcher.search(query, MAX_HITS);
 		ScoreDoc[] hits = results.scoreDocs;
 		boolean flag = false;
@@ -186,6 +188,8 @@ public class ShatamIndexReader {
 			}
 			for (ScoreDoc hit : hits) {
 				i++;
+				
+				//U.log("hit:"+hit.doc+"\tadd::"+address+"\t"+hit.score);
 				Document doc = searcher.doc(hit.doc);
 				AddressStruct addStruct = new AddressStruct(state);
 				addStruct.inputAddress = address;
@@ -212,7 +216,7 @@ public class ShatamIndexReader {
 							addStruct, indexType);
 					if (maxResult == 1) {
 						{
-							if (matcher.isResultMatched(caseV, key)) {
+							if (matcher.isResultMatched(caseV, key, distanceCriteria, boostAddress)) {
 								ShatamCachingSingle.put(query.toString()+state,
 										addStruct);
 								addresses.add(addStruct);
@@ -250,7 +254,7 @@ public class ShatamIndexReader {
 
 						firstApperanceaddresses.add(addStruct);
 						if (flag == false) {
-							if (matcher.isResultMatched(caseV, key)) {
+							if (matcher.isResultMatched(caseV, key, distanceCriteria, boostAddress)) {
 								addresses.add(addStruct);
 								if (i == MAX_HITS) {
 									addresses.add(firstApperanceaddresses

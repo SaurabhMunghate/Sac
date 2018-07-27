@@ -28,7 +28,8 @@ public class DistanceMatchForResult {
 
 	private static boolean isMatchGoodEnough(String name1,
 			final AddressStruct a, final AbstractIndexType it, String value,
-			String caseVal) throws Exception {
+			String caseVal, int distanceCriteria, BoostAddress boostAddress)
+			throws Exception {
 		JaroWinkler algorithm = new JaroWinkler();
 		String inputStreetAbrv = "";
 		String inputCity = "";
@@ -36,6 +37,16 @@ public class DistanceMatchForResult {
 		String numberWords = "zeroeth|first|second|third|fourth|fifth|sixth|seventh|eighth|nineth"
 				.toUpperCase();
 		q1 = q1.replaceAll("(" + numberWords + ")\\^5 ", "");
+
+		/**
+		 * To check distance criteria
+		 */
+		float threshold = 0f;
+		if (distanceCriteria >= 70 && distanceCriteria <= 100) {
+			threshold = distanceCriteria / 100f;
+		} else {
+			threshold = 90f / 100;
+		}
 
 		StringBuffer buf = new StringBuffer();
 
@@ -75,7 +86,10 @@ public class DistanceMatchForResult {
 			Matcher m = null;
 			int groupNum = 1;
 
-			m = Pattern.compile("([A-Z0-9]+)_CITY\\^4",
+			// m = Pattern.compile("([A-Z0-9]+)_CITY\\^4",
+			// Pattern.CASE_INSENSITIVE).matcher(" " + q1);
+			m = Pattern.compile(
+					"([A-Z0-9]+)_CITY\\" + boostAddress.getCityWeight(),
 					Pattern.CASE_INSENSITIVE).matcher(" " + q1);
 
 			if (groupNum <= 0) {
@@ -99,19 +113,19 @@ public class DistanceMatchForResult {
 		case "approxMatching":
 
 			if (value.equalsIgnoreCase("street")) {
-
+				// 94
 				if (inputAddress != null) {
-
 					if (algorithm.getSimilarity(inputStreetAbrv.toLowerCase()
 							.trim(), street.toLowerCase().trim()) > 0.9)
 						return true;
-
 				}
 			} else {
 
 				if (inputCity != null) {
 
-					if (algorithm.getSimilarity(inputCity.toLowerCase(), name1) > 0.9)
+					// if (algorithm.getSimilarity(inputCity.toLowerCase(),
+					// name1) > 0.9)
+					if (algorithm.getSimilarity(inputCity.toLowerCase(), name1) > threshold)
 						return true;
 					int jaroLastTime = (int) System.currentTimeMillis();
 				}
@@ -122,12 +136,9 @@ public class DistanceMatchForResult {
 		case "contains":
 
 			if (value.equalsIgnoreCase("street")) {
-
 				float f = algorithm.getSimilarity(inputStreetAbrv.trim(),
 						street);
-
 				if (inputStreetAbrv.contains(street) && f > 0.84) {
-
 					return true;
 				} else {
 					return false;
@@ -136,7 +147,9 @@ public class DistanceMatchForResult {
 
 				if (inputCity != null) {
 
-					if (algorithm.getSimilarity(inputCity.toLowerCase(), name1) > 0.9)
+					// if (algorithm.getSimilarity(inputCity.toLowerCase(),
+					// name1) > 0.9)
+					if (algorithm.getSimilarity(inputCity.toLowerCase(), name1) > threshold)
 						return true;
 					int jaroLastTime = (int) System.currentTimeMillis();
 				}
@@ -148,7 +161,7 @@ public class DistanceMatchForResult {
 			if (it.getFieldName().contains("k1")
 					|| it.getFieldName().contains("k2")
 					|| it.getFieldName().contains("k3"))
-				result = isMatchGoodEnough1(name1, a, it, value);
+				result = isMatchGoodEnough1(name1, a, it, value, boostAddress);
 			else
 				result = false;
 
@@ -159,8 +172,8 @@ public class DistanceMatchForResult {
 	}
 
 	private static boolean isMatchGoodEnough1(String name1,
-			final AddressStruct a, final AbstractIndexType it, String value)
-			throws Exception {
+			final AddressStruct a, final AbstractIndexType it, String value,
+			BoostAddress boostAddress) throws Exception {
 		String inputAddress = a.inputAddress.replace(a.getHouseNumber(), "")
 				.trim();
 		JaroWinkler algorithm = new JaroWinkler();
@@ -176,8 +189,10 @@ public class DistanceMatchForResult {
 		if (q1.contains("-"))
 			return true;
 
+		// final String q2 = q1.replace(U.STREET_ENHANCE,
+		// "").replace(U.CITY_ENHANCE, "").replace("_", "");
 		final String q2 = q1.replace(U.STREET_ENHANCE, "")
-				.replace(U.CITY_ENHANCE, "").replace("_", "");
+				.replace(boostAddress.getCityWeight(), "").replace("_", "");
 
 		String q3 = q2.replaceAll("(\\d+)(TH|ST|RD)", "$1");
 
@@ -251,9 +266,12 @@ public class DistanceMatchForResult {
 			m = Pattern.compile("([A-Z]+|[a-z]+)[\\~]?[\\^5]?",
 					Pattern.CASE_INSENSITIVE).matcher(" " + q1);
 		} else {
-			m = Pattern.compile("([A-Z0-9]+)_CITY\\^4",
+			// m =
+			// Pattern.compile("([A-Z0-9]+)_CITY\\^4",Pattern.CASE_INSENSITIVE).matcher(" "
+			// + q1);
+			m = Pattern.compile(
+					"([A-Z0-9]+)_CITY\\" + boostAddress.getCityWeight(),
 					Pattern.CASE_INSENSITIVE).matcher(" " + q1);
-
 		}
 
 		if (groupNum <= 0) {
@@ -371,22 +389,19 @@ public class DistanceMatchForResult {
 		indexType = it;
 	}
 
-	public boolean isResultMatched(String caseVal, String key) throws Exception {
+	public boolean isResultMatched(String caseVal, String key,
+			int distanceCriteria, BoostAddress boostAddress) throws Exception {
 		float score = score(addStruct);
-
-		if (score > 3) {
-
-		}
 
 		final String foundStreet = addStruct.getFoundName();
 		final String foundCity = addStruct.get(AddColumns.CITY).toUpperCase();
 		final String foundZip = addStruct.get(AddColumns.ZIP).toUpperCase();
 
 		if (DistanceMatchForResult.isMatchGoodEnough(foundStreet, addStruct,
-				indexType, "street", caseVal)) {
+				indexType, "street", caseVal, distanceCriteria, boostAddress)) {
 
 			if (DistanceMatchForResult.isMatchGoodEnough(foundCity, addStruct,
-					indexType, "city", caseVal)) {
+					indexType, "city", caseVal, distanceCriteria, boostAddress)) {
 
 				ShatamIndexReader.addressesWithoutZipTest = new ArrayList<>();
 				ShatamIndexReader.addressesWithoutZipTest.add(addStruct);

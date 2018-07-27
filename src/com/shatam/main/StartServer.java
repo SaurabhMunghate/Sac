@@ -27,6 +27,7 @@ public class StartServer {
 
 //		Paths.READ_DATA = "C:\\sac test\\DATA\\";
 //		U.log("Root Path ::"+System.getProperty("user.dir"));
+		//Paths.READ_DATA = "/home/glady/Sac_Workspace/Data/";
 		Server server = new Server();
 		SelectChannelConnector connector = new SelectChannelConnector();
 		connector.setPort(3309);
@@ -50,10 +51,16 @@ public class StartServer {
 		contexts.setHandlers(new Handler[] { contextState, contextPostData,
 				webapp });
 		server.setHandler(contexts);
-		U.log("SAC v 1.15 Running");
+		U.log("SAC v 1.24 boost parameter added Running");
 		server.start();
 		server.join();
 
 	}
 
+	/*
+P50 = 1321.5
+P90 = 2855
+P99 = 7205
+
+	 */
 }

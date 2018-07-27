@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
+import com.shatam.util.BoostAddress;
 import com.shatam.util.U;
 
 public class Seeding {
@@ -32,7 +33,7 @@ public class Seeding {
 		ThreadedSAC threadedSAC = new ThreadedSAC();
 		U.log("seed");
 		threadedSAC.processByParts(addresses, "", "1", "10", "USPS and TIGER",
-				false);
+				false,0, new BoostAddress());
 		
 	}
 

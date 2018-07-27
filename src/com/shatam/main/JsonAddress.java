@@ -19,8 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.http.HttpRequest;
 import org.json.JSONArray;
 
-
+import com.shatam.util.BoostAddress;
 import com.shatam.util.U;
+import com.test.SacLatency;
 
 public class JsonAddress {
 	public static boolean flag = false;
@@ -45,9 +46,42 @@ public class JsonAddress {
 		if (br != null)
 			br.close();
 	}
-
+	/*
+	 * This method is without distance criteria as parameter.
+	 */
 	public org.json.JSONArray jsonAddress(String textEntered, String hitscore,
 			String maxResults, String noOfJobs, String dataSource, boolean flag)
+			throws Exception {
+		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, 90, new BoostAddress()); //90 is default.
+	}
+	/*
+	 * This method is with distance criteria as parameter.
+	 */
+	public org.json.JSONArray jsonAddress(String textEntered, String hitscore,
+			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria)
+			throws Exception {
+		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, distanceCriteria, new BoostAddress());
+	}
+	/*
+	 * This method is with city & zip weight as its parameter.
+	 */
+	public org.json.JSONArray jsonAddress(String textEntered, String hitscore,
+			String maxResults, String noOfJobs, String dataSource, boolean flag, int cityWeight, int zipWeight)
+			throws Exception {
+		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, 90, new BoostAddress(cityWeight, zipWeight));//90 is default.
+	}
+	/*
+	 * This method is with distance criteria as parameter along with city & zip weight as its parameter.
+	 */
+	public org.json.JSONArray jsonAddress(String textEntered, String hitscore,
+			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria, int cityWeight, int zipWeight)
+			throws Exception {
+
+		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, distanceCriteria, new BoostAddress(cityWeight, zipWeight));
+	}	
+
+	private org.json.JSONArray jsonAddress(String textEntered, String hitscore,
+			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria, BoostAddress boostAddress)
 			throws Exception {
 		org.json.JSONArray outputObj = null;
 		JsonPostHandler jph = new JsonPostHandler();
@@ -70,7 +104,7 @@ public class JsonAddress {
 				addList = addressMap.get(m);
 				inputAddressCount += addList.size();
 				outputObj = jph.processJsonFileforSAC(addList, hitscore,
-						maxResults, noOfJobs, dataSource, flag);
+						maxResults, noOfJobs, dataSource, flag, distanceCriteria, boostAddress);
 				objOutput.put(outputObj);
 				noOfOutput += outputObj.length();
 			} else {
@@ -112,6 +146,7 @@ public class JsonAddress {
 		long e = System.currentTimeMillis();
 		flag = true;
 		//========= End =================
+//		SacLatency.writeLatency(""+(e - s));
 		U.log("Total SAC TIME::" + (e - s));
 		U.log("Number of INPUT addresses==" + inputAddressCount);
 		U.log("Number of OUTPUT addresses===" + noOfOutput);

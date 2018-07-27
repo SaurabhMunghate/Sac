@@ -31,6 +31,9 @@
 			e = document.getElementById("logging");
 			var logval = e.options[e.selectedIndex].text;
 			//var length = numberOfOutput.length;
+			var distanceCriteria = $("#distance_criteria").val();
+			var cityWeight = $("#city_weight").val();
+			var zipWeight = $("#zip_weight").val();
 			try {
 		        JSON.parse(Addresses1);
 		    } catch (e) {
@@ -49,7 +52,7 @@
 				url : "/postData/",
 				// The key needs to match your method's input parameter (case-sensitive).
 				//data : JSON.stringify(Addresses1),
-				data: JSON.stringify({ address: Addresses1, count: numberOfOutput,jobs: numberofJobs ,data:dataSource,log:logval}),
+				data: JSON.stringify({ address: Addresses1, count: numberOfOutput,jobs: numberofJobs ,data:dataSource,log:logval,distance_criteria:distanceCriteria,city_weight:cityWeight,zip_weight:zipWeight}),
 
 				error : function(xhr, status, error) {
 
@@ -127,10 +130,19 @@
 					<option value="usps">USPS</option>
 					<option value="tiger">TIGER</option>
 					<option value="both">USPS and TIGER</option>
-	        </select>
+					<option value="both">TIGER and USPS</option>
+	        </select><!--   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISTANCE CRITERIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="distance_criteria" value="" placeholder="Default is '90'"/>-->
 	        </td>
 		</tr>
-
+		
+		<tr>
+			<td>
+			<br>
+			CITY WEIGHT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="city_weight" value="" placeholder="Default is '4'"/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ZIP WEIGHT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="zip_weight" value="" placeholder="Default is '4'"/>
+			</td>
+		</tr>
+	
 		<tr>
 			<td>
 

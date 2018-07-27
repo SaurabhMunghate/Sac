@@ -207,7 +207,7 @@ public class ShatamIndexQueryCreator {
 			final String dataSource, final String city1, final String zip1,
 			final String state1, final AbstractIndexType indexType,
 			final HashMap<String, ShatamIndexReader> readerMap,
-			final boolean flag) throws Exception {
+			final boolean flag, BoostAddress boostAddress) throws Exception {
 		MultiMap queryMultimap = new MultiHashMap();
 		Query query = null;
 		Set<String> keys = multimap.keySet();
@@ -219,6 +219,7 @@ public class ShatamIndexQueryCreator {
 			String state = list.get(3);
 			String zip = list.get(4);
 			String addkey = list.get(5);
+
 			if (StrUtil.isEmpty(state) || state.length() != 2
 					|| !U.STATE_MAP.containsKey(state.toUpperCase())) {
 				try {
@@ -231,8 +232,8 @@ public class ShatamIndexQueryCreator {
 				}
 			}
 			long s = System.currentTimeMillis();
-			String readerKey = state + indexType.getFieldName() + "-"
-					+ dataSource;
+			String readerKey = state + indexType.getFieldName() + "-"+ dataSource;
+
 			ShatamIndexReader reader = ShatamIndexUtil.readerMap.get(readerKey);
 			if (reader == null) {
 				try {
@@ -259,14 +260,14 @@ public class ShatamIndexQueryCreator {
 			int j = 0;
 			ShatamIndexQueryStruct shatamIndexQueryStruct = new ShatamIndexQueryStruct();
 			try {
-				shatamIndexQueryStruct = addressQuery(address, city, zip,
-						indexType, state);
+				shatamIndexQueryStruct = addressQuery(address, city, zip, indexType, state);
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
 			StringBuffer buf = new StringBuffer(
 					shatamIndexQueryStruct.getQuery() == null ? ""
 							: shatamIndexQueryStruct.getQuery());
+
 			if (!StrUtil.isEmpty(city)) {
 				city = city.replaceAll("[\\s,\\.\\-]+", " ").trim();
 				city = city.trim().toLowerCase();
@@ -284,8 +285,8 @@ public class ShatamIndexQueryCreator {
 				}
 				shatamIndexQueryStruct.setNormalizedCity(city);
 
-				buf.append(" ").append(city + "_CITY" + U.CITY_ENHANCE);
-
+				//buf.append(" ").append(city + "_CITY" + U.CITY_ENHANCE);
+				buf.append(" ").append(city + "_CITY" + boostAddress.getCityWeight());
 			}
 			if (!StrUtil.isEmpty(zip)) {
 				zip = zip.trim();
@@ -297,13 +298,13 @@ public class ShatamIndexQueryCreator {
 						zip = String.format("%05d", Integer.parseInt(zip));
 
 					shatamIndexQueryStruct.setNormalizedZip(zip);
-					buf.append(" ").append(zip + "_ZIP" + U.ZIP_ENHANCE);
+					//buf.append(" ").append(zip + "_ZIP" + U.ZIP_ENHANCE);
+					buf.append(" ").append(zip + "_ZIP" + boostAddress.getZipWeight());
 				}
 			}
 
 			synchronized (reader) {
 				try {
-
 					shatamIndexQueryStruct.setQuery(buf.toString().trim());
 				} catch (Exception e1) {
 					e1.printStackTrace();
@@ -330,7 +331,7 @@ public class ShatamIndexQueryCreator {
 				queryMultimap.put(key, addkey);
 				queryMultimap.put(key, state);
 			}
-		}
+		}//eof for
 
 		ShatamIndexUtil.readerMap = readerMap;
 		return queryMultimap;

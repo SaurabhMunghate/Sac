@@ -150,7 +150,7 @@ public class Util {
 			zipToCity.put(rec.zip, cityArr);
 			if (rec.cityStateName.trim().split(" ").length > 1)
 				cityObserver.put(rec.cityStateName.trim().replace(" ", "")
-						.toUpperCase(), rec.cityStateName.trim().toUpperCase());
+						.toUpperCase()+rec.zip, rec.cityStateName.trim().toUpperCase());
 		}
 		fstream.close();
 
@@ -180,7 +180,7 @@ public class Util {
 			cityArr.add(city);
 			zipToCity.put(zip, cityArr);
 			if (city.trim().split(" ").length > 1)
-				cityObserver.put(city.trim().replace(" ", "").toUpperCase(),
+				cityObserver.put(city.trim().replace(" ", "").toUpperCase()+zip,
 						city.trim().toUpperCase());
 
 		}

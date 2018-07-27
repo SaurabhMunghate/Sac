@@ -27,11 +27,14 @@ public class JsonSchema implements Comparable<JsonSchema> {
 	public String message = "";
 	public float score;
 
+	public String secondary_number ="";
+	public String secondary_designator ="";
+	
+	
 	@Override
 	public int compareTo(JsonSchema objectAdStruct) {
 		Double hitsc = Double.parseDouble(this.score + "");
 		Double destsc = Double.parseDouble(objectAdStruct.score + "");
 		return destsc.compareTo(hitsc);
-
 	}
 }

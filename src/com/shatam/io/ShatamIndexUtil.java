@@ -21,6 +21,7 @@ import com.shatam.shatamindex.standard.StandardAnalyzer;
 import com.shatam.shatamindex.util.Version;
 import com.shatam.util.ShatamCachingList;
 import com.shatam.util.ShatamCachingSingle;
+import com.shatam.util.BoostAddress;
 import com.shatam.util.Paths;
 import com.shatam.util.ShatamIndexQueryCreator;
 import com.shatam.util.ShatamIndexQueryStruct;
@@ -74,7 +75,7 @@ public class ShatamIndexUtil {
 	public MultiMap correctAddresses(MultiMap multimap1,
 			final AbstractIndexType indexType1, final String dataSource1,
 			String maxresult, String hitscore, String noOfJobs,
-			String dataOfType, boolean flag) throws Exception {
+			String dataOfType, boolean flag, int distanceCriteria, BoostAddress boostAddress) throws Exception {
 		long start = System.currentTimeMillis();
 		output = new MultiHashMap();
 		NORMAL = 0;
@@ -97,7 +98,7 @@ public class ShatamIndexUtil {
 		String lastDataSource = null;
 		String k1DataSource = null;
 		String[] arrayOfSource = new String[2];
-		;
+		
 		if (dataOfType.contains("USPS and TIGER")) {
 			arrayOfSource = new String[2];
 			arrayOfSource[0] = "USPS";
@@ -105,7 +106,14 @@ public class ShatamIndexUtil {
 			lastDataSource = "TIGER";
 			k1DataSource = "USPS";
 
-		} else {
+		}else if (dataOfType.contains("TIGER and USPS")) {
+			arrayOfSource = new String[2];
+			arrayOfSource[0] = "TIGER";
+			arrayOfSource[1] = "USPS";			
+			lastDataSource = "USPS";
+			k1DataSource = "TIGER";
+
+		}else {
 			if (dataOfType.contains("USPS")) {
 				arrayOfSource = new String[1];
 
@@ -145,9 +153,9 @@ public class ShatamIndexUtil {
 
 					ss = System.currentTimeMillis();
 					ShatamIndexQueryCreator shatamIndexQueryCreator = new ShatamIndexQueryCreator();
+					
 					final MultiMap queryMultimap = shatamIndexQueryCreator
-							.createQuery(multimap, dataSource, "", "", "",
-									indexType, readerMap, flag);
+							.createQuery(multimap, dataSource, "", "", "",indexType, readerMap, flag, boostAddress);
 
 					ee = System.currentTimeMillis();
 
@@ -171,6 +179,7 @@ public class ShatamIndexUtil {
 
 						Query query = (Query) list.get(4);
 
+//						U.log("Query ::"+query);
 						if (query == null) {
 							U.log("OMG queryyyyy=null");
 						}
@@ -200,7 +209,7 @@ public class ShatamIndexUtil {
 										shatamIndexQueryStruct, unitType,
 										unitNumber, query, key,
 										indexType.getFieldName(), source,
-										dataSource, k1DataSource,Integer.parseInt(maxresult));
+										dataSource, k1DataSource,Integer.parseInt(maxresult), distanceCriteria, boostAddress);
 
 							} catch (Exception e1) {
 								U.log("exception in read addresses==" + e1);
