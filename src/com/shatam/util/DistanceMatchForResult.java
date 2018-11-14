@@ -72,7 +72,15 @@ public class DistanceMatchForResult {
 					.replaceAll(
 							"(zeroeth|first|second|third|fourth|fifth|sixth|seventh|eighth|nineth)",
 							"");
-
+		
+		//w 90th st > w 90 st 
+		if (Util.match(street.toLowerCase(), "\\d(th|st|nd|rd)") != null				
+				&& Util.match(inputAddress.toLowerCase(), "\\d(th|st|nd|rd)") == null){
+			street = street
+					.toLowerCase()
+					.replaceAll("(\\d)(th|st|nd|rd)", "$1");
+		}
+		
 		if (value.equalsIgnoreCase("street")) {
 			for (String s : inputAddress.split(" ")) {
 				String result = standrdForm(s, a.getState());
@@ -107,17 +115,16 @@ public class DistanceMatchForResult {
 			}
 
 			name1 = it.encode(name1.toLowerCase());
-		}
-
+		}		
 		switch (caseVal) {
 		case "approxMatching":
 
-			if (value.equalsIgnoreCase("street")) {
-				// 94
+			if (value.equalsIgnoreCase("street")) {				
 				if (inputAddress != null) {
 					if (algorithm.getSimilarity(inputStreetAbrv.toLowerCase()
-							.trim(), street.toLowerCase().trim()) > 0.9)
+							.trim(), street.toLowerCase().trim()) > 0.9){						
 						return true;
+					}
 				}
 			} else {
 
@@ -126,8 +133,7 @@ public class DistanceMatchForResult {
 					// if (algorithm.getSimilarity(inputCity.toLowerCase(),
 					// name1) > 0.9)
 					if (algorithm.getSimilarity(inputCity.toLowerCase(), name1) > threshold)
-						return true;
-					int jaroLastTime = (int) System.currentTimeMillis();
+						return true;					
 				}
 			}
 
@@ -136,9 +142,9 @@ public class DistanceMatchForResult {
 		case "contains":
 
 			if (value.equalsIgnoreCase("street")) {
-				float f = algorithm.getSimilarity(inputStreetAbrv.trim(),
-						street);
-				if (inputStreetAbrv.contains(street) && f > 0.84) {
+				float f = algorithm.getSimilarity(inputStreetAbrv.trim().toLowerCase(),
+						street.toLowerCase());			
+				if (inputStreetAbrv.toLowerCase().contains(street.toLowerCase()) && f > 0.84) {
 					return true;
 				} else {
 					return false;
@@ -151,7 +157,7 @@ public class DistanceMatchForResult {
 					// name1) > 0.9)
 					if (algorithm.getSimilarity(inputCity.toLowerCase(), name1) > threshold)
 						return true;
-					int jaroLastTime = (int) System.currentTimeMillis();
+					
 				}
 			}
 
@@ -163,8 +169,7 @@ public class DistanceMatchForResult {
 					|| it.getFieldName().contains("k3"))
 				result = isMatchGoodEnough1(name1, a, it, value, boostAddress);
 			else
-				result = false;
-
+				result = false;			
 			return result;
 
 		}

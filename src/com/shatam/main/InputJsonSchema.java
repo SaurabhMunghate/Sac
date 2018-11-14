@@ -7,14 +7,18 @@
  */
 package com.shatam.main;
 
-class InputJsonSchema implements Comparable<InputJsonSchema> {
+public class InputJsonSchema implements Comparable<InputJsonSchema> {
 
-	String address1;
-	String address2;
-	String city;
-	String state;
-	String zip;
-	String key;
+	public String address1;
+	public String address2;
+	public String city;
+	public String state;
+	public String zip;
+	public String key;
+
+
+	public boolean hasValidZip = true;
+	public int groupId;
 
 	@Override
 	public int compareTo(InputJsonSchema input) {

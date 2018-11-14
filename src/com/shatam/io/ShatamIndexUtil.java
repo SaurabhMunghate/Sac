@@ -75,7 +75,7 @@ public class ShatamIndexUtil {
 	public MultiMap correctAddresses(MultiMap multimap1,
 			final AbstractIndexType indexType1, final String dataSource1,
 			String maxresult, String hitscore, String noOfJobs,
-			String dataOfType, boolean flag, int distanceCriteria, BoostAddress boostAddress) throws Exception {
+			String dataOfType, boolean flag, int distanceCriteria,boolean deepSearchEnable, BoostAddress boostAddress) throws Exception {
 		long start = System.currentTimeMillis();
 		output = new MultiHashMap();
 		NORMAL = 0;
@@ -179,7 +179,7 @@ public class ShatamIndexUtil {
 
 						Query query = (Query) list.get(4);
 
-//						U.log("Query ::"+query);
+					//	U.log("Query ::"+query);
 						if (query == null) {
 							U.log("OMG queryyyyy=null");
 						}
@@ -209,7 +209,7 @@ public class ShatamIndexUtil {
 										shatamIndexQueryStruct, unitType,
 										unitNumber, query, key,
 										indexType.getFieldName(), source,
-										dataSource, k1DataSource,Integer.parseInt(maxresult), distanceCriteria, boostAddress);
+										dataSource, k1DataSource,Integer.parseInt(maxresult), distanceCriteria,deepSearchEnable, boostAddress);
 
 							} catch (Exception e1) {
 								U.log("exception in read addresses==" + e1);

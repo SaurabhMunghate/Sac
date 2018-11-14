@@ -51,7 +51,7 @@ public class StartServer {
 		contexts.setHandlers(new Handler[] { contextState, contextPostData,
 				webapp });
 		server.setHandler(contexts);
-		U.log("SAC v 1.24 boost parameter added Running");
+		U.log("SAC v 1.27");
 		server.start();
 		server.join();
 

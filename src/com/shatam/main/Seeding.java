@@ -33,7 +33,7 @@ public class Seeding {
 		ThreadedSAC threadedSAC = new ThreadedSAC();
 		U.log("seed");
 		threadedSAC.processByParts(addresses, "", "1", "10", "USPS and TIGER",
-				false,0, new BoostAddress());
+				false,0,false, new BoostAddress());
 		
 	}
 

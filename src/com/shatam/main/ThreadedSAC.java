@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,11 +33,12 @@ import com.shatam.shatamindex.search.Query;
 import com.shatam.util.AbbrReplacement;
 import com.shatam.util.BoostAddress;
 import com.shatam.util.DistanceMatchForResult;
-import com.shatam.util.ShatamCachingSingle;
 import com.shatam.util.OutputStatusCode;
+import com.shatam.util.ShatamCachingSingle;
 import com.shatam.util.ShatamIndexQueryStruct;
 import com.shatam.util.StrUtil;
 import com.shatam.util.U;
+import com.shatam.zip.search.RecordSelector;
 
 public class ThreadedSAC {
 
@@ -44,15 +46,16 @@ public class ThreadedSAC {
 
 	public org.json.JSONArray processByParts(ArrayList<InputJsonSchema> arr,
 			final String hitscor, String maxResult, String noOfJobs,
-			String dataSource, boolean flag, int distanceCriteria, BoostAddress boostAddress) throws Exception {
+			String dataSource, boolean flag, int distanceCriteria,boolean deepSearchEnable, BoostAddress boostAddress) throws Exception {
 
 		String hitscore = hitscor;
 		final String maxResults = maxResult;
 		org.json.JSONArray outputArr = new JSONArray();
 		MultiMap multiMap = null;
-
-		try {
-			multiMap = addMultiplMap(arr);
+		//
+		Map<Integer, List<String>> groupMap = new HashMap<>();
+		try {			
+			multiMap = addMultiplMap(arr,groupMap);
 		} catch (Exception e1) {
 
 			e1.printStackTrace();
@@ -62,7 +65,7 @@ public class ThreadedSAC {
 		MultiMap finalresult = null;
 		try {
 			finalresult = customAddressCorrector.corrUsingAppropriateIndex(
-					multiMap, maxResults, hitscor, noOfJobs, dataSource, flag, distanceCriteria, boostAddress);
+					multiMap, maxResults, hitscor, noOfJobs, dataSource, flag, distanceCriteria,deepSearchEnable, boostAddress);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
@@ -98,7 +101,7 @@ public class ThreadedSAC {
 			try {
 				finalresult = customAddressCorrector.corrUsingAppropriateIndex(
 						semimultiMap, maxResults, hitscor, noOfJobs,
-						dataSource, flag, distanceCriteria, boostAddress);
+						dataSource, flag, distanceCriteria,deepSearchEnable, boostAddress);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -114,12 +117,17 @@ public class ThreadedSAC {
 		}
 
 		else {
-			for (String key : keys) {
+			RecordSelector mppro = new RecordSelector(); 
+			if(groupMap.size()>0){				
+				mppro.sortAndgetHighScoreRecords(combined,groupMap);
+			}
+			for (String key : keys) {				
 				ArrayList<AddressStruct> addStruct = null;
 				ArrayList<JsonSchema> listOutput = new ArrayList<JsonSchema>();
 				List list = (List) combined.get(key);
 				if (list == null) {
-					U.log("Found some issues to getting key of inputed addresses");
+					//U.log("Found some issues to getting key of inputed addresses");
+					continue;
 				}
 				addStruct = (ArrayList<AddressStruct>) list.get(0);
 				String addkey = (String) list.get(1);
@@ -321,8 +329,8 @@ public class ThreadedSAC {
 
 						AddressStruct struct = new AddressStruct("");
 						struct.inputAddress = "No Match Found";
-						ShatamCachingSingle.put(
-								ShatamCachingSingle.k1_reference, struct);
+//						ShatamCachingSingle.put(
+//								ShatamCachingSingle.k1_reference, struct);
 						JsonSchema schemaobj = new JsonSchema();
 						schemaobj.key = addkey;
 						schemaobj.address = "No Match Found";
@@ -421,15 +429,27 @@ public class ThreadedSAC {
 			throws JSONException, JsonGenerationException,
 			JsonMappingException, IOException {
 		MultiMap multiMap = new MultiValueMap();
+		Map<Integer,List<String>> groupMap = new HashMap<>();
 		for (int i = 0; i < array.size(); i++) {
 			InputJsonSchema innerArr = array.get(i);
 			String state = innerArr.state.toUpperCase();
 			ArrayList<AddressStruct> addStruct = null;
 			String value = evaluateInputAddress(innerArr.toString());
 			if (value == null) {
+				
 				String address2 = innerArr.address2.replaceAll(
 						"[$&+,:;=?@#|*%()^!.~-]", "");
 				String ival = Integer.toString(i);
+				if(innerArr.groupId>0){
+					
+					List<String> l = groupMap.get(innerArr.groupId);
+					if(l==null){
+						l = new ArrayList<>();
+					}
+					l.add(ival);
+					groupMap.put(innerArr.groupId, l);
+					
+				}
 				multiMap.put(ival, innerArr.address1);
 				multiMap.put(ival, address2);
 				multiMap.put(ival, innerArr.city);
@@ -439,9 +459,44 @@ public class ThreadedSAC {
 
 			}
 		}
+		
+	//	U.log(groupMap +"--");		
 		return multiMap;
 	}
 
+	public MultiMap addMultiplMap(ArrayList<InputJsonSchema> array,Map<Integer,List<String>> groupMap)
+			throws JSONException, JsonGenerationException,
+			JsonMappingException, IOException {
+		MultiMap multiMap = new MultiValueMap();
+		for (int i = 0; i < array.size(); i++) {
+			InputJsonSchema innerArr = array.get(i);
+			String state = innerArr.state.toUpperCase();
+			ArrayList<AddressStruct> addStruct = null;
+			String value = evaluateInputAddress(innerArr.toString());
+			if (value == null) {				
+				String address2 = innerArr.address2.replaceAll(
+						"[$&+,:;=?@#|*%()^!.~-]", "");
+				String ival = Integer.toString(i);
+				if(innerArr.groupId>0){					
+					List<String> l = groupMap.get(innerArr.groupId);
+					if(l==null){
+						l = new ArrayList<>();
+					}
+					l.add(ival);
+					groupMap.put(innerArr.groupId, l);					
+				}
+				multiMap.put(ival, innerArr.address1);
+				multiMap.put(ival, address2);
+				multiMap.put(ival, innerArr.city);
+				multiMap.put(ival, state);
+				multiMap.put(ival, innerArr.zip);
+				multiMap.put(ival, innerArr.key);
+
+			}
+		}					
+		return multiMap;
+	}
+	
 	private String evaluateInputAddress(String inputData) {
 		try {
 			inputData = inputData.replace("\\", "").trim();

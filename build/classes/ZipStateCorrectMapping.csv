@@ -1,0 +1,160 @@
+Zip	City Set	StateSet	CorrectState
+10965	[pearl river, chestnut ridge]	[NY, NJ]	NY
+10964	[palisades]	[NY, NJ]	NY
+10983	[tappan]	[NY, NJ]	NY
+10925	[greenwood lk, greenwood lake]	[NY, NJ]	NY
+24602	[bandy]	[VA, WV]	VA
+24622	[jewell valley, jewell ridge]	[VA, WV]	VA
+96134	[tionesta, newell, tulelake, lava beds national monument, medicine lake lodge]	[CA, OR]	CA
+68325	[byron]	[KS, NE]	NE
+68327	[chester]	[KS, NE]	NE
+35447	[pickensville, carrollton]	[AL, MS]	AL
+80737	[julesburg]	[CO, NE]	CO
+82725	[recluse]	[WY, MT]	WY
+82701	[newcastle]	[SD, WY]	WY
+12719	[barryville]	[NY, PA]	NY
+68420	[pawnee city]	[KS, NE]	NE
+68466	[wymore, sicily]	[KS, NE]	NE
+82930	[bear river, evanston]	[UT, WY]	WY
+68777	[spencer]	[SD, NE]	NE
+39819	[bdge, bainbridge]	[GA, FL]	GA
+19973	[blades, seaford]	[DE, MD]	DE
+10590	[lake kitchawan, south salem, lewisboro]	[NY, CT]	NY
+10506	[bedford village, banksville, bedford]	[NY, CT]	NY
+10509	[brewster, sears corners, southeast]	[NY, CT]	NY
+82063	[woods landing, jelm, laramie]	[WY, CO]	WY
+82070	[jelm, bosler, laramie, foxpark]	[WY, CO]	WY
+82082	[pine bluffs]	[WY, CO, NE]	WY
+35958	[bryant]	[GA, AL]	AL
+58845	[westby, alkabo, grenora]	[ND, MT]	ND
+58838	[cartwright]	[ND, MT]	ND
+89421	[mcdermitt, cordero, mc dermitt]	[NV, OR]	NV
+89439	[verdi]	[NV, CA]	NV
+58623	[griffin, buffalo springs, ladd, bowman, buffalo spg]	[SD, ND]	ND
+58621	[beach, trotters]	[ND, MT]	ND
+58649	[reeder]	[SD, ND]	ND
+58639	[bucyrus, haynes, hettinger]	[SD, ND]	ND
+99030	[rockford]	[WA, ID]	WA
+99025	[newman lake, east farms]	[WA, ID]	WA
+58568	[selfridge]	[SD, ND]	ND
+54540	[land o lakes]	[MI, WI]	WI
+56164	[pipestone, verdi, hatfield, ihlen]	[SD, MN]	MN
+56144	[trosky, jasper]	[SD, MN]	MN
+56220	[canby]	[SD, MN]	MN
+56219	[browns valley]	[SD, MN]	MN
+56257	[marietta, nassau]	[SD, MN]	MN
+58053	[lidgerwood, geneseo]	[SD, ND]	ND
+58043	[havana]	[SD, ND]	ND
+58041	[hankinson]	[SD, ND]	ND
+68978	[cadams, superior, bostwick]	[KS, NE]	NE
+68943	[hardy]	[KS, NE]	NE
+72338	[frenchman byu, frenchmans bayou]	[AR, TN]	AR
+31905	[cols, columbus, camp rogers, fort benning]	[GA, AL]	GA
+72395	[reverie tn, wilson]	[AR, TN]	AR
+36855	[five points]	[GA, AL]	AL
+66955	[mahaska]	[KS, NE]	KS
+52542	[cantril]	[MO, IA]	IA
+52537	[savannah, monterey, stiles, belknap, west grove, mark, troy, bloomfield]	[MO, IA]	IA
+58439	[forbes]	[SD, ND]	ND
+58436	[ellendale, monango]	[SD, ND]	ND
+99128	[farmington]	[WA, ID]	WA
+72444	[maynard]	[AR, MO]	AR
+52626	[farmington, croton]	[MO, IA]	IA
+70438	[franklinton, thomas, sheridan]	[LA, MS]	LA
+70444	[new zion, kentwood, sunnyhill, springcreek]	[LA, MS]	LA
+58225	[drayton, bowesmont]	[MN, ND]	ND
+66518	[oketo]	[KS, NE]	KS
+72616	[metalton, urbanette, berryville, rudd, grandview]	[AR, MO]	AR
+72644	[lead hill, diamond city]	[AR, MO]	AR
+99362	[walla walla]	[WA, OR]	WA
+74902	[pocola]	[OK, AR]	OK
+97910	[danner, burns junction, rome, south mtn, jordan valley, south mountain]	[ID, OR]	OR
+81137	[allison, s ute indian, southern ute indian reservat, oxford, indian agency, so ute indian res, ignacio, tiffany]	[NM, CO]	CO
+85534	[virden, duncan]	[NM, AZ]	AZ
+40965	[middlesboro, middlesborough]	[TN, KY]	KY
+30165	[rome]	[GA, AL]	GA
+69343	[gordon, clinton]	[SD, NE]	NE
+69337	[chadron]	[SD, NE]	NE
+69212	[crookston]	[SD, NE]	NE
+69216	[kilgore]	[SD, NE]	NE
+69201	[eli, valentine]	[SD, NE]	NE
+83856	[priest river, priest lake]	[WA, ID]	ID
+97635	[new pine crk, new pine creek]	[CA, OR]	CA
+79835	[canutillo]	[NM, TX]	TX
+83342	[elba, malta]	[UT, ID]	ID
+83114	[cokeville, raymond]	[ID, WY]	WY
+83120	[freedom]	[ID, WY]	WY
+69128	[bushnell]	[CO, NE]	NE
+69145	[kimball]	[CO, NE]	NE
+69026	[danbury]	[KS, NE]	NE
+69044	[trenton]	[KS, NE]	NE
+79932	[el paso]	[NM, TX]	TX
+79922	[el paso]	[NM, TX]	TX
+88240	[hobbs, oil center]	[NM, TX]	NM
+71937	[cove, hatton]	[OK, AR]	AR
+71953	[menos, dallas, rocky, mountain fork, big fork, ink, acorn, mena, potter, nunley, potter junction, black fork, yocana]	[OK, AR]	AR
+57724	[sky ranch, gustave, camp crook]	[SD, MT]	SD
+57735	[lauzen, burdock, provo, edgemont, dewey, ardmore]	[SD, NE]	SD
+42223	[fort campbell]	[TN, KY]	KY
+57717	[willet, mason, belle fourche, fruitdale]	[SD, WY, MT]	South
+20041	[washington, dulles international airport, dulles international airp]	[VA, DC]	VA
+57270	[veblen, hillhead]	[SD, ND]	SD
+42602	[browns crossroads, static, highway, albany, seventy six, snow, browns xroads, aaron, seminary]	[TN, KY]	KY
+20135	[mount weather, bluemont]	[VA, WV]	VA
+57430	[kidder, britton, sunset colony, newark, spain]	[SD, ND]	SD
+57437	[hills, greenway, eureka, hillsview, artas]	[SD, ND]	SD
+57457	[long lake, longlake]	[SD, ND]	SD
+57441	[elm lake, frederick]	[SD, ND]	SD
+57446	[hecla]	[SD, ND]	SD
+51640	[hamburg]	[MO, IA]	IA
+57533	[gregory, carlock, dixon, iona]	[SD, NE]	SD
+57523	[burke, lucas]	[SD, NE]	SD
+26034	[chester]	[WV, PA]	WV
+51557	[mondamin]	[IA, NE]	IA
+57632	[herreid]	[SD, ND]	SD
+57638	[white butte, shadehill, thunder hawk, lemmon]	[SD, ND]	SD
+57645	[morristown]	[SD, ND]	SD
+57642	[mc laughlin, mclaughlin, maple leaf, kenel]	[SD, ND]	SD
+57641	[mcintosh, mc intosh]	[SD, ND]	SD
+57648	[pollock]	[SD, ND]	SD
+59008	[belfry]	[WY, MT]	MT
+86044	[tonalea, red lake]	[UT, AZ]	AZ
+14724	[clymer]	[NY, PA]	NY
+71069	[rodessa, zylks]	[LA, AR]	LA
+14871	[pine city]	[NY, PA]	NY
+59221	[fairview]	[ND, MT]	MT
+59270	[sidney]	[ND, MT]	MT
+57068	[valley springs, valley spgs, ben claire]	[SD, MN]	SD
+57034	[moe, norway center, hudson]	[SD, IA]	SD
+57026	[ward, elkton]	[SD, MN]	SD
+57005	[corson, brandon, rowena]	[SD, IA]	SD
+59314	[biddle]	[WY, MT]	MT
+59311	[alzada]	[WY, MT]	MT
+65761	[longrun, theodosia, dugginsville, ocie]	[AR, MO]	MO
+65739	[ridgedale]	[AR, MO]	MO
+67756	[st francis, saint francis, wheeler]	[CO, KS]	KS
+51023	[hawarden]	[SD, IA]	IA
+03579	[wntwrths lctn, wentworths location, errol]	[NH, ME]	NH
+03813	[south chatham, center conway, north chatham, chatham]	[NH, ME]	NH
+71277	[spearsville, mount union, lockhart]	[LA, AR]	LA
+28112	[monroe]	[SC, NC]	NC
+30559	[mineral bluff]	[GA, TN, NC]	GA
+30555	[mccaysville, mc caysville, fry]	[GA, TN]	GA
+67622	[almena]	[KS, NE]	KS
+59847	[lolo]	[ID, MT]	MT
+68719	[bristow]	[SD, NE]	NE
+58653	[haley, scranton, gascoyne]	[SD, ND]	ND
+50065	[davis city, pleasanton]	[MO, IA]	IA
+56136	[hendricks]	[SD, MN]	MN
+58030	[fairmount]	[MN, ND]	ND
+58413	[venturia, nelvik, ashley, danzig]	[SD, ND]	ND
+52573	[keosauqua, cantril, mount sterling, mt sterling]	[MO, IA]	IA
+69168	[venango]	[CO, NE]	NE
+57260	[rosholt, victor, white rock]	[SD, ND]	SD
+51630	[blanchard]	[MO, IA]	IA
+57660	[watauga]	[SD, ND]	SD
+59275	[westby]	[ND, MT]	MT
+57030	[sherman, palisade, garretson]	[SD, MN]	SD
+63535	[coatsville, chariton]	[MO, IA]	MO
+51001	[ruble, akron]	[SD, IA]	IA
+71256	[junction city, lillie]	[LA, AR]	AR

@@ -17,13 +17,13 @@ public class CustomAddressCorrector {
 
 	public MultiMap corrUsingAppropriateIndex(MultiMap multimap,
 			String maxresult, String hitscore, String noOfJobs,
-			String dataSource, boolean flag, int distanceCriteria, BoostAddress boostAddress) throws Exception {
+			String dataSource, boolean flag, int distanceCriteria,boolean deepSearchEnable, BoostAddress boostAddress) throws Exception {
 		@SuppressWarnings("deprecation")
 		MultiMap returnoutput = new MultiHashMap();
 		//long s = System.currentTimeMillis();
 		ShatamIndexUtil shatamIndexUtil = new ShatamIndexUtil();
 		returnoutput = shatamIndexUtil.correctAddresses(multimap, null, null,
-				maxresult, hitscore, noOfJobs, dataSource, flag, distanceCriteria, boostAddress);
+				maxresult, hitscore, noOfJobs, dataSource, flag, distanceCriteria,deepSearchEnable, boostAddress);
 		//long e = System.currentTimeMillis();
 		return returnoutput;
 

@@ -829,6 +829,10 @@ public class AbbrReplacement {
 						.get(a) : null;
 			}
 
+			if(!StrUtil.isEmpty(abr)){
+				abr = abr.replace("_"+SPANISH, "");
+			}
+			
 			if (StrUtil.isEmpty(abr))
 				buf.append(a).append(" ");
 			else

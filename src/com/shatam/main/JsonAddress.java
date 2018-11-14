@@ -52,36 +52,36 @@ public class JsonAddress {
 	public org.json.JSONArray jsonAddress(String textEntered, String hitscore,
 			String maxResults, String noOfJobs, String dataSource, boolean flag)
 			throws Exception {
-		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, 90, new BoostAddress()); //90 is default.
+		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, 90,false, new BoostAddress()); //90 is default.
 	}
 	/*
 	 * This method is with distance criteria as parameter.
 	 */
 	public org.json.JSONArray jsonAddress(String textEntered, String hitscore,
-			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria)
+			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria,boolean deepSearchEnable)
 			throws Exception {
-		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, distanceCriteria, new BoostAddress());
+		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, distanceCriteria,deepSearchEnable, new BoostAddress());
 	}
-	/*
-	 * This method is with city & zip weight as its parameter.
-	 */
-	public org.json.JSONArray jsonAddress(String textEntered, String hitscore,
-			String maxResults, String noOfJobs, String dataSource, boolean flag, int cityWeight, int zipWeight)
-			throws Exception {
-		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, 90, new BoostAddress(cityWeight, zipWeight));//90 is default.
-	}
+//	/*
+//	 * This method is with city & zip weight as its parameter.
+//	 */
+//	public org.json.JSONArray jsonAddress(String textEntered, String hitscore,
+//			String maxResults, String noOfJobs, String dataSource, boolean flag, int cityWeight, int zipWeight)
+//			throws Exception {
+//		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, 90, new BoostAddress(cityWeight, zipWeight));//90 is default.
+//	}
 	/*
 	 * This method is with distance criteria as parameter along with city & zip weight as its parameter.
 	 */
 	public org.json.JSONArray jsonAddress(String textEntered, String hitscore,
-			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria, int cityWeight, int zipWeight)
+			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria,boolean deepSearchEnable, int cityWeight, int zipWeight)
 			throws Exception {
 
-		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, distanceCriteria, new BoostAddress(cityWeight, zipWeight));
+		return jsonAddress(textEntered, hitscore,maxResults, noOfJobs, dataSource, flag, distanceCriteria,deepSearchEnable, new BoostAddress(cityWeight, zipWeight));
 	}	
 
 	private org.json.JSONArray jsonAddress(String textEntered, String hitscore,
-			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria, BoostAddress boostAddress)
+			String maxResults, String noOfJobs, String dataSource, boolean flag, int distanceCriteria,boolean deepSearchEnable, BoostAddress boostAddress)
 			throws Exception {
 		org.json.JSONArray outputObj = null;
 		JsonPostHandler jph = new JsonPostHandler();
@@ -97,14 +97,15 @@ public class JsonAddress {
 		ArrayList<InputJsonSchema> addList = null;
 		Set<String> addSet = addressMap.keySet();
 		int noOfOutput = 0;
-		int inputAddressCount = 0;
+		int inputAddressCount = 0;		
 		long s = System.currentTimeMillis();
+		//U.log(addressMap);
 		for (String m : addSet) {
-			if (!m.contains("no state") && !m.contains("missing")) {
+			if (!m.contains("no state") && !m.contains("missing") && !m.contains("invalidzip")) {
 				addList = addressMap.get(m);
 				inputAddressCount += addList.size();
 				outputObj = jph.processJsonFileforSAC(addList, hitscore,
-						maxResults, noOfJobs, dataSource, flag, distanceCriteria, boostAddress);
+						maxResults, noOfJobs, dataSource, flag, distanceCriteria,deepSearchEnable, boostAddress);				
 				objOutput.put(outputObj);
 				noOfOutput += outputObj.length();
 			} else {
@@ -124,7 +125,7 @@ public class JsonAddress {
 						noOfOutput += outputObj.length();
 					}
 				}
-				if (m.contains("no state")) {
+				else if (m.contains("no state")) {
 					addList = addressMap.get(m);
 					inputAddressCount += addList.size();
 					for (int i = 0; i < addList.size(); i++) {
@@ -132,6 +133,23 @@ public class JsonAddress {
 						String key = innerArr.key;
 						{
 							String arr[] = { key, "State is invalid", "", "",
+									"", "", "", "", "", "", "", "", "", "", "" };
+							outputObj = new JSONArray(Arrays.asList(arr));
+							outputObj = new JSONArray(Arrays.asList(outputObj));
+							outputObj = new JSONArray(Arrays.asList(outputObj));
+							objOutput.put(outputObj);
+							noOfOutput += outputObj.length();
+						}
+					}
+				}else{
+					//If zip is invalid
+					addList = addressMap.get(m);
+					inputAddressCount += addList.size();
+					for (int i = 0; i < addList.size(); i++) {
+						InputJsonSchema innerArr = addList.get(i);
+						String key = innerArr.key;
+						{
+							String arr[] = { key, "Zip is invalid", "", "",
 									"", "", "", "", "", "", "", "", "", "", "" };
 							outputObj = new JSONArray(Arrays.asList(arr));
 							outputObj = new JSONArray(Arrays.asList(outputObj));
@@ -148,7 +166,7 @@ public class JsonAddress {
 		//========= End =================
 //		SacLatency.writeLatency(""+(e - s));
 		U.log("Total SAC TIME::" + (e - s));
-		U.log("Number of INPUT addresses==" + inputAddressCount);
+		U.log("Number of INPUT addresses==" + noOfOutput);
 		U.log("Number of OUTPUT addresses===" + noOfOutput);
 		return objOutput;
 

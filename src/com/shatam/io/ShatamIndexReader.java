@@ -73,7 +73,7 @@ public class ShatamIndexReader {
 			ShatamIndexQueryStruct shatamIndexQueryStruct,
 			String unitTypeFromInputAddress, String unitNumber, Query query,
 			String key, String indextype, String finalsource,
-			String dataSource, String k1dataSource,int maxResult, int distanceCriteria, BoostAddress boostAddress)
+			String dataSource, String k1dataSource,int maxResult, int distanceCriteria,boolean deepSearchEnable, BoostAddress boostAddress)
 
 	throws Exception {
 
@@ -93,14 +93,14 @@ public class ShatamIndexReader {
 
 		}
 		if (indextype == "k1") {
-			ShatamCachingSingle.k1_reference = query.toString()+state;
+			ShatamCachingSingle.k1_reference = query.toString()+state+deepSearchEnable;
 		}
 		if (maxResult == 1) {
 			ShatamCachingSingle.newBuilder();
 			if (ShatamCachingSingle.size() > 0) {
 				AddressStruct newStruct = new AddressStruct(state);
 				AddressStruct oldStruct = ShatamCachingSingle.get(query
-						.toString()+state);
+						.toString()+state+deepSearchEnable);
 				if (oldStruct != null) {
 					if (oldStruct.inputAddress != null) {
 						if (oldStruct.inputAddress.equals("No Match Found")) {
@@ -137,7 +137,7 @@ public class ShatamIndexReader {
 			ShatamCachingList.newBuilder();
 
 			List<AddressStruct> oldlist = ShatamCachingList.get(query
-					.toString()+state);
+					.toString()+state+deepSearchEnable);
 			if (oldlist != null && oldlist.size() == maxResult) {		
 				ArrayList<AddressStruct> newList = new ArrayList<>();
 				for (AddressStruct old : oldlist) {
@@ -175,8 +175,7 @@ public class ShatamIndexReader {
 		TopDocs results = searcher.search(query, MAX_HITS);
 		ScoreDoc[] hits = results.scoreDocs;
 		boolean flag = false;
-		int i = 0;
-
+		int i = 0;		
 		for (String caseV : new String[] { "contains", "approxMatching",
 				"defaults" }) {
 
@@ -185,6 +184,12 @@ public class ShatamIndexReader {
 						|| caseV.contains("approxMatching")) {
 					continue;
 				}
+			}		
+			if(deepSearchEnable){
+				if(caseV.equalsIgnoreCase("approxMatching")){					
+					continue;
+				}
+				
 			}
 			for (ScoreDoc hit : hits) {
 				i++;
@@ -217,7 +222,7 @@ public class ShatamIndexReader {
 					if (maxResult == 1) {
 						{
 							if (matcher.isResultMatched(caseV, key, distanceCriteria, boostAddress)) {
-								ShatamCachingSingle.put(query.toString()+state,
+								ShatamCachingSingle.put(query.toString()+state+deepSearchEnable,
 										addStruct);
 								addresses.add(addStruct);
 
@@ -277,7 +282,7 @@ public class ShatamIndexReader {
 			}
 			if (maxResult > 1
 					&& addresses.size() == maxResult) {
-				ShatamCachingList.put(query.toString()+state, addresses);
+				ShatamCachingList.put(query.toString()+state+deepSearchEnable, addresses);
 			}
 			if (addresses.size() == maxResult) {
 				break;
@@ -286,7 +291,7 @@ public class ShatamIndexReader {
 		if (finalsource.contains(dataSource) && indextype.contains("k5")
 				&& addresses.size() == 0 && maxResult > 1) {
 			addresses = mapOfAddresses.get(key);
-			ShatamCachingList.put(query.toString()+state, addresses);
+			ShatamCachingList.put(query.toString()+state+deepSearchEnable, addresses);
 		}
 
 		if (addresses == null) {
