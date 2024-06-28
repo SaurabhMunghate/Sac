@@ -31,10 +31,10 @@ public class Seeding {
 		ArrayList<InputJsonSchema> addresses = sorter
 				.sortInputAddress(textEntered);
 		ThreadedSAC threadedSAC = new ThreadedSAC();
-		U.log("seed");
+		U.log("seed-----------------------------------------------");
 		threadedSAC.processByParts(addresses, "", "1", "10", "USPS and TIGER",
 				false,0,false, new BoostAddress());
-		
+		U.log("End-------------------------------------------------");
 	}
 
 }

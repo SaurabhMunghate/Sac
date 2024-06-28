@@ -348,7 +348,7 @@ public class AddressStruct implements Comparable<AddressStruct> {
 		this.longitude = from.longitude;
 
 	}
-
+	
 	public boolean isGoodLatLon() {
 		boolean badLoc = (latitude + "").equals("NaN")
 				|| (longitude + "").equals("NaN") || latitude == 0.0

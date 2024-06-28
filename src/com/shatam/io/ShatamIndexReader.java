@@ -76,6 +76,7 @@ public class ShatamIndexReader {
 			String dataSource, String k1dataSource,int maxResult, int distanceCriteria,boolean deepSearchEnable, BoostAddress boostAddress)
 
 	throws Exception {
+		U.log("ShatamIndexReader-searchIndex");
 
 		ArrayList<AddressStruct> addresses = new ArrayList<AddressStruct>();
 		ArrayList<AddressStruct> firstApperanceaddresses = new ArrayList<AddressStruct>();
@@ -297,6 +298,7 @@ public class ShatamIndexReader {
 		if (addresses == null) {
 			addresses = new ArrayList<>();
 		}
+		U.log("addresses - "+addresses);
 
 		return addresses;
 

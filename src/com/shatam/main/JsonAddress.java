@@ -150,7 +150,7 @@ public class JsonAddress {
 						String key = innerArr.key;
 						{
 							String arr[] = { key, "Zip is invalid", "", "",
-									"", "", "", "", "", "", "", "", "", "", "" };
+									"","", "", "", "", "", "", "", "", "", "" };
 							outputObj = new JSONArray(Arrays.asList(arr));
 							outputObj = new JSONArray(Arrays.asList(outputObj));
 							outputObj = new JSONArray(Arrays.asList(outputObj));

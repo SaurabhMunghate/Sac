@@ -64,6 +64,7 @@ public class ThreadedSAC {
 		CustomAddressCorrector customAddressCorrector = new CustomAddressCorrector();
 		MultiMap finalresult = null;
 		try {
+			U.log("try-corrUsingAppropriateIndex");
 			finalresult = customAddressCorrector.corrUsingAppropriateIndex(
 					multiMap, maxResults, hitscor, noOfJobs, dataSource, flag, distanceCriteria,deepSearchEnable, boostAddress);
 		} catch (Exception e1) {
@@ -80,6 +81,7 @@ public class ThreadedSAC {
 		keys.addAll(keys1);
 		Set<String> keys2 = multiMap.keySet();
 		if (keys1.size() != keys2.size()) {
+			U.log("keys1.size() != keys2.size()");
 			MultiMap semimultiMap = new MultiValueMap();
 			for (String k : keys2) {
 				if (!keys1.contains(keys2)) {
@@ -99,6 +101,7 @@ public class ThreadedSAC {
 				}
 			}
 			try {
+				U.log("try------"+finalresult);
 				finalresult = customAddressCorrector.corrUsingAppropriateIndex(
 						semimultiMap, maxResults, hitscor, noOfJobs,
 						dataSource, flag, distanceCriteria,deepSearchEnable, boostAddress);
@@ -117,11 +120,12 @@ public class ThreadedSAC {
 		}
 
 		else {
+			U.log("else----------------");
 			RecordSelector mppro = new RecordSelector(); 
 			if(groupMap.size()>0){				
 				mppro.sortAndgetHighScoreRecords(combined,groupMap);
 			}
-			for (String key : keys) {				
+			for (String key : keys) { U.log("thisus---------------------------------");
 				ArrayList<AddressStruct> addStruct = null;
 				ArrayList<JsonSchema> listOutput = new ArrayList<JsonSchema>();
 				List list = (List) combined.get(key);
@@ -138,7 +142,7 @@ public class ThreadedSAC {
 
 					}
 				}
-				if (addStruct == null) {
+				if (addStruct == null) { 
 					JsonSchema schemaobj = new JsonSchema();
 					schemaobj.key = addkey;
 					schemaobj.address = "No Match Found";
@@ -164,7 +168,7 @@ public class ThreadedSAC {
 					schemaobj.secondary_designator = "";
 					schemaobj.secondary_number = "";
 					listOutput.add(schemaobj);
-				} else {
+				} else { 
 					if (addStruct.size() > 0) {
 						for (int returnOutputSize = 0; returnOutputSize < addStruct
 								.size(); returnOutputSize++) {
@@ -213,11 +217,11 @@ public class ThreadedSAC {
 									&& current.hitScore >= 6) {
 								current.hitScore = 6;
 							}
-
+							
 							JsonSchema schemaobj = new JsonSchema();
 							schemaobj.key = addkey;
 							schemaobj.address = getCompleteStreet(current);
-
+							U.log(schemaobj.address);
 							if (!StrUtil.isEmpty(current.unitNumber)) {
 								schemaobj.secondary_designator = current
 										.getUnitType();
@@ -373,7 +377,7 @@ public class ThreadedSAC {
 
 			}
 		}
-
+U.log("outputArr :-"+outputArr);
 		return outputArr;
 	}
 

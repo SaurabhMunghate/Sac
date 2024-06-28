@@ -32,7 +32,7 @@ public abstract class AbstractIndexType {
 	public static AbstractIndexType[] TYPES = { NORMAL, SOUNDEX, METAPHONE,
 			DOUBLE_METAPHONE, REFINED_SOUNDEX };
 
-	public static String standardize(String v) {
+	public static String standardize(String v) {			
 		if (v.length() <= 1 && v.matches("[a-z]")) {
 			v = v;
 		}

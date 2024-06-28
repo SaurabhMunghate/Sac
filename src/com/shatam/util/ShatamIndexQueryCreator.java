@@ -322,6 +322,7 @@ public class ShatamIndexQueryCreator {
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
+				
 
 				queryMultimap.put(key, shatamIndexQueryStruct);
 				queryMultimap.put(key, unitArr[0]);
@@ -331,8 +332,9 @@ public class ShatamIndexQueryCreator {
 				queryMultimap.put(key, addkey);
 				queryMultimap.put(key, state);
 			}
-		}//eof for
-
+		}//eof for 
+		
+U.log("queryMultimapqueryMultimap"+queryMultimap);
 		ShatamIndexUtil.readerMap = readerMap;
 		return queryMultimap;
 

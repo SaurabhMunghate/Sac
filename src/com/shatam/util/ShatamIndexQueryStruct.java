@@ -89,7 +89,7 @@ public class ShatamIndexQueryStruct {
 
 			}
 		}
-
+U.log("qqqq"+q);
 		return q;
 	}
 

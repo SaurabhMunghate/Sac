@@ -119,7 +119,7 @@ public class DistanceMatchForResult {
 		switch (caseVal) {
 		case "approxMatching":
 
-			if (value.equalsIgnoreCase("street")) {				
+			if (value.equalsIgnoreCase("street")) {					
 				if (inputAddress != null) {
 					if (algorithm.getSimilarity(inputStreetAbrv.toLowerCase()
 							.trim(), street.toLowerCase().trim()) > 0.9){						
@@ -423,6 +423,8 @@ public class DistanceMatchForResult {
 		return false;
 	}
 
+	
+	
 	public static boolean chkForZip(String foundZip, String foundCity,
 			AddressStruct addStruct) {
 		String inputCity = addStruct.getQueryCity();
@@ -433,7 +435,7 @@ public class DistanceMatchForResult {
 				&& !inputZip.contains(foundZip.trim())) {
 
 			HashSet<String> cities = Util.zipToCity.get(inputZip);
-
+			
 			if (cities != null)
 				for (String city : cities) {
 

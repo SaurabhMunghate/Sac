@@ -84,7 +84,6 @@ public abstract class FSDirectory extends Directory {
 				lf.setLockPrefix(null);
 			}
 		}
-
 	}
 
 	public static String[] listAll(File dir) throws IOException {

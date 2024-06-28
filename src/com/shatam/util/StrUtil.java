@@ -24,8 +24,7 @@ public class StrUtil
     static
     {
         
-        unitRegexMap
-                .add(new String[] {
+        unitRegexMap.add(new String[] {
             "po box",
             "(post office box|po draw|p\\.o\\. boxx| po boxx|p o boxx|po box|po bxo|po bx|p\\. *o\\. *b\\.|pob |p\\.o\\.bo|p\\.o\\.|p o box|post box|p o bx|firm caller|caller|drawer |lock *box|pobx|po boc|bx | bin )"
                     + _UNIT_ETRACT_SUFFIX_UNIT });
@@ -42,7 +41,7 @@ public class StrUtil
 
         
         unitRegexMap.add(new String[] { "#", "( # )" + _UNIT_ETRACT_SUFFIX_UNIT });
-
+        
         unitRegexMap.add(new String[] { "apt", "(apt |apartment|aptmt|aptmnt|bld )" + _UNIT_ETRACT_SUFFIX_UNIT });
         unitRegexMap.add(new String[] { "ste", WORD_DELIMETER + "(suite|suit|ste )" + _UNIT_ETRACT_SUFFIX_UNIT });
         unitRegexMap.add(new String[] { "floor", "(floor|flr|fl )" + _UNIT_ETRACT_SUFFIX_UNIT });

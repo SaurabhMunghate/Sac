@@ -29,7 +29,7 @@ public class GenerateCache {
 	}
 
 	public static HashMap<String, String> FIPS = new HashMap<>();
-
+	
 	public static HashMap<String, HashSet<String>> cities = Util.getCity();
 
 	public static HashMap<String, String> getfips() throws Exception {

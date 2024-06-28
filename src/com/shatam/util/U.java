@@ -251,7 +251,6 @@ public class U {
 	private static String correctNumbersDisguisedAsWords(String address) {
 		if (StrUtil.isEmpty(address))
 			return address;
-
 		{
 			String[] num2Words = { "zero", "one", "two", "three", "four",
 					"five", "six", "seven", "eight", "nine", "ten" };

@@ -12,6 +12,7 @@ import org.apache.commons.collections.MultiMap;
 
 import com.shatam.io.ShatamIndexUtil;
 import com.shatam.util.BoostAddress;
+import com.shatam.util.U;
 
 public class CustomAddressCorrector {
 
@@ -25,7 +26,9 @@ public class CustomAddressCorrector {
 		returnoutput = shatamIndexUtil.correctAddresses(multimap, null, null,
 				maxresult, hitscore, noOfJobs, dataSource, flag, distanceCriteria,deepSearchEnable, boostAddress);
 		//long e = System.currentTimeMillis();
+		U.log("returnoutput"+returnoutput);
 		return returnoutput;
+		
 
 	}
 }

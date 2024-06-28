@@ -27,14 +27,14 @@ public class StartServer {
 
 //		Paths.READ_DATA = "C:\\sac test\\DATA\\";
 //		U.log("Root Path ::"+System.getProperty("user.dir"));
-		//Paths.READ_DATA = "/home/glady/Sac_Workspace/Data/";
+		Paths.READ_DATA = "/home/shatam-100/eclipse-workspace/SAC/Chinmay/SACWorkspace/Data";
 		Server server = new Server();
 		SelectChannelConnector connector = new SelectChannelConnector();
 		connector.setPort(3309);
 		server.addConnector(connector);
-		ContextHandler contextState = new ContextHandler("/checkStatus");
+		ContextHandler contextState = new ContextHandler("/checkStatus");	
 		StateHandler2 handler = new StateHandler2();
-		contextState.setHandler(handler);
+		contextState.setHandler(handler);	
 		ContextHandler contextPostData = new ContextHandler("/postData");
 		JsonPostHandler handler2 = new JsonPostHandler();
 		contextPostData.setHandler(handler2);
@@ -51,9 +51,10 @@ public class StartServer {
 		contexts.setHandlers(new Handler[] { contextState, contextPostData,
 				webapp });
 		server.setHandler(contexts);
-		U.log("SAC v 1.27");
+		U.log("SAC v 1.28");
 		server.start();
 		server.join();
+		U.log("End");
 
 	}
 

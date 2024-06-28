@@ -39,7 +39,7 @@ public class ShatamIndexUtil {
 	public static int NORMAL = 0, METAPHONE = 0, SOUNDEX = 0,
 			DOUBLE_METAPHONE = 0, REFINED_SOUNDEX = 0, Tiger = 0;
 	public static AddressStruct adStructBackUp = null;
-
+	
 	public static boolean isDebug = false;
 	public static HashMap<String, ShatamIndexReader> readerMap = new HashMap<>();
 	public static HashMap<String, ShatamIndexWriter> writerMap;
@@ -136,7 +136,7 @@ public class ShatamIndexUtil {
 		ShatamIndexReader.mapaddressesWithoutZipTest = new HashMap<>();
 		String[] queryType = { "normal" };
 
-		for (String quryType : queryType) {
+		for (String quryType : queryType) { 
 
 			for (AbstractIndexType it : AbstractIndexType.TYPES) {
 
@@ -179,7 +179,7 @@ public class ShatamIndexUtil {
 
 						Query query = (Query) list.get(4);
 
-					//	U.log("Query ::"+query);
+						//U.log("Query ::"+query);
 						if (query == null) {
 							U.log("OMG queryyyyy=null");
 						}
@@ -203,14 +203,15 @@ public class ShatamIndexUtil {
 						}
 						synchronized (lock) {
 
-							try {
+							try { 
+								U.log("try2");
 
 								addresses = reader.searchIndex(address,
 										shatamIndexQueryStruct, unitType,
 										unitNumber, query, key,
 										indexType.getFieldName(), source,
 										dataSource, k1DataSource,Integer.parseInt(maxresult), distanceCriteria,deepSearchEnable, boostAddress);
-
+U.log("addresses--"+shatamIndexQueryStruct.getHouseNumber());
 							} catch (Exception e1) {
 								U.log("exception in read addresses==" + e1);
 								e1.printStackTrace();
@@ -233,7 +234,7 @@ public class ShatamIndexUtil {
 								if (dataSource.contains("TIGER"))
 									Tiger++;
 								indexervalue(indexType);
-							} else {
+							} else { 
 								List<String> list1 = (List<String>) multimap
 										.get(key);
 								nonmatchedAddresses.put(key, list1.get(0));
@@ -264,8 +265,10 @@ public class ShatamIndexUtil {
 		}
 
 		long end = System.currentTimeMillis();
+		
 
 		return output;
+		
 
 	}
 
